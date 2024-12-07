@@ -1,0 +1,239 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="title"  type="list"/>
+</basis>
+
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="image" type="list" format="4"/>
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+    <member name="image-banner" type="list" format="4"  postsql="select * from [db.image-banner] where ord=1001"/>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="list" blgid="222" size="264x288" type="list" propertyid="7244,7248"/>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member request="json-ld" type="scalar" name="json"  />
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="cataloge" type="list" format="9"/>
+</basis>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> [##db.title.title##]</title>
+    <meta name="description" content=" [##db.title.title##]"> 
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/viewer.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/splide.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/journal.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/journalShow.css">
+<style>
+    .journal-Flip{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .journal-Flip iframe{
+        width: 100%;
+        height: 100% !important;
+    }
+    .logo-backs2{
+display: none !important;
+    }
+</style>
+</head>
+
+<body class="font-['IRANSans'] font-normal bg-black journalshow ">
+
+    <basis core="call" file="header-black.inc" />
+    <div class="w-full journalcont bg-black mt-[150px]">
+ 
+   
+    </div>
+<!-- 
+<div class="clr"></div> -->
+<div class="shh w-main mx-auto  ">
+    <basis core="print" datamembername="db.cataloge">
+        <layout>
+            @child
+        </layout>
+        <face filter="ord=1000">
+            <div class="journal-Flip">
+                <iframe allowfullscreen="allowfullscreen" id="myiFrame"
+                 scrolling="no" class="fp-iframe"   
+                 src="@name" style="border: 1px solid lightgray; width: 100%; height: 400px;"
+                 ></iframe>
+        
+             </div>
+        </face>
+    </basis>
+    
+         
+        <basis core="print" datamembername="db.list">
+            <layout>
+                <div class=" h-[72px] relative mb-10 mt-[150px]">
+                    <div class="left-0 top-0  text-right text-white text-2xl font-medium titleM textHover">ماهنامه های تجارت طلایی</div>
+                    <div class="w-44 relative rtl flex" style="    margin-top: 10px;">
+                    <div class="w-[21px]  left-[65px] top-[10px] absolute titlw">
+                    <div class="mer w-[21px] h-[21px] left-0 top-0 absolute roundedd rounded-full border border-white">
+                        <div class="w-[3px] h-[3px] left-[14px] top-[14px] absolute bg-white"></div>
+                    </div>
+                 
+                    </div>
+                    <a href="ماهنامه" class=" text-white  origin-top-left leading-10 titleM1">مشاهده لیست </a>
+                </div>
+                    </div> 
+              <div class="result">
+                <div class="mahnameC">
+                 <div class="w-main mx-auto my-0 pt-20 pr-10 mahname">
+               <div id="" class=" mx-auto my-0">
+                           <section class="splide mt-[40px]" id="news_slider1">
+                               <div class="splide__track">
+                                     <ul class="splide__list">
+                                      @child
+                                     </ul>
+                                   
+                               </div>
+                               <div class="splide__arrows   ">
+      
+                                  <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative left-[-60px]  rounded-0" 
+                                  >
+                                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                          </svg>
+                                          
+                                  </button>
+                                  <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
+                                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                          </svg>
+                                          
+                                  </button>
+                            </div>
+                                  </section>
+                            </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+            </layout>
+              <face>
+                  <li class="splide__slide journal_list">
+                      <div class="w-[260px]  rounded-[20px] relative ">
+                          <a href="@link"   alt="@tit" title="@title">
+                          <img src="@00264X00288prp" width="260" 
+                          class="rounded-[20px]" alt="@title" title="@title" /></a>
+                          <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
+                             
+                              <a href="@link"   alt="@tit" title="@title"
+                              class="text-white text-sm relative z-50 w-full  text-center ">
+                                @title
+                              </a>
+                              <span class="sign w-[73px] h-[79px]  absolute top-[-40px] right-2 flex justify-center items-start pt-2 bg-center text-white journal_title_badge">
+                               @prp_7248
+                              </span>
+                          </div>
+                        </div>
+                          </li>
+                       
+              </face>
+          
+          </basis>
+
+                   
+  
+<div  class=" jornalshow-adaa w-main my-0 mx-auto flex flex-col justify-center items-center pt-[80px] pb-[80px]">
+    <basis core="print" datamembername="db.image-banner">
+        <face filter="ord=1005">
+ 
+                <a href="@description">
+                <img src="@largeIMG"  alt="@name" title="@name"></a>
+    
+        </face>
+    </basis>
+   
+</div>
+</div>
+  <div class="clr"></div>
+  <basis core="call" file="footer-black.inc" />
+  <basis core="call" file="scripts.inc" />
+    <script src="[##cms.cms.cdn##]/js/swiper-bundle.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="[##cms.cms.cdn##]/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="[##cms.cms.cdn##]/js/splide.min.js"></script>
+<script>
+var iframe = document.getElementById( 'myiFrame' );
+	var content = document.getElementById("myiFrame").innerHTML;
+	var frameDoc = iframe.document;
+    console.log(frameDoc);
+    
+	// if (iframe.contentWindow)
+	// 	frameDoc = iframe.contentWindow.document;
+
+	// frameDoc.open();
+	// frameDoc.writeln(content);
+	// frameDoc.close();
+
+    // $(".fp-iframe").contents().find(".logo-backs2").attr("style","display:none;")
+    let mahnames = document.querySelectorAll('#news_slider1 .splide__slide')
+ let colurs = ['#B2D9EA','#FFFFD1',' #F0C5D5','#FFFFFF']
+ let i = 0
+ mahnames.forEach(element => {
+    console.log(element);
+    element.querySelector('.color').style.backgroundColor=colurs[i]
+    element.querySelector('.color').setAttribute('data-color',colurs[i])
+    element.querySelector('.color').classList.add(`data-${i}`)
+
+    i++
+    if(i>=colurs.length){
+        i=0
+    }
+   
+ });
+ var news_slider1 = new Splide( '#news_slider1', {
+  // type   : 'loop',
+  perPage: 4,
+  perMove: 1,
+  autoWidth: true,
+  arrows : true,
+  pagination : false,
+  gap: '28px',
+  direction: 'rtl', 
+  classes: {
+      arrows: 'splide__arrows your-class-arrows',
+             arrow : 'splide__arrow your-class-arrow',
+          prev  : 'splide__arrow--prev',
+          next  : 'splide__arrow--next',
+  },
+  breakpoints: {
+    1024: {
+      perPage: 3,
+     
+    },
+    767: {
+      perPage: 2,
+  
+    },
+    640: {
+      perPage: 1,
+
+    },
+  },
+  } );
+
+  news_slider1.mount();
+</script>
+<script  type="application/ld+json" >
+    [##db.json.Column1##]
+     </script>
+</body>
+
+</html>

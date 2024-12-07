@@ -1,0 +1,99 @@
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+    <member name="image-banner" type="list" format="4"/>
+   </basis>
+   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208528">
+   <member name="blog-list" size="500x260" type="list"/>
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208528">
+   <member name="blog-list" size="200x200" type="list"/>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" catid="208528"  >
+    <member type="list" name="list" propertyid="7244,7248"  typeid="159" size="500x260"  preview=""  perpage="12" order="id desc" link="conversation.bc"  />
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2354278">
+   <member name="image-blog" type="list" format="4"/>
+</basis>
+<!doctype html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title> گفتگوها</title>
+    <meta name="description" content="گفتگوها"> 
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">   
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/conversation.css"> 
+</head>
+
+<body class="font-['IRANSans'] font-normal conversationList">  
+    <basis core="call" file="header-white.inc" />
+    <div class="Ads">
+        <basis core="print" datamembername="db.image-banner">
+          <face filter="ord=1002">
+            <div class="ad">
+                <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                  <img src="@largeIMG" alt="@name" title="@name" ></a>
+          </div>
+          </face>
+      </basis>
+       
+      </div>
+  
+    <div class="converlistt w-main  mx-auto my-0 pb-5 pt-5">
+
+
+        <basis core="print" datamembername="db.list">
+            <face>
+                <div class="conver w-full  relative flex justify-center items-center">
+      
+                    <div class=" relative  justify-start items-center flex border-b-[1px] border-solid border-lightgray pb-[40px] mt-[40px]">
+                    <div class="relative">
+                        <a href="/@link" alt="@title" title="@title" aria-label="@title " rel="noopener"> 
+                             <img class=" leftimg relative rounded-md" src="@type_159" width="500" height="260" alt="@title" /></a>
+                    <div class="h-[60px] bor11 w-full bg-orange 
+                    absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
+                    pr-[150px]">
+                    <img src="@00500X00260prp" width="140" height="140" alt="@title"
+                     class="rounded50 absolute right-[15px] rounded-full bottom-2 " />
+                     
+                    <p>
+                        @title
+                    </p>
+                    </div>
+                </div>
+                    <div class="w-[70%] mrg  mr-5 z-50">
+                        <div class="text-gray text-sm pb-2">تاریخ انتشار: @cdate</div>
+                        <a  alt="@title" title="@title" aria-label="@title " rel="noopener" href="/@link" class="block text-black text-sm font-bold pb-3 ">@title</a>
+                    <div class="newText text-justify text-black text-sm font-normal pb-3">
+                        @prp_7244</div>
+                        <a href="@link"  alt="@title" title="@title" aria-label="@title " rel="noopener" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                            <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+                      
+                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
+                            <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+                             bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                            </div>
+                        
+                        </a>
+                    </div>
+                   
+                   
+                    </div>
+                    
+                    </div>
+            </face>
+        </basis>
+     
+        <div class="textHover seeMore w-[152px] h-[46px] mt-[30px] rounded-[20px] border-[1px] border-lightorange cursor-pointer transition
+        text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto hover:bg-orange hover:text-black">
+            مشاهده بیشتر 
+        </div>
+    </div>
+   
+    <basis core="call" file="footer-white.inc" />
+    <basis core="call" file="scripts.inc" />
+<script src="[##cms.cms.cdn##]/js/conversationList.js"></script>
+</body>
+
+</html>

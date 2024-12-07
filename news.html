@@ -1,0 +1,562 @@
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+    <member name="image-banner" type="list" format="4"/>
+   </basis>
+   <basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="banner" type="list" format="4" postsql="select * from [db.banner] where ord=1"/>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">>
+    <member name="list-blog" size="240x240" type="list" propertyid="7244,7248"/>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="news" type="view"/>
+</basis> 
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="writer" type="view" postsql="select * from [db.writer] where prpid = 7248" />
+</basis> 
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member request="navigationcat" postsql="select * from [db.navigationcat] where Parentcatid <> (208470) and Parentcatid <> Catid"
+    type="tree" name="navigationcat" preview="" />
+</basis> 
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member type="list" name="title" typeid="150"  preview="" />
+</basis>
+<basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="[##cms.query.id##]" >
+    <member type="list" name="gallery"/>
+</basis>
+
+<basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="[##cms.query.id##]" >
+    <member type="list" name="video" format="3"  preview="" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1"  usedforid="[##cms.query.id##]" >
+    <member request="listcomment" type="list" name="listcomment"  preview="" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1" usedforid="[##cms.query.id##]" >
+    <member request="listcomment" type="list" name="listcommentcount"
+    postsql="select count(*) as count from [db.listcommentcount]"  preview="" />
+</basis>
+<basis core='dbsource' name='captcha' run='AtClient' source='trust_login' triggers='db.refresh'>
+    <member name='code' type='scalar' request='captcha'></member>
+    </basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member type="list" name="relatednew" blgid="222" order="id desc" size="249x249" link="news.bc" preview="" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208625">
+    <member name="list-blog1" size="187x187" type="list" propertyid="7244,7248" sort="id desc"/>
+  </basis>
+  <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" catid="208685" >
+    <member type="list" name="retail" size="187x187" propertyid="7244,7248" sort="id desc"  />
+  </basis>
+  <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" > 
+    <member request="cat" type="tree" name="tab2" parentid="208685" size="240x240" />
+</basis>
+  <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" > 
+    <member request="cat" type="tree" name="tab1" parentid="208526" size="240x240" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member request="json-ld" type="scalar" name="json"  />
+</basis>
+<!doctype html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[##cms.seo.title##]</title>
+    <meta name="description" content="[##cms.seo.description##]">
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/splide.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">   
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/news.css"> 
+</head>
+
+<body class="font-['IRANSans'] font-normal ">
+
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+        <member type="view" name="view" preview="" />
+    </basis>
+
+
+    
+    <basis core="call" file="header-white.inc" />
+    <div class="newsC">
+        <div class="w-full bg-bg  sec1Container">
+            <div class="navvv">
+                <span>
+                    <a href="/" aria-label="صفحه نخست" rel="noopener" title="صفحه نخست">
+                        صفحه نخست
+                    </a>
+                </span>
+                >
+                <span>
+                    <a href="اخبار" aria-label="اخبار " rel="noopener" title="اخبار ">
+                        اخبار
+                    </a>
+
+                </span>
+                >
+                <span class="bold textHover">
+                    [##db.title.title##]
+                </span>
+            </div>
+            <div class="w-main sec1 sticky  mx-auto my-0 flex items-center justify-start  ">
+              <div class="relative w-1/2 imgg">
+                  <basis core="print" datamembername="db.banner">
+                      <face>
+                          <img src="[##cms.cms.cdn##]/@largeIMG" width="700" height="480" class="w-full" alt="@name"  />
+                          <div class="w-[49px] h-[113px]  rounded-[36px] bg-white shadow-xl shadow-shadow absolute flex flex-col justify-around right-[10px] bottom-[-50px] items-center bottom-[-10px]">
+                              <!-- <div class="w-[80px] h-[80px] bg-social absolute top-[-20px] z-0"></div> -->
+                        
+                                <a target="_blank" class="z-10" aria-label="[##db.list-blog.title##] " rel="noopener"
+                                href="https://www.instagram.com/?url=http://a112tl.undertest.ir/[##db.list-blog.link##]"
+                                alt="[##db.list-blog.link##]" title="[##db.list-blog.link##]">
+                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.271 2C11.1147 2.00225 11.5429 2.00675 11.9127 2.01725L12.0582 2.0225C12.2262 2.0285 12.3919 2.036 12.5921 2.045C13.3901 2.0825 13.9346 2.2085 14.4123 2.39374C14.9073 2.58424 15.3243 2.84223 15.7412 3.25847C16.1226 3.63338 16.4177 4.08689 16.6059 4.58744C16.7912 5.06518 16.9172 5.60967 16.9547 6.4084C16.9637 6.60789 16.9712 6.77364 16.9772 6.94238L16.9817 7.08788C16.9929 7.45687 16.9974 7.88511 16.9989 8.72884L16.9997 9.28833V10.2708C17.0015 10.8178 16.9958 11.3649 16.9824 11.9118L16.9779 12.0573C16.9719 12.226 16.9644 12.3918 16.9554 12.5913C16.9179 13.39 16.7904 13.9337 16.6059 14.4122C16.4182 14.913 16.1231 15.3667 15.7412 15.7412C15.3662 16.1224 14.9128 16.4175 14.4123 16.6059C13.9346 16.7912 13.3901 16.9172 12.5921 16.9547C12.4142 16.963 12.2362 16.9705 12.0582 16.9771L11.9127 16.9816C11.5429 16.9921 11.1147 16.9974 10.271 16.9989L9.71154 16.9996H8.72984C8.18256 17.0015 7.63529 16.9958 7.08817 16.9824L6.94268 16.9779C6.76465 16.9712 6.58665 16.9634 6.40871 16.9547C5.61075 16.9172 5.06628 16.7912 4.5878 16.6059C4.08733 16.4179 3.63401 16.1228 3.25962 15.7412C2.87792 15.3664 2.58257 14.9129 2.39416 14.4122C2.20892 13.9345 2.08293 13.39 2.04543 12.5913C2.03707 12.4133 2.02958 12.2353 2.02293 12.0573L2.01918 11.9118C2.00536 11.3649 1.99911 10.8179 2.00043 10.2708V8.72884C1.99834 8.18181 2.00384 7.63477 2.01693 7.08788L2.02218 6.94238C2.02818 6.77364 2.03568 6.60789 2.04468 6.4084C2.08218 5.60967 2.20817 5.06593 2.39341 4.58744C2.58174 4.08638 2.87768 3.63273 3.26037 3.25847C3.63467 2.87709 4.08768 2.58198 4.5878 2.39374C5.06628 2.2085 5.61 2.0825 6.40871 2.045C6.6082 2.036 6.77469 2.0285 6.94268 2.0225L7.08817 2.018C7.63504 2.00467 8.18206 1.99892 8.72909 2.00075L10.271 2ZM9.50005 5.74991C8.50554 5.74991 7.55176 6.14499 6.84853 6.84824C6.14531 7.55148 5.75024 8.50529 5.75024 9.49982C5.75024 10.4944 6.14531 11.4482 6.84853 12.1514C7.55176 12.8547 8.50554 13.2497 9.50005 13.2497C10.4946 13.2497 11.4483 12.8547 12.1516 12.1514C12.8548 11.4482 13.2499 10.4944 13.2499 9.49982C13.2499 8.50529 12.8548 7.55148 12.1516 6.84824C11.4483 6.14499 10.4946 5.74991 9.50005 5.74991ZM9.50005 7.24988C9.79551 7.24983 10.0881 7.30798 10.3611 7.421C10.6341 7.53403 10.8821 7.69971 11.0911 7.90861C11.3 8.1175 11.4658 8.3655 11.5789 8.63846C11.692 8.91142 11.7503 9.20398 11.7503 9.49945C11.7504 9.79492 11.6922 10.0875 11.5792 10.3605C11.4662 10.6335 11.3005 10.8816 11.0916 11.0905C10.8827 11.2995 10.6347 11.4652 10.3618 11.5784C10.0888 11.6915 9.79626 11.7497 9.5008 11.7498C8.90409 11.7498 8.33183 11.5127 7.90989 11.0908C7.48795 10.6688 7.25091 10.0965 7.25091 9.49982C7.25091 8.9031 7.48795 8.33082 7.90989 7.90887C8.33183 7.48692 8.90409 7.24988 9.5008 7.24988M13.4381 4.62494C13.1895 4.62494 12.951 4.72371 12.7752 4.89952C12.5994 5.07533 12.5006 5.31378 12.5006 5.56242C12.5006 5.81105 12.5994 6.0495 12.7752 6.22531C12.951 6.40112 13.1895 6.4999 13.4381 6.4999C13.6867 6.4999 13.9252 6.40112 14.101 6.22531C14.2768 6.0495 14.3755 5.81105 14.3755 5.56242C14.3755 5.31378 14.2768 5.07533 14.101 4.89952C13.9252 4.72371 13.6867 4.62494 13.4381 4.62494Z" fill="black"/>
+                                      </svg>
+                                      
+                              </a>
+                              <a  target="_blank" class="z-10" aria-label="[##db.list-blog.title##] " rel="noopener"
+                               href="https://api.whatsapp.com/send?text=http://a112tl.undertest.ir/[##db.list-blog.link##]"
+                              alt="[##db.list-blog.link##]" title="[##db.list-blog.link##]">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.00001 0C10.8661 0 14 3.1339 14 7C14 10.8661 10.8661 14 7.00001 14C5.76295 14.002 4.54767 13.6746 3.47901 13.0515L0.00280985 14L0.949209 10.5224C0.325575 9.45341 -0.00205686 8.23759 9.71617e-06 7C9.71617e-06 3.1339 3.13391 0 7.00001 0ZM4.61441 3.71L4.47441 3.7156C4.38377 3.72112 4.29519 3.74493 4.21401 3.7856C4.13807 3.8286 4.06875 3.88235 4.00821 3.9452C3.92421 4.0243 3.87661 4.0929 3.82551 4.1594C3.56659 4.49603 3.42719 4.90932 3.42931 5.334C3.43071 5.677 3.52031 6.0109 3.66031 6.3231C3.94661 6.9545 4.41771 7.62299 5.03931 8.24249C5.18911 8.39159 5.33611 8.5414 5.49431 8.68069C6.26668 9.36072 7.18708 9.85112 8.1823 10.1129L8.5799 10.1738C8.7094 10.1808 8.8389 10.171 8.9691 10.1647C9.17297 10.1542 9.37203 10.099 9.5522 10.003C9.64387 9.95578 9.73333 9.90439 9.8203 9.84899C9.8203 9.84899 9.8504 9.82939 9.9078 9.78599C10.0023 9.71599 10.0604 9.6663 10.1388 9.58439C10.1969 9.52419 10.2473 9.45349 10.2858 9.37299C10.3404 9.25889 10.395 9.04119 10.4174 8.85989C10.4342 8.7213 10.4293 8.64569 10.4272 8.59879C10.4244 8.5239 10.3621 8.44619 10.2942 8.41329L9.8868 8.2306C9.8868 8.2306 9.2778 7.9653 8.9054 7.7959C8.86644 7.77888 8.82468 7.76915 8.7822 7.7672C8.73431 7.76228 8.68592 7.76767 8.64028 7.783C8.59464 7.79833 8.55281 7.82326 8.5176 7.8561C8.5141 7.8547 8.4672 7.8946 7.9611 8.5078C7.93206 8.54683 7.89204 8.57633 7.84617 8.59253C7.80029 8.60874 7.75062 8.61092 7.7035 8.59879C7.6579 8.58657 7.61323 8.57113 7.5698 8.5526C7.483 8.5162 7.4529 8.50219 7.3934 8.47699C6.99165 8.30168 6.61969 8.0648 6.29091 7.7749C6.20271 7.6979 6.12081 7.6139 6.03681 7.5327C5.76142 7.26896 5.52141 6.9706 5.32281 6.6451L5.28151 6.5786C5.25184 6.53391 5.22786 6.48571 5.21011 6.4351C5.18351 6.3322 5.25281 6.2496 5.25281 6.2496C5.25281 6.2496 5.42291 6.0634 5.50201 5.9626C5.57901 5.8646 5.64411 5.7694 5.68611 5.7015C5.76871 5.5685 5.79461 5.432 5.75121 5.3263C5.55521 4.8475 5.35221 4.3708 5.14361 3.8976C5.10231 3.8038 4.97981 3.7366 4.86851 3.7233C4.83071 3.7191 4.79291 3.7149 4.75511 3.7121C4.6611 3.70743 4.5669 3.70836 4.47301 3.7149L4.61441 3.71Z" fill="black"/>
+                                    </svg>
+                                    
+                              </a>
+                              <a target="_blank" class="z-10" aria-label="[##db.list-blog.title##] " rel="noopener"
+                               href="https://t.me/share/url?url=http://a112tl.undertest.ir/[##db.list-blog.link##]"
+                              alt="[##db.list-blog.link##]" title="[##db.list-blog.link##]">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.66667 0C2.98667 0 0 2.98667 0 6.66667C0 10.3467 2.98667 13.3333 6.66667 13.3333C10.3467 13.3333 13.3333 10.3467 13.3333 6.66667C13.3333 2.98667 10.3467 0 6.66667 0ZM9.76 4.53333C9.66 5.58667 9.22667 8.14667 9.00667 9.32667C8.91333 9.82667 8.72667 9.99333 8.55333 10.0133C8.16667 10.0467 7.87333 9.76 7.5 9.51333C6.91333 9.12667 6.58 8.88667 6.01333 8.51333C5.35333 8.08 5.78 7.84 6.16 7.45333C6.26 7.35333 7.96667 5.8 8 5.66C8.00463 5.63879 8.00401 5.61678 7.9982 5.59587C7.9924 5.57496 7.98157 5.55578 7.96667 5.54C7.92667 5.50667 7.87333 5.52 7.82667 5.52667C7.76667 5.54 6.83333 6.16 5.01333 7.38667C4.74667 7.56667 4.50667 7.66 4.29333 7.65333C4.05333 7.64667 3.6 7.52 3.26 7.40667C2.84 7.27333 2.51333 7.2 2.54 6.96667C2.55333 6.84667 2.72 6.72667 3.03333 6.6C4.98 5.75333 6.27333 5.19333 6.92 4.92667C8.77333 4.15333 9.15333 4.02 9.40667 4.02C9.46 4.02 9.58667 4.03333 9.66667 4.1C9.73333 4.15333 9.75333 4.22667 9.76 4.28C9.75333 4.32 9.76667 4.44 9.76 4.53333Z" fill="black"/>
+                                    </svg>
+                                    
+                              </a>
+                          </div>
+                      </face>
+                  </basis>
+                 
+              </div>
+              <div class="mr-[40px]">
+                  <div class="flex justify-start items-center">
+                  <div class="flex justify-start items-center">
+                   <basis core="print" datamembername="db.navigationcat">
+                      <face filter="rownumber=1">
+                          <a href="/news-list.bc?catid=@Catid" alt="@title" title="@title" aria-label="@title " rel="noopener" class="mr-[10px] textHover">@Title</a>
+                          <span class="ml-[10px]"></span>
+                      </face>
+                   </basis>
+              
+                  </div>
+                  <div class="mr-[10px]">
+                      <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12C9 11.76 8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5C21 3.34 19.66 2 18 2C16.34 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.35C15.11 18.56 15.08 18.78 15.08 19C15.08 20.61 16.39 21.92 18 21.92C19.61 21.92 20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z" fill="black" fill-opacity="0.8"/>
+                          </svg> -->
+                          
+                  </div>
+              </div>
+              <h1 class="text-[#000] text-right text-[24px] mt-[15px] mb-[15px] textHover">
+               [##db.title.title##]
+              </h1>
+              <p class="text-[#ABABAB] text-right text-[14px] textHover">
+                  [##db.title.cdate##]
+              </p>
+              <basis core="print" datamembername="db.news">
+                <layout>
+                    @child
+                </layout>
+                <face filter="prpID = 7247">
+              <div class="row">
+
+                <span>نام نویسنده :</span>
+                <span class="val">
+                    @Answer
+                </span>
+              </div>
+                </face>
+              </basis>
+             
+                    <div class="row val text-[#ABABAB] text-right text-[14px] textHover mt-[15px]">
+                        <span>منبع :</span>
+        
+                        <span class="">
+                            [##db.writer.answer|(-)##]
+                        </span>
+                      </div> 
+           
+       
+              </div>
+
+            </div>
+          </div>
+          <div class="pinBg">
+              <div class="w-main my-[70px] mx-auto flex justify-between wrapperr ">
+                  <div class="sec1Right w-[70%] pl-[60px] text-justify leading-10 ">
+                      <basis core="print" datamembername="db.view">
+                          <face filter="typeid not in (150,159,160,161,162)">
+                              <p class="text-bold">@text</p>
+                              @largetext
+                          </face>
+                      </basis>
+                 
+                   
+                                  <basis core="print" datamembername="db.gallery">
+                                      <layout>
+                                          <section class="splide" id="blog_gallery">
+                                              <div class="Title textHover">
+                                                  <p>تصاویر مربوطه:</p>
+                                              </div>
+                                              <div class="splide__track">
+                                                    <ul class="splide__list">
+                                      @child
+                                      </ul>
+                                  </div>
+                                </section>
+                                      </layout>
+                                      <face filter="ord=1000">
+                                          <li class="splide__slide">
+                                              <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name" />
+                                            </li>
+                                      </face>
+                                  </basis>
+                                   
+                                  <basis core="print" datamembername="db.video">
+                                      <layout>    
+                                          <div class="textHover">
+                                              <p class="mt-[50px] pb-[30px]">
+                                                  ویدیو مربوطه:
+                                              </p>
+                                             @child
+                                            </div>  
+                                          </layout>
+                                          <face>
+                                              <video width="320" height="240" controls="" >
+                                                  <source src="[##cms.cms.cdn##]/@largeIMG" type="video/mp4">
+                                                  
+                                                  Your browser does not support the video tag.
+                                                </video> 
+                                          </face>
+                                          </basis>
+                       
+                        <div class="clr"></div>
+                        <div class="text-justify w-main mx-auto my-0 mt-5 flex">
+                            <span class="text-black text-sm font-normal ">تگها : </span>
+                            <span class="text-zinc-500 text-xs font-normal flex">
+                                <basis core="print" datamembername="db.navigationcat">
+                                    <face >
+                                        <a href="/news-list.bc?catid=@Catid" alt="@title" title="@title" aria-label="@title " rel="noopener"
+                                         class="mr-[10px] text-zinc-500 text-xs">@Title</a>
+                                        <span class="mr-[10px]">,</span>
+                                    </face>
+                                 </basis>
+                            </span></div>
+                  </div>
+                  <div class="w-[30%] navF">
+                      <div class="addContF w-full h-[426px] relative flex flex-col">
+                        <basis core="print" datamembername="db.image-banner">
+                            <face filter="ord=1002">
+                                <div class=" add w-full h-[90px]  flex items-center justify-center ">
+<a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                                    <img src="@largeIMG"  alt="@name" title="@name">
+</a>
+                                </div>
+                            </face>
+                        </basis>
+                      
+                      
+                      </div>
+                  </div>
+              </div>
+              <div class="flex flex-col items-start mt-[50px] w-main my-0 mx-auto" >
+           
+                      <basis core="print" datamembername="db.listcomment">
+                        <layout>
+                            <p class=" mb-4 tit textHover">نظراتان بسیار ارزشمند است</p>
+                            <div id="all_comments" class="w-full">
+                                @child
+                                <basis core="print" datamembername="db.listcommentcount">
+                                    <face filter="count > 5 ">
+                                        <div class="w-[152px] h-[46px] mt-[30px] rounded-[20px] border-[1px] border-lightorange text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto">
+                                            مشاهده بیشتر نظرات
+                                        </div>
+                                    </face>
+                                </basis>
+                    
+                                <form class="mt-[30px] border-[1px] border-solid border-lightblue p-4">
+                                    <input type="text" class="bg-lightblue w-full p-[10px]" placeholder="نام و نام خانوادگی" />
+                               
+                                </form>
+                                <div id="captcha_wrapper" class=" flex  p-[9px] justify-end items-center">
+                                    <div class="flex  justify-end items-center  bg-[#FAFAFA] border-[1px] border-solid border-[#DDDDDD] px-[4px] ">
+                                        <span class="text-xs text-[#888888]">کد امنیتی را وارد نمایید.</span>
+                                        <basis core='print' run='AtClient' datamembername='captcha.code'><face >
+                                            <script type="text/template">
+                                            
+                                            <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                                            <input type="hidden" name="captchaid" value="@captcha@" />
+                                            </script>
+                                            </face>
+                                        </basis>
+                                      
+                                        <div class="mx-2" onclick="refreshcaptcha()">
+                                            <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.0545 19.73C9.61818 19.73 7.54545 18.7874 5.83636 16.9023C4.12727 15.0171 3.27273 12.7165 3.27273 10.0002V9.7874L1.52727 11.7333L0 10.0306L4.36364 5.16578L8.72727 10.0306L7.2 11.7333L5.45455 9.7874V10.0002C5.45455 12.0273 6.09546 13.7502 7.37727 15.1692C8.65909 16.5881 10.2182 17.2975 12.0545 17.2975C12.5273 17.2975 12.9909 17.2367 13.4455 17.1151C13.9 16.9935 14.3455 16.811 14.7818 16.5678L16.4182 18.3921C15.7273 18.8381 15.0182 19.1725 14.2909 19.3955C13.5636 19.6185 12.8182 19.73 12.0545 19.73ZM19.6364 14.8347L15.2727 9.96983L16.8 8.26713L18.5455 10.2131V10.0002C18.5455 7.97321 17.9045 6.25024 16.6227 4.83132C15.3409 3.4124 13.7818 2.70294 11.9455 2.70294C11.4727 2.70294 11.0091 2.76375 10.5545 2.88537C10.1 3.00699 9.65455 3.18943 9.21818 3.43267L7.58182 1.60835C8.27273 1.1624 8.98182 0.82794 9.70909 0.604967C10.4364 0.381994 11.1818 0.270508 11.9455 0.270508C14.3818 0.270508 16.4545 1.21308 18.1636 3.09821C19.8727 4.98335 20.7273 7.28402 20.7273 10.0002V10.2131L22.4727 8.26713L24 9.96983L19.6364 14.8347Z" fill="#818181"/>
+                                                </svg>
+                                                
+                                        </div>
+                                        <input class="w-[135px] h-[32px] fill-[#FFF] stroke-[1px] stroke-[#DDD] " />
+                    
+                                    </div>
+                                    <button class="w-[107px] h-[40px] border-orange text-xs rounded-l-[50px] border-[1px] mr-2 ">ثبت نظر</button>
+                                </div>
+                            </div>
+                        </layout>
+                          <face>
+                              <div class="comment w-full mt-4 border-[1px] border-solid border-lightblue p-4" >
+                                  <div class="flex ">
+                                      <div>
+                                          <img src="[##cms.cms.cdn##]/[##cms.cms.cdn##]/images/comment_avatar.png" class="mt-[5px]" />
+                                      </div>
+                                      <div class="mr-4">
+                                          <div >@username <span class="text-gray text-xs mr-[15px]">@createdate</span></div>
+                                          <div>@comment</div>
+                                      </div>
+                                  </div>
+                                  <!-- <div class="answers bg-lightblue w-full mt-2">
+                                      <div class="flex p-[30px]">
+                                          <div class="mt-[10px]">
+                                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M19 5.99962V8.99962C19 9.96095 18.657 10.7846 17.971 11.4706C17.285 12.1566 16.4613 12.4996 15.5 12.4996H5.921L10.021 8.39962L9.308 7.69162L4 12.9996L9.308 18.3076L10.021 17.5996L5.921 13.4996H15.5C16.742 13.4996 17.8027 13.0603 18.682 12.1816C19.5607 11.3023 20 10.2416 20 8.99962V5.99962H19Z" fill="black"/>
+                                                  </svg>
+                                                  
+                                          </div>
+                                          <div class="mr-4">
+                                              <div >ادمین سایت<span class="text-gray text-xs mr-[15px]">9 مرداد 1403</span></div>
+                                              <div>ممنون از انتشار این گفت و گو</div>
+                                          </div>
+                                      </div>
+                                  </div> -->
+                              </div>
+                          </face>
+                      </basis>
+                      <basis core="print" datamembername="db.listcommentcount">
+                          <face filter="count > 5 ">
+                              <div class="w-[152px] h-[46px] mt-[30px] rounded-[20px] border-[1px] border-lightorange text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto">
+                                  مشاهده بیشتر نظرات
+                              </div>
+                          </face>
+                      </basis>
+          
+                      <form class="mt-[30px] border-[1px] border-solid border-lightblue p-4">
+                          <input type="text" class="bg-lightblue w-full p-[10px]" placeholder="نام و نام خانوادگی" />
+                     
+                      </form>
+                      <div id="captcha_wrapper" class=" flex  p-[9px] justify-end items-center">
+                          <div class="flex  justify-end items-center  bg-[#FAFAFA] border-[1px] border-solid border-[#DDDDDD] px-[4px] ">
+                              <span class="text-xs text-[#888888]">کد امنیتی را وارد نمایید.</span>
+                              <basis core='print' run='AtClient' datamembername='captcha.code'><face >
+                                  <script type="text/template">
+                                  
+                                  <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                                  <input type="hidden" name="captchaid" value="@captcha@" />
+                                  </script>
+                                  </face>
+                              </basis>
+                            
+                              <div class="mx-2" onclick="refreshcaptcha()">
+                                  <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12.0545 19.73C9.61818 19.73 7.54545 18.7874 5.83636 16.9023C4.12727 15.0171 3.27273 12.7165 3.27273 10.0002V9.7874L1.52727 11.7333L0 10.0306L4.36364 5.16578L8.72727 10.0306L7.2 11.7333L5.45455 9.7874V10.0002C5.45455 12.0273 6.09546 13.7502 7.37727 15.1692C8.65909 16.5881 10.2182 17.2975 12.0545 17.2975C12.5273 17.2975 12.9909 17.2367 13.4455 17.1151C13.9 16.9935 14.3455 16.811 14.7818 16.5678L16.4182 18.3921C15.7273 18.8381 15.0182 19.1725 14.2909 19.3955C13.5636 19.6185 12.8182 19.73 12.0545 19.73ZM19.6364 14.8347L15.2727 9.96983L16.8 8.26713L18.5455 10.2131V10.0002C18.5455 7.97321 17.9045 6.25024 16.6227 4.83132C15.3409 3.4124 13.7818 2.70294 11.9455 2.70294C11.4727 2.70294 11.0091 2.76375 10.5545 2.88537C10.1 3.00699 9.65455 3.18943 9.21818 3.43267L7.58182 1.60835C8.27273 1.1624 8.98182 0.82794 9.70909 0.604967C10.4364 0.381994 11.1818 0.270508 11.9455 0.270508C14.3818 0.270508 16.4545 1.21308 18.1636 3.09821C19.8727 4.98335 20.7273 7.28402 20.7273 10.0002V10.2131L22.4727 8.26713L24 9.96983L19.6364 14.8347Z" fill="#818181"/>
+                                      </svg>
+                                      
+                              </div>
+                              <input type="text" class="w-[135px] h-[32px] fill-[#FFF] stroke-[1px] stroke-[#DDD] " />
+          
+                          </div>
+                          <button class="w-[107px] h-[40px] border-orange text-xs rounded-l-[50px] border-[1px] mr-2 ">ثبت نظر</button>
+                      </div>
+                  </div>
+
+                                  
+                  <div class="newsContainer">
+                                  <basis core="print" datamembername="db.relatednew">
+                                    <layout>
+                                    <div class="result">
+                                       
+                                   
+                                        <p class="title_bg textHover">اخبار مرتبط</p>
+                                        <div class="swiper-news">
+                                          <div class="swiper-wrapper">
+                                            @child
+                                            
+                                           </div>
+                          
+                                         </div>
+                        
+                                    
+                                      
+                                      
+                                      </div>
+                                      </div>
+                                  
+                                  </layout>
+                                        <face>
+                                            <div class="swiper-slide newitem">
+                                            <div data-default-news="" class="w-[249.50px] newItem flex-col justify-center items-start gap-[5px] inline-flex border-b-[1px] border-solid border-orange pb-2">
+                                                <a href="/@link"  alt="@title" title="@title" aria-label="@title " rel="noopener">  
+                                                     <img class="w-[249px] h-[249px]" src="/@00249X00249prp" alt="@title" /></a>
+                                                <div
+                                                    class="pr-1.5 pt-[5.46px] pb-[5.08px]  justify-start items-center inline-flex">
+                                                    <div class="boxnews  self-stretch flex-col justify-start items-end gap-2.5 inline-flex">
+                                                        <div class="text-right text-gray text-sm w-full">@cdate
+                                                        </div>
+                                                        <a href="/@link" alt="@title" title="@title" aria-label="@title " rel="noopener" class=" textf text-right text-black text-sm font-medium ">
+                                                            @title</a>
+                                                        <div class="justify-start items-start gap-[5px] inline-flex w-full">
+                                
+                                                            <a href="/@link" alt="@title" title="@title" aria-label="@title " rel="noopener" class="textnew text-justify text-gray text-sm block ">
+                                                                مشاهده</a>
+                                                            <div class="w-[21px] h-[19.46px] relative">
+                                                                <div
+                                                                    class="w-[21px] h-[19.46px]
+                                                                     left-0 top-0 absolute rounded-full
+                                                                       roundedd border-[1px] border-solid border-gray">
+                                                                       <div class="w-[3px] h-[2.78px] left-[14px] top-[13px] absolute bg-gray"></div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </face>
+                                    
+                                    </basis>
+          
+                                    <div class="w-main mx-auto my-0 relative flex mt-[50px] margin addCont">
+
+                                        <basis core="print" datamembername="db.image-banner">
+                                            <face filter="ord=1003">
+                                                <div class="w-2/6 flex items-center justify-center mb-[30px] ads">
+                                                 <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                                                    <img src="@largeIMG"  alt="@name" title="@name"></a>
+                                                </div>
+                                            </face>
+                                        </basis>
+                                    
+                                    </div>
+          
+              </div>
+                  <div class="marginB w-main mx-auto my-0 flex justify-between">
+                   
+
+
+
+
+
+
+
+
+
+                    
+                  <div id="tabs" class="w-[70%]">
+                      <div id="tabs_header" class="flex w-full  rtl tab_heaer">
+                          <div class=" text-right text-base  tab_header  pl-8 tab_active pb-2 z-50"
+                          onclick="changeTab(this,1)" data-tab-header="1">[##db.tab1.urltitle##] </div>
+                          <div class=" text-right text-gray tab_header text-base pb-2"
+                          onclick="changeTab(this,2)" data-tab-header="2">[##db.tab2.urltitle##]   </div>
+                      </div>
+                      <div id="tabs_body">
+                          <div class="body_active tab1 " data-tab-body="1">
+                            <basis core="print" datamembername="db.list-blog1">
+                                <face>
+                                      <div class="w-full tab_body_header">
+                                          <div class="w-full  px-[15px] py-[19px] border-b border-[#ABABAB] justify-between items-start flex ">
+                                              
+                                              <div class="text-right text-black text-sm font-normal ">@title</div>
+                                              <div class="text-right text-[#ABABAB] text-sm font-normal ">@cdate</div>
+                                              </div>
+                                              <div class="w-full h-0 overflow-hidden  rtl  justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
+                                                  <a href="@link"><img class="w-[187px] h-[187px]" alt="@title" src="/@00187x00187prp " width="180" height="180" /></a>
+                                                  <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
+                                                  <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">@cdate</div>
+                                                  <a href="/@link" class=" text-right text-black text-sm font-normal mb-2">@title</a>
+                                                  <a href="/@link" alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                                    <p class=" font-normal text-sm leading-21.91 text-black">مشاهده </p>
+                                                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+                                                    ">
+                                                    <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+                                                     bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                                                    </div>
+                                                </a>
+                                                  </div>
+                                                 
+                                                  </div>
+                                              </div>
+                                  </face>
+                              </basis>
+                            
+                          </div>
+                          <div class="tab2 body_inactive" data-tab-body="2">
+                            <basis core="print" datamembername="db.retail">
+                                <face>
+                                      <div class="w-full tab_body_header">
+                                          <div class="w-full  px-[15px] py-[19px] border-b border-[#ABABAB] justify-between items-start flex ">
+                                              
+                                              <div class="text-right text-black text-sm font-normal ">@title</div>
+                                              <div class="text-right text-[#ABABAB] text-sm font-normal ">@cdate</div>
+                                              </div>
+                                              <div class="w-full h-0 overflow-hidden  rtl  justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
+                                                  <a href="@link" alt="@title" title="@title" aria-label="@title " rel="noopener">
+                                                    <img class="w-[187px] h-[187px]"
+                                                     alt="@title" src="/@00187x00187prp" width="180" height="180" /></a>
+                                                  <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
+                                                  <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">@cdate</div>
+                                                  <a href="/@link" alt="@title" title="@title" aria-label="@title " rel="noopener" class=" text-right text-black 
+                                                  text-sm font-normal mb-2">@title</a>
+                                                  <a href="/@link" alt="@title" title="@title" aria-label="@title " rel="noopener" 
+                                                  class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                                    <p class=" font-normal text-sm leading-21.91 text-black">مشاهده </p>
+                                                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative">
+                                                    <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+                                                     bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                                                    </div>
+                                                </a>
+                                                  </div>
+                                                 
+                                                  </div>
+                                              </div>
+                                  </face>
+                              </basis>
+                              </div>
+                      </div>
+                  </div>
+                 
+                    <basis core="print" datamembername="db.image-banner">
+                        <face filter="ord=1005">
+                            <p class="fill add mb-3 float-left">
+                                <a href="@description" aria-label="@name " rel="noopener" title="@name ">
+                                <img src="@largeIMG"  alt="@name" title="@name"></a>
+                            </p>
+                        </face>
+                    </basis>
+                   
+                  </div>
+              </div>
+                </div> 
+          </div>
+    </div>
+
+   
+    <basis core="call" file="footer-white.inc" />
+    <basis core="call" file="scripts.inc" />
+    <script src="[##cms.cms.cdn##]/js/splide.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/text.js"></script>
+    <script src="[##cms.cms.cdn##]/js/news.js"></script>
+    <script  type="application/ld+json" >
+        [##db.json.Column1##]
+         </script>
+ 
+</body>
+
+</html>

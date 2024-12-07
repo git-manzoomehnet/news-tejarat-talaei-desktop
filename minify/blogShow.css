@@ -1,0 +1,47 @@
+.sharww{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .8em;
+}
+.sharww a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+}
+.ads{
+    display: flex;
+    gap: .5em;
+}
+.add{
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add img{
+    width: 100%;
+    object-fit: contain;
+}
+.textC p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.borderW{
+    border-right: 1px solid #fff;
+padding-right: .5em;
+
+}
+.cir{
+    left: 40px;
+}
+.borderb{
+    border-bottom: 1px solid #000;
+    margin-bottom: 2em;
+}
+p:hover{
+    cursor: pointer;
+}

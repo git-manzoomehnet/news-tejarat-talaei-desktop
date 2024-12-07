@@ -1,0 +1,113 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208681">
+    <member name="list-blog" size="249x249" type="list" order="id desc"/>
+</basis>
+
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+ <member name="image-banner" type="list" format="4"/>
+</basis>
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>اخبار</title>
+    <meta name="description" content="اخبار">
+    <basis core="call" file="styles.inc" />
+   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/newsList.css">
+</head>
+
+<body class="font-['IRANSans'] font-normal newslistp">
+    <basis core="call" file="header-white.inc" />
+    <div class="w-main filterr border-y-2 border-orange border-solid my-[50px] textHover
+     py-2 mx-auto h-[40px] flex items-center mt-20 mb-[40px]">
+        فیلتر
+    </div>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" >
+        <member request="cat" type="tree" name="cat" parentid="208681" preview="" />
+    </basis>
+
+    <div class=" menuu flex justify-start pr-[50px] items-center w-main my-0 mx-auto border-b-2 border-orange border-solid">
+        <basis core="print" datamembername="db.cat">
+            <face>
+                <div class="pl-[100px] btn">
+                    <input type="radio" bc-value="@catid" id="filter@rownumber" bc-name="db.catfilter"
+                      bc-triggers="click" name="filter1" class="hidden ml-[80px] radionBtnActive textHover" />
+                    <label for="filter@rownumber" class="relative before:radiobtn ">@urltitle</label>
+                </div>
+            </face>
+        </basis>
+      
+       
+    </div>
+
+    <basis core="callback" triggers="db.catfilter" method="funcFilterNews" run="atclient" ></basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1"  >
+        <member type="list" name="list"   perpage="12" order="id desc" size="240x240" link="news.bc" preview="" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" catid="{##db.catfilter.value##}" triggers="db.catfilter" 
+    run="atclient" if="{##db.catfilter|(false)##}" >
+        <member type="list" name="listclient"   size="249x249"  
+        postsql="select title,id,cdate,[00249X00249prp] as _00249X00249prp from [db.listclient]" 
+       link="news.bc"  />
+    </basis>
+  
+    <div class="w-main h-[0px] border-1 border-orange w-main my-0 mx-auto"></div>
+    <div class="w-main my-[70px] wrapperr mx-auto flex justify-between newd">
+        <div class="w-[70%]  grid gap-[60px] grid-cols-3" id="default_news">
+          
+            <basis core="print" datamembername="db.list-blog">
+                <face>
+                    <div data-default-news="" class="w-[249.50px] newitem flex-col justify-center items-start gap-[5px]
+                     inline-flex border-b-[1px] border-solid border-orange pb-2">
+                        <a href="/@link"  aria-label="@title" rel="noopener" alt="@title" title='@title' > 
+                              <img class="w-[249px] h-[249px]" src="[##cms.cms.cdn##]/@00249X00249prp" alt="@title" title='@title' /></a>
+                        <div
+                            class="pr-1.5 pt-[5.46px] pb-[5.08px]  justify-start items-center inline-flex">
+                            <div class="self-stretch flex-col justify-start items-end gap-2.5 inline-flex">
+                                <div class="text-right text-gray text-sm w-full">@cdate
+                                </div>
+                                <a href="/@link" aria-label="@title" rel="noopener" alt="@title" title='@title'
+                                 class="newText text-right text-black text-sm font-medium ">
+                                    @title</a>
+                                <div class=" textf justify-start items-start gap-[5px] inline-flex w-full">
+        
+                                    <a href="@link"  aria-label="@title" rel="noopener" title="@title" alt="@title" 
+                                    class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                        <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+                                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative">
+                                        <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+                                         bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+        </div>
+        <div class="w-[30%] navF">
+            <div class="w-full h-[426px] relative flex flex-col">
+                <basis core="print" datamembername="db.image-banner">
+                    <face filter="ord=1002">
+                        <div class="add w-full h-[90px] flex items-center justify-center mb-[30px]">
+                            <a href="@description" aria-label="@name" rel="noopener" alt="@name" title='@name'>
+                            <img src="@largeIMG"  alt="@name" title="@name"></a>
+                        </div>
+                    </face>
+                </basis>
+            
+            
+            </div>
+        </div>
+       
+    </div>
+    <div   class="seeMore textHover w-[152px] h-[46px] mt-[30px] transition rounded-[20px] mb-10 my-0 mx-auto border-[1px] border-lightorange text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto hover:bg-orange hover:text-black">
+        <p>مشاهده بیشتر </p>
+    </div>
+    <basis core="call" file="footer-white.inc" />
+    <basis core="call" file="scripts.inc" />
+ <script src="[##cms.cms.cdn##]/js/newsList.js"></script>
+</body>
+
+</html>

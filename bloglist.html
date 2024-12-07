@@ -1,0 +1,85 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208663">
+  <member name="blog-list" size="286x286" type="list" propertyid="7244,7248" link="blog.bc"/>
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+  <member name="image-banner" type="list" format="4" />
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355178">
+  <member name="image-blog" type="list" format="4"/>
+</basis>
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title> بلاگ</title>
+    <meta name="description" content="بلاگ"> 
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">   
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/bloglist.css">   
+
+</head>
+<body class="font-['IRANSans'] font-normal bg-black blogList-container ">
+
+   <basis core="call" file="header-black.inc" />
+    <div class="topsec">
+        <div class="w-full blog-lists  pt-[19px] pb-[18px] bg-black/opacity-50 justify-end items-center my-0 mx-auto">
+          <basis core="print" datamembername="db.blog-list">
+            <face>
+            <div class="blog relative bloglist justify-start items-center flex pb-3 pt-3 border-gray border-solid border-b-[1px]">
+                <div class="absolute top-0 left-0 w-full h-[200px] green_shadow"></div>
+                <div class="w-main mx-auto my-0 justify-start items-center flex ">
+
+                     <a  alt="@title" title="@title" aria-label="@title " rel="noopener" href="/@link" class="imgg">
+                      <img class="w-[286px] h-[286px] relative" 
+                      src="[##cms.cms.cdn##]/@00286X00286prp" alt="@title" title="@title" />
+                    </a>
+            <div class="w-[70%] testup  mr-5 z-50 h-[280px] flex flex-col item-start justify-end">
+                <a alt="@title" title="@title" aria-label="@title " rel="noopener" 
+                href="/@link" class="blog-Title text-white text-sm font-bold mb-3 block ">@title</a>
+            <div class=" text-justify blogd text-white text-sm font-normal pb-3 textHover">@prp_7244</div>
+            <div class="flex mt-3 blogt">
+                <a alt="@title" title="@title" aria-label="@title " rel="noopener"
+                 href="/@link" class=" text-justify text-white text-sm font-normal ">مشاهده</a>
+                <div class="w-[21px] h-[21px] relative mr-2">
+                <div class="w-[21px] h-[21px] left-0 top-0 absolute rounded-full roundedd border border-white">
+                  <div class="w-[3px] h-[3px] left-[13px] top-[14px] absolute bg-white"></div>
+                </div>
+               
+                </div>
+            </div>
+            </div>
+           
+                </div>
+               
+           
+            </div>
+        </face>
+          </basis>
+          
+            </div>
+    </div>
+  <div class="textHover seeMore w-[152px] h-[46px] mt-[30px] rounded-[20px] border-[1px] border-lightorange text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto">
+    مشاهده بیشتر 
+</div>
+
+<div class="clr"></div>
+<div  class="w-main my-0 mx-auto flex ads  justify-center items-center pt-[80px]">
+  <basis core="print" datamembername="db.image-banner">
+    <face filter="ord in (1001)">
+     <div class="ad">
+      <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+      <img src="@largeIMG" alt="@name" title="@name" ></a>
+     </div>
+          
+     
+    </face>
+</basis>
+   
+</div>
+  <div class="clr"></div>
+   <basis core="call" file="footer-black.inc" />
+   <basis core="call" file="scripts.inc" />
+   <script src="[##cms.cms.cdn##]/js/blogList.js"></script>
+</body>
+
+</html>

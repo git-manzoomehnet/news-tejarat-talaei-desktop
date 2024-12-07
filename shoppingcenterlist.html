@@ -1,0 +1,86 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="208627">
+  <member name="list-center" link="shoppingShow.bc" size="408x255" type="list"/>
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+  <member name="image-banner" type="list" format="4" postsql="select * from [db.image-banner] where ord=1002"/>
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+  <member name="image-banner1" type="list" format="4" />
+</basis>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>مراکز خرید </title>
+    <meta name="description" content="مراکز خرید"> 
+    <basis core="call" file="styles.inc" />
+   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/shoppingList.css">
+</head>
+<body class="font-['IRANSans'] font-normal shopping-center ">
+  <basis core="call" file="header-white.inc" />
+<div class="listC">
+  <div class="Ads">
+    <basis core="print" datamembername="db.image-banner1">
+      <face filter="ord=1002">
+        <div class="ad">
+          <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+              <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name" ></a>
+      </div>
+      </face>
+  </basis>
+   
+  </div>
+    <div class="lists w-main mx-auto my-0">
+        <div class="w-full relative flex mt-[50px]">
+            <basis core="print" datamembername="db.image-banner">
+              <face filter="ord=1003">
+                <div class="add w-2/6  flex items-center justify-center mb-[30px]">
+                  <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                      <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name">
+                  </a>
+                  </div>
+              </face>
+          </basis>
+  
+
+        </div>
+        <div class="grid listt  my-0 mx-auto grid-cols-3 justify-items-center" >
+        <basis core="print" datamembername="db.list-center">
+          <face>
+          
+              <div class="shopp  rounded-[20px] relative shL">
+                  <a href="@link" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                <img src="[##cms.cms.cdn##]/@00408X00255prp" class="rounded-[20px]" alt="@title" title="@title" />
+              </a>
+                <a  href="@link" alt="@name" title="@name" aria-label="@name " rel="noopener" 
+                class=" shL logoc absolute top-0 left-0  bg-hover flex justify-center rounded-[20px] 
+                items-center transition hover:opacity-0" >
+                <div class="title">
+                  <h1>@title</h1>
+                </div>
+                  <img alt="@title" title="@title" src="[##cms.cms.cdn##]/images/shoping_center_logo.png" />
+                </a>
+              </div>
+
+            
+          </face>
+        </basis>
+    </div>
+   
+    </div>
+    <div class=" bo add2">
+      <basis core="print" datamembername="db.image-banner">
+        <face filter="rownumber in (1,2)">
+          <div class="ad">
+            <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name" ></a>
+        </div>
+        </face>
+    </basis>
+  </div>
+    <basis core="call" file="footer-white.inc" />
+    <basis core="call" file="scripts.inc" />
+</body>
+
+</html>

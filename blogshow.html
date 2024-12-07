@@ -1,0 +1,286 @@
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+    <member name="image-banner" type="list" format="4"/>
+   </basis>
+
+   <basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="banner" type="list" format="4" postsql="select * from [db.banner] where ord=1"/>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="list-blog" size="240x240" type="list" propertyid="7244,7248"/>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="news" type="view"/>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member type="view" name="view" preview="" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member type="list" name="title" typeid="150"  preview="" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member request="navigationcat" type="tree" name="navigationcat" preview="" />
+</basis>
+<basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="[##cms.query.id##]" >
+    <member type="list" name="gallery"  preview="" />
+</basis>
+<basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="[##cms.query.id##]" >
+    <member type="list" name="video" format="3"  preview="" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1"  usedforid="[##cms.query.id##]" >
+    <member request="listcomment" type="list" name="listcomment"  preview="" />
+</basis>
+<basis core="dbsource" source="userbehavior" name="db" lid="1" usedforid="[##cms.query.id##]" >
+    <member request="listcomment" type="list" name="listcommentcount"
+    postsql="select count(*) as [count] from [db.listcommentcount]"  preview="" />
+</basis>
+<basis core='dbsource' name='captcha' run='AtClient' source='trust_login' triggers='db.refresh'>
+    <member name='code' type='scalar' request='captcha'></member>
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+        <member type="list" name="relatednew" blgid="222" order="id desc" size="286x286" link="news.bc" preview="" />
+    </basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+    <member request="json-ld" type="scalar" name="json"  />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="related-blog" blgid="222" size="500x260" type="list"/>
+</basis> 
+<!doctype html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[##cms.seo.title##]</title>
+    <meta name="description" content="[##cms.seo.description##]">
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css"> 
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/blogShow.css"> 
+</head>
+<body class="font-['IRANSans'] font-normal blogShoww">
+    <basis core="call" file="header-white.inc" />
+    <div class="w-main mx-auto my-0 topsec">
+        <div class="ads w-full relative flex mt-[50px]">
+
+            <basis core="print" datamembername="db.image-banner">
+                <face filter="ord in (1002)">
+                    <div class="add w-2/6 flex items-center justify-center mb-[30px]">
+                        <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name" ></a>
+                 </div>
+                </face>
+            </basis>
+
+        </div>
+      
+    </div>
+    <div class="w-main bg-natural-100 mx-auto my-0 pb-5 pt-5 borderb">
+      <div class="w-full sec1  relative flex justify-center items-center ">
+      
+        <div class="leftText  w-[370px] h-[400px] justify-end flex flex-col">
+            <div class=" flex text-text2 mb-2">
+                <div class=" text-right  text-xs font-normal textHover">تاریخ انتشار:</div>
+                <div class=" text-right text-xs font-normal textHover"> [##db.title.cdate##]</div>
+              
+                </div>
+                <h1 class=" text-right text-black text-lg font-bold mb-2 textHover"> [##db.title.title##]</h1>
+                <div class="sharww flex justify_evenly mb-10"> 
+                    <a href="#" alt="@title" title="@title" aria-label="@title " rel="noopener" class="mr-3">
+                                            
+                 
+                        <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.8333 14.8434C15.0311 14.8434 14.3133 15.1596 13.7644 15.6551L6.23833 11.2801C6.29111 11.0377 6.33333 10.7952 6.33333 10.5422C6.33333 10.2892 6.29111 10.0467 6.23833 9.80422L13.68 5.47139C14.25 5.99849 14.9994 6.3253 15.8333 6.3253C17.5856 6.3253 19 4.91265 19 3.16265C19 1.41265 17.5856 0 15.8333 0C14.0811 0 12.6667 1.41265 12.6667 3.16265C12.6667 3.41566 12.7089 3.65813 12.7617 3.9006L5.32 8.23343C4.75 7.70633 4.00056 7.37952 3.16667 7.37952C1.41444 7.37952 0 8.79217 0 10.5422C0 12.2922 1.41444 13.7048 3.16667 13.7048C4.00056 13.7048 4.75 13.378 5.32 12.8509L12.8356 17.2364C12.7828 17.4578 12.7511 17.6898 12.7511 17.9217C12.7511 19.619 14.1339 21 15.8333 21C17.5328 21 18.9156 19.619 18.9156 17.9217C18.9156 16.2244 17.5328 14.8434 15.8333 14.8434Z" fill="#FEBE1B"/>
+                            </svg>
+                    </a>
+                
+                 
+                    <a target="_blank" class="z-10" title="[##db.list-blog.title##]" aria-label="[##db.list-blog.title##]" rel="noopener"
+                     href="https://t.me/share/url?url=http://a112tl.undertest.ir/[##db.list-blog.link##]"
+                    alt="[##db.list-blog.title##]">
+                  
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5 0C4.704 0 0 4.704 0 10.5C0 16.296 4.704 21 10.5 21C16.296 21 21 16.296 21 10.5C21 4.704 16.296 0 10.5 0ZM15.372 7.14C15.2145 8.799 14.532 12.831 14.1855 14.6895C14.0385 15.477 13.7445 15.7395 13.4715 15.771C12.8625 15.8235 12.4005 15.372 11.8125 14.9835C10.8885 14.3745 10.3635 13.9965 9.471 13.4085C8.4315 12.726 9.1035 12.348 9.702 11.739C9.8595 11.5815 12.5475 9.135 12.6 8.9145C12.6073 8.8811 12.6063 8.84643 12.5972 8.81349C12.588 8.78056 12.571 8.75035 12.5475 8.7255C12.4845 8.673 12.4005 8.694 12.327 8.7045C12.2325 8.7255 10.7625 9.702 7.896 11.634C7.476 11.9175 7.098 12.0645 6.762 12.054C6.384 12.0435 5.67 11.844 5.1345 11.6655C4.473 11.4555 3.9585 11.34 4.0005 10.9725C4.0215 10.7835 4.284 10.5945 4.7775 10.395C7.8435 9.0615 9.8805 8.1795 10.899 7.7595C13.818 6.5415 14.4165 6.3315 14.8155 6.3315C14.8995 6.3315 15.099 6.3525 15.225 6.4575C15.33 6.5415 15.3615 6.657 15.372 6.741C15.3615 6.804 15.3825 6.993 15.372 7.14Z" fill="#FEBE1B"/>
+                            </svg>
+                            
+                    </a>
+                    <a target="_blank"   alt="[##db.list-blog.title##]" title="[##db.list-blog.title##]" 
+                    aria-label="[##db.list-blog.title##]" rel="noopener" 
+                    class="z-10" href="https://api.whatsapp.com/send?text=http://a112tl.undertest.ir/[##db.list-blog.link##]">
+                 
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5 0C16.2992 0 21 4.70085 21 10.5C21 16.2991 16.2992 21 10.5 21C8.64443 21.003 6.8215 20.5119 5.21851 19.5772L0.00421477 21L1.42381 15.7836C0.488362 14.1801 -0.00308529 12.3564 1.45742e-05 10.5C1.45742e-05 4.70085 4.70086 0 10.5 0ZM6.92161 5.565L6.71161 5.5734C6.57566 5.58168 6.44279 5.61739 6.32101 5.6784C6.20711 5.7429 6.10313 5.82353 6.01231 5.9178C5.88631 6.03645 5.81491 6.13935 5.73826 6.2391C5.34989 6.74404 5.14078 7.36397 5.14396 8.00099C5.14606 8.51549 5.28046 9.01635 5.49046 9.48464C5.91991 10.4317 6.62656 11.4345 7.55896 12.3637C7.78366 12.5874 8.00416 12.8121 8.24146 13.021C9.40002 14.0411 10.7806 14.7767 12.2735 15.1693L12.8699 15.2607C13.0641 15.2712 13.2584 15.2565 13.4537 15.247C13.7595 15.2313 14.058 15.1485 14.3283 15.0045C14.4658 14.9337 14.6 14.8566 14.7305 14.7735C14.7305 14.7735 14.7756 14.7441 14.8617 14.679C15.0035 14.574 15.0906 14.4994 15.2082 14.3766C15.2954 14.2863 15.371 14.1802 15.4287 14.0595C15.5106 13.8883 15.5925 13.5618 15.6261 13.2898C15.6513 13.0819 15.644 12.9685 15.6408 12.8982C15.6366 12.7858 15.5432 12.6693 15.4413 12.6199L14.8302 12.3459C14.8302 12.3459 13.9167 11.9479 13.3581 11.6938C13.2997 11.6683 13.237 11.6537 13.1733 11.6508C13.1015 11.6434 13.0289 11.6515 12.9604 11.6745C12.892 11.6975 12.8292 11.7349 12.7764 11.7841C12.7712 11.782 12.7008 11.8419 11.9417 12.7617C11.8981 12.8202 11.8381 12.8645 11.7692 12.8888C11.7004 12.9131 11.6259 12.9164 11.5553 12.8982C11.4869 12.8799 11.4198 12.8567 11.3547 12.8289C11.2245 12.7743 11.1794 12.7533 11.0901 12.7155C10.4875 12.4525 9.92953 12.0972 9.43636 11.6623C9.30406 11.5468 9.18121 11.4208 9.05521 11.299C8.64212 10.9034 8.28212 10.4559 7.98421 9.96764L7.92226 9.86789C7.87776 9.80087 7.84179 9.72856 7.81516 9.65264C7.77526 9.49829 7.87921 9.3744 7.87921 9.3744C7.87921 9.3744 8.13436 9.09509 8.25301 8.94389C8.36851 8.79689 8.46616 8.65409 8.52916 8.55225C8.65306 8.35275 8.69191 8.14799 8.62681 7.98945C8.33281 7.27125 8.02831 6.5562 7.71541 5.8464C7.65346 5.7057 7.46971 5.6049 7.30276 5.58495C7.24606 5.57865 7.18936 5.57235 7.13266 5.56815C6.99165 5.56114 6.85035 5.56254 6.70951 5.57235L6.92161 5.565Z" fill="#FEBE1B"/>
+                            </svg>
+          </a>
+          <a target="_blank" class="z-10" href="https://www.instagram.com/?url=http://a112tl.undertest.ir/[##db.list-blog.link##]"
+          alt="[##db.list-blog.title##]" title="[##db.list-blog.title##]" aria-label="[##db.list-blog.title##]" rel="noopener">
+         
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.5794 0C12.7606 0.00314993 13.3601 0.00944978 13.8777 0.0241494L14.0814 0.0314992C14.3166 0.039899 14.5487 0.0503988 14.829 0.0629985C15.9461 0.115497 16.7084 0.291893 17.3772 0.551237C18.0702 0.817931 18.654 1.17912 19.2377 1.76186C19.7716 2.28674 20.1847 2.92165 20.4483 3.62242C20.7076 4.29125 20.884 5.05353 20.9365 6.17176C20.9491 6.45105 20.9596 6.68309 20.968 6.91934L20.9743 7.12303C20.9901 7.63962 20.9964 8.23916 20.9985 9.42038L20.9995 10.2037V11.5791C21.0021 12.345 20.9941 13.1108 20.9754 13.8765L20.9691 14.0802C20.9607 14.3164 20.9502 14.5485 20.9376 14.8278C20.8851 15.946 20.7066 16.7072 20.4483 17.3771C20.1855 18.0782 19.7723 18.7133 19.2377 19.2377C18.7127 19.7714 18.0779 20.1845 17.3772 20.4483C16.7084 20.7076 15.9461 20.884 14.829 20.9365C14.5799 20.9482 14.3307 20.9587 14.0814 20.968L13.8777 20.9743C13.3601 20.989 12.7606 20.9964 11.5794 20.9985L10.7962 20.9995H9.42177C8.65559 21.0022 7.8894 20.9941 7.12344 20.9754L6.91975 20.9691C6.6705 20.9596 6.42131 20.9488 6.17219 20.9365C5.05505 20.884 4.29279 20.7076 3.62292 20.4483C2.92226 20.1851 2.28762 19.7719 1.76347 19.2377C1.22909 18.713 0.815599 18.078 0.551828 17.3771C0.292491 16.7083 0.1161 15.946 0.0636025 14.8278C0.0519049 14.5786 0.0414053 14.3294 0.0321042 14.0802L0.0268546 13.8765C0.00750622 13.1109 -0.00124427 12.345 0.00060582 11.5791V9.42038C-0.00232454 8.65453 0.00537588 7.88867 0.0237047 7.12303L0.0310543 6.91934C0.0394539 6.68309 0.0499533 6.45105 0.0625527 6.17176C0.11505 5.05353 0.291441 4.2923 0.550777 3.62242C0.814434 2.92093 1.22875 2.28582 1.76452 1.76186C2.28854 1.22792 2.92276 0.814767 3.62292 0.551237C4.29279 0.291893 5.054 0.115497 6.17219 0.0629985C6.45148 0.0503988 6.68456 0.039899 6.91975 0.0314992L7.12344 0.0251993C7.88905 0.00654419 8.65489 -0.0015064 9.42072 0.0010499L11.5794 0ZM10.5001 5.24988C9.10775 5.24988 7.77246 5.80299 6.78795 6.78753C5.80343 7.77207 5.25034 9.1074 5.25034 10.4998C5.25034 11.8921 5.80343 13.2274 6.78795 14.212C7.77246 15.1965 9.10775 15.7496 10.5001 15.7496C11.8924 15.7496 13.2277 15.1965 14.2122 14.212C15.1967 13.2274 15.7498 11.8921 15.7498 10.4998C15.7498 9.1074 15.1967 7.77207 14.2122 6.78753C13.2277 5.80299 11.8924 5.24988 10.5001 5.24988ZM10.5001 7.34983C10.9137 7.34976 11.3233 7.43117 11.7055 7.5894C12.0877 7.74764 12.435 7.9796 12.7275 8.27205C13.02 8.5645 13.2521 8.91171 13.4105 9.29385C13.5688 9.67599 13.6504 10.0856 13.6504 10.4992C13.6505 10.9129 13.5691 11.3225 13.4109 11.7047C13.2526 12.0869 13.0207 12.4342 12.7282 12.7267C12.4358 13.0193 12.0886 13.2513 11.7065 13.4097C11.3243 13.5681 10.9148 13.6496 10.5011 13.6497C9.66573 13.6497 8.86455 13.3178 8.27385 12.7271C7.68314 12.1364 7.35128 11.3352 7.35128 10.4998C7.35128 9.66434 7.68314 8.86315 8.27385 8.27242C8.86455 7.68169 9.66573 7.34983 10.5011 7.34983M16.0133 3.67491C15.6653 3.67491 15.3314 3.81319 15.0853 4.05933C14.8392 4.30546 14.7009 4.6393 14.7009 4.98738C14.7009 5.33547 14.8392 5.6693 15.0853 5.91544C15.3314 6.16158 15.6653 6.29985 16.0133 6.29985C16.3614 6.29985 16.6952 6.16158 16.9414 5.91544C17.1875 5.6693 17.3258 5.33547 17.3258 4.98738C17.3258 4.6393 17.1875 4.30546 16.9414 4.05933C16.6952 3.81319 16.3614 3.67491 16.0133 3.67491Z" fill="#FEBE1B"/>
+            </svg>
+          </a>
+                </div>
+                <section class="splide mt-[40px]" id="related_new_slider">
+                    <div class="splide__track">
+                          <ul class="splide__list">
+                            <basis core="print" datamembername="db.gallery">
+                                <face filter="ord=1001" >
+                                    <li class="splide__slide">
+                                        <img src="[##cms.cms.cdn##]/@largeIMG" width="110" height="110" title="[##db.title.title##]"
+                                         alt="[##db.title.title##]" />
+                                            </li>
+                                    </face>
+                                    </basis>
+                           
+                           
+                          </ul>
+                    </div>
+                    <div class="splide__arrows w-[100px] absolute bottom-[15px] ">
+                        
+                        <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 absolute left-0 rounded-0" 
+                        onclick="nextslider1(this,'related_new_slider')">
+                            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                </svg>
+                                
+                        </button>
+                        <button onclick="nextslider1(this,'related_new_slider')" class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
+                            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                </svg>
+                                
+                        </button>
+                  </div>
+                  </section>
+        </div>
+        <basis core="print" datamembername="db.gallery">
+            <face filter="rownumber = 1">
+                <img class="rightIMG w-[391px] h-[391px] mr-8 " id="gallery_big_image" alt="@name" src="[##cms.cms.cdn##]/@largeIMG" />
+            </face>
+            </basis>
+       
+        </div>
+    </div>
+    <div class="w-main textC mx-auto my-0 text-justify text-black text-sm font-normal mt-5 leading-7">
+        <basis core="print" datamembername="db.view">
+            <face filter="typeid not in (150,159,160,161,162)">
+                <p class="text-bold">@text</p>
+                @largetext
+            </face>
+        </basis>
+        </div>
+    <div class="tagContainer text-justify w-main mx-auto my-0 mt-5 flex">
+        <span class="text-black text-sm font-normal textHover">تگها : </span>
+        <span class="text-zinc-500 text-xs font-normal flex">
+            <basis core="print" datamembername="db.navigationcat">
+                <face filter="Parentcatid not in (208470) and Parentcatid <> Catid">
+                    <a href="/news-list.bc?catid=@Catid"  alt="@title" title="@title" aria-label="@title " rel="noopener"
+                    class="mr-[10px] text-zinc-500 text-xs textHover">@Title</a>
+                    <span class="mr-[10px]">,</span>
+                </face>
+             </basis>
+        </span>
+    </div>
+     
+               
+            <basis core="print" datamembername="db.video">
+                <layout>    
+                    <div class=" w-main videoContainer my-0 mx-auto">
+                    <div class="textHover">
+                        <p class="mt-[50px] pb-[30px]">
+                            ویدیو مربوطه:
+                        </p>
+                       @child
+                      </div>  
+                    </div>
+                    </layout>
+                    <face>
+                        <video width="320" height="240" controls="" >
+                            <source src="[##cms.cms.cdn##]/@largeIMG" type="video/mp4">
+                            
+                            Your browser does not support the video tag.
+                          </video> 
+                    </face>
+                    </basis>
+  
+        <div class="formContainer flex secc flex-col items-start mt-[50px] w-main my-0 mx-auto" >
+           
+            <form class="mt-[30px] border-[1px] border-solid border-lightblue p-4">
+                <input type="text" class="bg-lightblue w-full p-[10px]" placeholder="نام و نام خانوادگی" />
+           
+            </form>
+            <div id="captcha_wrapper" class=" flex  p-[9px] justify-end items-center">
+                <div class="flex  justify-end items-center  bg-[#FAFAFA] border-[1px] border-solid border-[#DDDDDD] px-[4px] ">
+                    <span class="text-xs text-[#888888]">کد امنیتی را وارد نمایید.</span>
+                    <basis core='print' run='AtClient' datamembername='captcha.code'><face >
+                        <script type="text/template">
+                        
+                        <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                        <input type="hidden" name="captchaid" value="@captcha@" />
+                        </script>
+                        </face>
+                    </basis>
+                  
+                    <div class="mx-2" onclick="refreshcaptcha()">
+                        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0545 19.73C9.61818 19.73 7.54545 18.7874 5.83636 16.9023C4.12727 15.0171 3.27273 12.7165 3.27273 10.0002V9.7874L1.52727 11.7333L0 10.0306L4.36364 5.16578L8.72727 10.0306L7.2 11.7333L5.45455 9.7874V10.0002C5.45455 12.0273 6.09546 13.7502 7.37727 15.1692C8.65909 16.5881 10.2182 17.2975 12.0545 17.2975C12.5273 17.2975 12.9909 17.2367 13.4455 17.1151C13.9 16.9935 14.3455 16.811 14.7818 16.5678L16.4182 18.3921C15.7273 18.8381 15.0182 19.1725 14.2909 19.3955C13.5636 19.6185 12.8182 19.73 12.0545 19.73ZM19.6364 14.8347L15.2727 9.96983L16.8 8.26713L18.5455 10.2131V10.0002C18.5455 7.97321 17.9045 6.25024 16.6227 4.83132C15.3409 3.4124 13.7818 2.70294 11.9455 2.70294C11.4727 2.70294 11.0091 2.76375 10.5545 2.88537C10.1 3.00699 9.65455 3.18943 9.21818 3.43267L7.58182 1.60835C8.27273 1.1624 8.98182 0.82794 9.70909 0.604967C10.4364 0.381994 11.1818 0.270508 11.9455 0.270508C14.3818 0.270508 16.4545 1.21308 18.1636 3.09821C19.8727 4.98335 20.7273 7.28402 20.7273 10.0002V10.2131L22.4727 8.26713L24 9.96983L19.6364 14.8347Z" fill="#818181"/>
+                            </svg>
+                            
+                    </div>
+                    <input class="w-[135px] h-[32px] fill-[#FFF] stroke-[1px] stroke-[#DDD] " />
+
+                </div>
+                <button class="w-[107px] h-[40px] border-orange text-xs rounded-l-[50px] border-[1px] mr-2 ">ثبت نظر</button>
+            </div>  
+            <div class="w-main mx-auto my-0 flex justify-between">        
+        </div>
+          </div> 
+          
+          <div class="w-full  bg-black">
+            <div class="w-main mx-auto my-0 pt-20 ">                           
+                <basis core="print" datamembername="db.relatednew">
+                            <layout>
+                                <div class=" borderW w-44 h-[72px] relative mb-10">
+                                    <div class="left-0 top-0  text-right text-white text-2xl font-medium textHover">مطالب مرتبط  </div>
+                                    <div class="w-[21px] h-[21px] left-[50px] top-[43px] cir absolute">
+                                    <div class="w-[21px] h-[21px] left-0 top-0 absolute rounded-full roundedd 
+                                    border border-white">
+                                    <div class="w-[3px] h-[3px] left-[14px] top-[14px] absolute bg-white"></div></div>
+                               
+                                    </div>
+                                    <a href="بلاگ" alt="بلاگ" title="بلاگ" aria-label="بلاگ " rel="noopener"
+                                     class=" text-white  origin-top-left leading-10">مشاهده لیست </a>
+                                    </div> 
+                                    <div id="books" class="w-[1000px] mx-auto my-0 flex justify-between">
+                                        @child
+                                    </div>
+                            </layout>
+                            <face>
+                                <div class="w-[142px] h-[338px] relative green_book">
+                                    <div class="w-[142px] h-[338px] left-0 top-0 absolute bg-black/opacity-50"></div>
+                                    <div class="IMG">
+                            <a href="@link" alt="@title" title="@title" aria-label="@title " rel="noopener">
+                                        <img src="[##cms.cms.cdn##]/@00286x00286prp" alt="@title" title="@title" aria-label="@title " rel="noopener""></a>
+                                    </div>
+                                    <div class="w-[30px] h-[292px] left-[56px] top-[8px] absolute text">
+                                    <div class="left-0 top-0 absolute text-center text-white text-[35px] font-normal num">0@RowNumber</div>
+                                    <a href="@link" alt="@title" title="@title" aria-label="@title " rel="noopener">  
+                                         <div class="w-[212px] h-[27px] left-[1px] top-[292px] 
+                                         absolute origin-top-left -rotate-90 text-right text-white
+                                          text-sm font-bold font-['IRANSansWeb(FaNum)']">@title   </div></a>
+                                    </div>
+                                 
+                                    </div>                             
+                            </face>
+                        </basis>                                                                                    
+              </div>             
+<basis core="call" file="footer-black.inc" />
+<basis core="call" file="scripts.inc" />
+</div>
+
+<script src="[##cms.cms.cdn##]/js/text.js"></script>
+<script src="[##cms.cms.cdn##]/js/blogShow.js"></script>
+<script  type="application/ld+json" >
+ [##db.json.Column1##]
+</script>
+</body>
+
+</html>

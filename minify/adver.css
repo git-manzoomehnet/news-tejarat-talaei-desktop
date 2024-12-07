@@ -1,0 +1,24 @@
+.Ads{
+    width: 90%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: .5em;
+    height: 120px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .Ads .ad{
+    width: 100%;
+    height: 100% !important;
+ margin: 1em 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  }
+  .Ads .ad img{
+    width: 100%;
+    height: 100% !important;
+    object-fit: contain;
+ 
+  }

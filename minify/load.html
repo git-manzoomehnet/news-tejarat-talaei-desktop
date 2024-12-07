@@ -1,0 +1,776 @@
+ 
+ <basis core="group" if="[##cms.query.type##]=208524">
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]" q="[##cms.query.q##]">
+      <member name="list-news" size="249x249" type="list"  propertyid="7244,7248"/>
+    </basis>
+    
+      <basis core="group" if="'[##db.list-news.RowNumber##]' = ''">
+      <div class="nodata">
+          <p class="text">
+              باعرض پوزش مطلبی پیدا نشد.
+          واژه دیگری را جست و جو نمایید.
+            </p>
+          
+        <img src="/images/search-desktop.png" alt="">
+    </div>
+ 
+    </basis>
+   
+         
+    <basis core="print" datamembername="db.list-news">
+       <layout>
+            <div class="box">
+<div class="title">
+<p>نتایج جستجو در اخبار:</p>
+</div>
+       <div class="result">
+         <div class="newsContainer">
+           <div class="swiper-news">
+             <div class="swiper-wrapper">
+               @child
+               
+              </div>
+
+            </div>
+
+         <div class="swiper-button-next">
+           <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M0.500227 4.99984L4.74323 0.756836L6.15723 2.17184L3.32823 4.99984L6.15723 7.82784L4.74323 9.24284L0.500227 4.99984Z" fill="white"/>
+             </svg>
+             
+         </div>
+         <div class="swiper-button-prev">
+           <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M6.49977 5.00016L2.25677 9.24316L0.842773 7.82816L3.67177 5.00016L0.842773 2.17216L2.25677 0.757164L6.49977 5.00016Z" fill="white"/>
+             </svg>
+         
+         
+         </div>
+         </div>
+       </div>
+     </div>
+     </layout>
+           <face>
+               <div class="swiper-slide">
+               <div data-default-news="" class="w-[249.50px]  flex-col justify-center items-start gap-[5px] inline-flex border-b-[1px] border-solid border-orange pb-2">
+                   <a href="/@link" >  
+                        <img class="w-[249px] h-[249px]" src="/@00249X00249prp" alt="@title" /></a>
+                   <div
+                       class="pr-1.5 pt-[5.46px] pb-[5.08px]  justify-start items-center inline-flex">
+                       <div class="self-stretch flex-col justify-start items-end gap-2.5 inline-flex">
+                           <div class="text-right text-gray text-sm w-full">@cdate
+                           </div>
+                           <a href="/@link" class="textf text-right text-black text-sm font-medium ">
+                               @title</a>
+                               <a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                  <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+                                  ">
+                                  <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+                                   bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                                  </div>
+                                  <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+                            
+                              </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           </face>
+        
+       </basis>
+
+
+             
+<basis core="call" file="footer-white.inc" />
+</basis>
+
+<basis core="group" if="[##cms.query.type##]=208632">
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]" q="[##cms.query.q##]">
+      <member name="list-mahnamee" size="264x288" type="list" propertyid="7244,7248"/>
+    </basis>
+  
+      <basis core="group" if="'[##db.list-mahnamee.RowNumber##]' = ''">
+      <div class="nodata">
+          <p class="text">
+              باعرض پوزش مطلبی پیدا نشد.
+          واژه دیگری را جست و جو نمایید.
+            </p>
+          
+        <img src="/images/search-desktop.png" alt="">
+    </div>
+ 
+    </basis>
+   
+    <basis core="print" datamembername="db.list-mahnamee">
+      <layout>
+        <div class="box mahnameCC">
+            <div class="title">
+                <p>نتایج جستجو در ماهنامه:</p>
+            </div>
+         
+        <div class="result">
+          <div class="mahnameC">
+           <div class="w-main mx-auto my-0 pt-20 pr-10 mahname">
+         <div id="" class=" mx-auto my-0">
+                     <section class="splide mt-[40px]" id="news_slider1">
+                         <div class="splide__track">
+                               <ul class="splide__list">
+                                @child
+                               </ul>
+                             
+                         </div>
+                         <div class="splide__arrows   ">
+
+                            <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative left-[-60px]  rounded-0" 
+                            >
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                    </svg>
+                                    
+                            </button>
+                            <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                    </svg>
+                                    
+                            </button>
+                      </div>
+                            </section>
+                      </div>
+                  </div>
+                </div>
+
+
+              </div>
+        </div>
+      </layout>
+        <face>
+            <li class="splide__slide journal_list">
+                <div class="w-[260px]  rounded-[20px] relative ">
+                    <a href="@link"   alt="@tit" title="@title">
+                    <img src="@00264X00288prp" width="260" 
+                    class="rounded-[20px]" alt="@title" title="@title" /></a>
+                    <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
+                       
+                        <a href="@link"   alt="@tit" title="@title"
+                        class="text-white text-sm relative z-50 w-full  text-center ">
+                          @title
+                        </a>
+                        <span class="sign w-[73px] h-[79px]  absolute top-[-40px] right-2 flex justify-center items-start pt-2 bg-center text-white journal_title_badge">
+                         @prp_7248
+                        </span>
+                    </div>
+                  </div>
+                    </li>
+                 
+        </face>
+    
+    </basis>
+
+         
+
+             
+<basis core="call" file="footer-white.inc" />
+</basis>
+
+<basis core="group" if="[##cms.query.type##]=208627">
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="[##cms.query.catid##]" q="[##cms.query.q##]">
+      <member name="list-project" size="408x255" type="list"/>
+    </basis>
+  
+      <basis core="group" if="'[##db.list-project.RowNumber##]' = ''">
+      <div class="nodata">
+          <p class="text">
+              باعرض پوزش مطلبی پیدا نشد.
+          واژه دیگری را جست و جو نمایید.
+            </p>
+          
+        <img src="/images/search-desktop.png" alt="">
+    </div>
+ 
+    </basis>
+   
+    <basis core="print" datamembername="db.list-project">
+      <layout>
+        <div class="box full mahnameCC">
+            <div class="title">
+                <p>نتایج جستجو در مراکز خرید:</p>
+            </div>
+        <div class="result">
+          <div class="ShoppingContainer">
+            <section class="splide mt-[40px]" id="related_new_slider">
+              <div class="splide__track">
+                    <ul class="splide__list">
+                      @child
+                    </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+        </div>
+      </layout>
+      <face>
+          <li class="splide__slide">
+              <div class="w-[400px] h-[250px] rounded-[20px] relative shL">
+                  <a href="@link"  alt="@title" title="@title">
+                      <img src="@00408X00255prp" class="rounded-[20px]" alt="@title" title="@title" />
+              </a>
+                <a href="@link" alt="@title" title="@title" class="shL logoc absolute top-0 left-0 w-[400px] h-[250px] bg-hover flex justify-center rounded-[20px] items-center transition hover:opacity-0" >
+                  <div class="title">
+                      <p>@title</p>
+                    </div>
+                  <img src="images/shoping_center_logo.png" />
+                </a>
+              </div>
+            </li>
+         
+      </face>
+    
+</basis>
+
+         
+
+  
+             
+<basis core="call" file="footer-white.inc" />
+</basis>
+
+
+<basis core="group" if="[##cms.query.type##]=208528">
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]" q="[##cms.query.q##]">
+      <member name="list-conversation" size="500X260" type="list" propertyid="7244,7248" typeid="159" q="[##cms.query.q##]"/>
+    </basis>
+  
+      <basis core="group" if="'[##db.list-conversation.RowNumber##]' = ''">
+      <div class="nodata">
+          <p class="text">
+              باعرض پوزش مطلبی پیدا نشد.
+          واژه دیگری را جست و جو نمایید.
+            </p>
+          
+        <img src="/images/search-desktop.png" alt="">
+    </div>
+ 
+    </basis>
+    <basis core="print" datamembername="db.list-conversation">
+
+      <layout>
+      <div class="box ">
+      <div class="title">
+        <p>نتایج جستجو در گفتگو:</p>
+      </div>
+      <div class="result">
+      <div class="conversationContainer">
+      <div class="slider">
+      <div class="result">
+      <div class="conversationContainer">
+        <div class="slider">
+      <div id="" class="w-main slidinner  mx-auto my-0">
+      
+          <section class="swiper-conversation">
+              <div class="swiper-wrapper">
+              
+       @child
+        </div>
+      
+      </section>
+      </div>
+      <div class="swiper-button-next">
+      <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.500227 4.99984L4.74323 0.756836L6.15723 2.17184L3.32823 4.99984L6.15723 7.82784L4.74323 9.24284L0.500227 4.99984Z" fill="white"/>
+      </svg>
+      
+      </div>
+      <div class="swiper-button-prev">
+      <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.49977 5.00016L2.25677 9.24316L0.842773 7.82816L3.67177 5.00016L0.842773 2.17216L2.25677 0.757164L6.49977 5.00016Z" fill="white"/>
+      </svg>
+      
+      
+      </div>
+      </div>
+      
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </layout>
+      <face>
+      <li class="swiper-slide">
+          <div class=" relative conta">
+              <div class="rightt relative">
+                  <a href="/@link"  alt="@title" title="@title"> 
+                       <img class="leftimg"  alt="@title" title="@title" width="500" src="/@00500X00260prp" /></a>
+              <div class="bor11 h-[60px] w-full bg-orange absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
+              pr-[150px]
+              ">
+              <img src="@type_159" 
+              alt="@title" title="@title" width="110" height="110" class="cirr absolute right-[15px] rounded-full bottom-2 " />
+              <p>
+                @title
+            </p>
+              </div>
+          </div>
+              <div class="leftt  mr-5 z-50">
+                  <div class="text-gray text-sm pb-2">تاریخ انتشار: @cdate</div>
+      <a href="/@link"  alt="@title" title="@title" class="newText block text-black text-sm font-bold pb-3 ">@title</a>
+      <div class=" text-justify text-black text-sm font-normal pb-3">
+      @prp_7244</div>
+      <a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+          <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+          ">
+          <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+           bg-black absolute top-[70%] translate-x-[-50%]"></div>
+          </div>
+          <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+    
+      </a>
+              </div>
+             
+             
+              </div>
+              </li>
+      </face>
+      
+      </basis>
+      
+      
+
+         
+
+             
+<basis core="call" file="footer-white.inc" />
+</basis>
+
+
+
+<basis core="group" if="[##cms.query.type##]=208663">
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]" q="[##cms.query.q##]">
+      <member name="list-blog" size="286x286" type="list" propertyid="7244,7248" />
+    </basis>
+ 
+      <basis core="group" if="'[##db.list-blog.RowNumber##]' = ''">
+      <div class="nodata">
+          <p class="text">
+              باعرض پوزش مطلبی پیدا نشد.
+          واژه دیگری را جست و جو نمایید.
+            </p>
+          
+        <img src="/images/search-desktop.png" alt="">
+    </div>
+ 
+    </basis>
+
+    <basis core="print" datamembername="db.list-blog">
+      <layout>
+      <div class="box full">
+        <div class="title">
+            <p>نتایج جستجو در بلاگ :</p>
+        </div>
+      <div class="result">
+      <div class="blogC">
+        <div class="w-full blog-lists  pt-[19px] pb-[18px] bg-black/opacity-50 justify-end items-center my-0 mx-auto">
+          @child
+        </div>
+      </div>
+        
+         
+        </div>
+      </div>
+      </layout>
+      <face>
+      <div class="blog relative bloglist justify-start items-center flex pb-3 pt-3 border-gray border-solid border-b-[1px]">
+      <div class="cont  absolute top-0 left-0 w-full green_shadow"></div>
+      <div class="w-main mx-auto my-0 justify-start items-center flex ">
+      
+           <a  alt="@title" title="@title" href="/@link" class="imgg"><img class="w-[286px] h-[286px] relative" alt="@title" 
+            src="@00286X00286prp" alt="@title" title="@title" /></a>
+      <div class="w-[70%]  mr-5 z-50 h-[280px] flex flex-col item-start justify-end">
+      <a  alt="@title" title="@title" href="/@link" class="blog-Title text-white text-sm font-bold mb-3 block ">@title</a>
+      <div class=" text-justify text-white text-sm font-normal pb-3">@prp_7244</div>
+      <a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+          <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+          ">
+          <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+           bg-black absolute top-[70%] translate-x-[-50%]"></div>
+          </div>
+          <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+    
+      </a>
+      </div>
+      
+      </div>
+      
+      
+      </div>
+      </face>
+      
+      </basis>
+             
+      
+
+
+             
+<basis core="call" file="footer-white.inc" />
+</basis>
+
+<basis core="group" if="[##cms.query.type##]=2">
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208524" q="[##cms.query.q##]">
+      <member name="list-news" size="249x249" type="list"  propertyid="7244,7248"/>
+    </basis>
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="208627" q="[##cms.query.q##]">
+      <member name="list-project" size="408x255" type="list"/>
+    </basis>  
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208632" q="[##cms.query.q##]">
+      <member name="list-mahnamee" size="264x288" type="list" propertyid="7244,7248"/>
+    </basis>
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208528" q="[##cms.query.q##]">
+      <member name="list-conversation" size="500X260" type="list" propertyid="7244,7248" typeid="159"/>
+    </basis>
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208663" q="[##cms.query.q##]">
+      <member name="list-blog" size="286x286" type="list" propertyid="7244,7248" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1"  q="[##cms.query.q##]">
+      <member type="list" name="list"   perpage="12" order="id desc" size="240x240" link="news.bc" preview="" />
+    </basis>
+
+   <!-- <div class="loaded"> -->
+     <basis core="group" if="'[##db.list-news.RowNumber##]' = '' and
+     '[##db.list-project.RowNumber##]' = '' and 
+     '[##db.list-mahnamee.RowNumber##]' = '' and
+     '[##db.list-conversation.RowNumber##]' = '' and
+     '[##db.list-blog.RowNumber##]' = '' ">
+     <div class="nodata">
+         <p class="text">
+             باعرض پوزش مطلبی پیدا نشد.
+         واژه دیگری را جست و جو نمایید.
+           </p>
+         
+       <img src="/images/search-desktop.png" alt="">
+   </div>
+
+   </basis>
+  
+        
+   <basis core="print" datamembername="db.list-news">
+      <layout>
+           <div class="box">
+<div class="title">
+<p>نتایج جستجو در اخبار:</p>
+</div>
+      <div class="result">
+        <div class="newsContainer">
+          <div class="swiper-news">
+            <div class="swiper-wrapper">
+              @child
+              
+             </div>
+
+           </div>
+
+        <div class="swiper-button-next">
+          <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.500227 4.99984L4.74323 0.756836L6.15723 2.17184L3.32823 4.99984L6.15723 7.82784L4.74323 9.24284L0.500227 4.99984Z" fill="white"/>
+            </svg>
+            
+        </div>
+        <div class="swiper-button-prev">
+          <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.49977 5.00016L2.25677 9.24316L0.842773 7.82816L3.67177 5.00016L0.842773 2.17216L2.25677 0.757164L6.49977 5.00016Z" fill="white"/>
+            </svg>
+        
+        
+        </div>
+        </div>
+      </div>
+    </div>
+    </layout>
+          <face>
+              <div class="swiper-slide">
+              <div data-default-news="" class="w-[249.50px]  flex-col justify-center items-start gap-[5px] inline-flex border-b-[1px] border-solid border-orange pb-2">
+                  <a href="/@link" >  
+                       <img class="w-[249px] h-[249px]" src="/@00249X00249prp" alt="@title" /></a>
+                  <div
+                      class="pr-1.5 pt-[5.46px] pb-[5.08px]  justify-start items-center inline-flex">
+                      <div class="self-stretch flex-col justify-start items-end gap-2.5 inline-flex">
+                          <div class="text-right text-gray text-sm w-full">@cdate
+                          </div>
+                          <a href="/@link" class="textf text-right text-black text-sm font-medium ">
+                              @title</a>
+                              <a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                  <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+                                  ">
+                                  <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+                                   bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                                  </div>
+                                  <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+                            
+                              </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </face>
+       
+      </basis>
+
+
+
+
+
+
+<basis core="print" datamembername="db.list-conversation">
+
+<layout>
+<div class="box ">
+<div class="title">
+<p>نتایج جستجو در گفتگو:</p>
+</div>
+<div class="result">
+<div class="conversationContainer">
+<div class="slider">
+<div class="result">
+<div class="conversationContainer">
+<div class="slider">
+<div id="" class="w-main slidinner  mx-auto my-0">
+
+  <section class="swiper-conversation">
+      <div class="swiper-wrapper">
+      
+@child
+</div>
+
+</section>
+</div>
+<div class="swiper-button-next">
+<svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.500227 4.99984L4.74323 0.756836L6.15723 2.17184L3.32823 4.99984L6.15723 7.82784L4.74323 9.24284L0.500227 4.99984Z" fill="white"/>
+</svg>
+
+</div>
+<div class="swiper-button-prev">
+<svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.49977 5.00016L2.25677 9.24316L0.842773 7.82816L3.67177 5.00016L0.842773 2.17216L2.25677 0.757164L6.49977 5.00016Z" fill="white"/>
+</svg>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</layout>
+<face>
+<li class="swiper-slide">
+  <div class=" relative conta">
+      <div class="rightt relative">
+          <a href="/@link"  alt="@title" title="@title"> 
+               <img class="leftimg"  alt="@title" title="@title" width="500" src="/@00500X00260prp" /></a>
+      <div class="bor11 h-[60px] w-full bg-orange absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
+      pr-[150px]
+      ">
+      <img src="@type_159" 
+      alt="@title" title="@title" width="110" height="110" class="cirr absolute right-[15px] rounded-full bottom-2 " />
+      <p>
+        @title
+    </p>
+      </div>
+  </div>
+      <div class="leftt  mr-5 z-50">
+          <div class="text-gray text-sm pb-2">تاریخ انتشار: @cdate</div>
+<a href="/@link"  alt="@title" title="@title" class="newText block text-black text-sm font-bold pb-3 ">@title</a>
+<div class=" text-justify text-black text-sm font-normal pb-3">
+@prp_7244</div>
+<a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+  <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+  ">
+  <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+   bg-black absolute top-[70%] translate-x-[-50%]"></div>
+  </div>
+  <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+
+</a>
+      </div>
+     
+     
+      </div>
+      </li>
+</face>
+
+</basis>
+
+
+
+
+ 
+<basis core="print" datamembername="db.list-project">
+      <layout>
+        <div class="box full mahnameCC">
+            <div class="title">
+                <p>نتایج جستجو در مراکز خرید:</p>
+            </div>
+        <div class="result">
+          <div class="ShoppingContainer">
+            <section class="splide mt-[40px]" id="related_new_slider">
+              <div class="splide__track">
+                    <ul class="splide__list">
+                      @child
+                    </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+        </div>
+      </layout>
+      <face>
+          <li class="splide__slide">
+              <div class="w-[400px] h-[250px] rounded-[20px] relative shL">
+                  <a href="@link"  alt="@title" title="@title">
+                      <img src="@00408X00255prp" class="rounded-[20px]" alt="@title" title="@title" />
+              </a>
+                <a href="@link" alt="@title" title="@title" class="shL logoc absolute top-0 left-0 w-[400px] h-[250px] bg-hover flex justify-center rounded-[20px] items-center transition hover:opacity-0" >
+                  <div class="title">
+                      <p>@title</p>
+                    </div>
+                  <img src="images/shoping_center_logo.png" />
+                </a>
+              </div>
+            </li>
+         
+      </face>
+    
+</basis>
+
+
+
+            <basis core="print" datamembername="db.list-mahnamee">
+              <layout>
+                <div class="box mahnameCC">
+                    <div class="title">
+                        <p>نتایج جستجو در ماهنامه:</p>
+                    </div>
+                 
+                <div class="result">
+                  <div class="mahnameC">
+                   <div class="w-main mx-auto my-0 pt-20 pr-10 mahname">
+                 <div id="" class=" mx-auto my-0">
+                             <section class="splide mt-[40px]" id="news_slider1">
+                                 <div class="splide__track">
+                                       <ul class="splide__list">
+                                        @child
+                                       </ul>
+                                     
+                                 </div>
+                                 <div class="splide__arrows   ">
+        
+                                    <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative left-[-60px]  rounded-0" 
+                                    >
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                            </svg>
+                                            
+                                    </button>
+                                    <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
+                                            </svg>
+                                            
+                                    </button>
+                              </div>
+                                    </section>
+                              </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                </div>
+              </layout>
+                <face>
+                    <li class="splide__slide journal_list">
+                        <div class="w-[260px]  rounded-[20px] relative ">
+                            <a href="@link"   alt="@tit" title="@title">
+                            <img src="@00264X00288prp" width="260" 
+                            class="rounded-[20px]" alt="@title" title="@title" /></a>
+                            <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
+                               
+                                <a href="@link"   alt="@tit" title="@title"
+                                class="text-white text-sm relative z-50 w-full  text-center ">
+                                  @title
+                                </a>
+                                <span class="sign w-[73px] h-[79px]  absolute top-[-40px] right-2 flex justify-center items-start pt-2 bg-center text-white journal_title_badge">
+                                 @prp_7248
+                                </span>
+                            </div>
+                          </div>
+                            </li>
+                         
+                </face>
+            
+            </basis>
+  
+
+
+
+<basis core="print" datamembername="db.list-blog">
+<layout>
+<div class="box full">
+<div class="title">
+    <p>نتایج جستجو در بلاگ :</p>
+</div>
+<div class="result">
+<div class="blogC">
+<div class="w-full blog-lists  pt-[19px] pb-[18px] bg-black/opacity-50 justify-end items-center my-0 mx-auto">
+  @child
+</div>
+</div>
+
+ 
+</div>
+</div>
+</layout>
+<face>
+<div class="blog relative bloglist justify-start items-center flex pb-3 pt-3 border-gray border-solid border-b-[1px]">
+<div class="cont  absolute top-0 left-0 w-full green_shadow"></div>
+<div class="w-main mx-auto my-0 justify-start items-center flex ">
+
+   <a  alt="@title" title="@title" href="/@link" class="imgg"><img class="w-[286px] h-[286px] relative" alt="@title" 
+    src="@00286X00286prp" alt="@title" title="@title" /></a>
+<div class="w-[70%]  mr-5 z-50 h-[280px] flex flex-col item-start justify-end">
+<a  alt="@title" title="@title" href="/@link" class="blog-Title text-white text-sm font-bold mb-3 block ">@title</a>
+<div class=" text-justify text-white text-sm font-normal pb-3">@prp_7244</div>
+<a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+  <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+  ">
+  <div class="dot w-[5px] h-[5px] translate-y-[-50%]
+   bg-black absolute top-[70%] translate-x-[-50%]"></div>
+  </div>
+  <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
+
+</a>
+</div>
+
+</div>
+
+
+</div>
+</face>
+
+</basis>
+
+      
+     
+     
+       <!-- </div> -->
+       
+<basis core="call" file="footer-white.inc" />
+</basis>
+   
+ 
+
