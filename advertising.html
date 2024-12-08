@@ -1,16 +1,20 @@
 <basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
     <member name="image-banner" type="list" format="4"/>
 </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+    <member name="contactus" type="view"/>
+</basis>
 <!doctype html>
-<html>
+<html lang="fa">
 
 <head>
     <meta charset="UTF-8">
     <title> تعرفه تبلیغاتی</title>
+    <meta name="description" content=" تعرفه تبلیغاتی"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styleNew.css">   
-    <link rel="stylesheet" href="css/adver.css">   
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">   
+    <link rel="stylesheet" href="[##cms.cms.cdn##]css/adver.css">   
 </head>
 
 <body class="font-['IRANSans'] font-normal advertise  ">
@@ -28,11 +32,11 @@
                 </div>
         </div>
         <div class="IMG">
-            <img src="/images/tarefeh.png" alt="">
+            <img src="[##cms.cms.cdn##]/images/tarefeh.png" alt="tarefeh" title="tarefeh">
             <div class="OV">
                 <div class="Box">
                     <div class="Top">
-                           <img src="/images/logo-taarefe.png" alt="">
+                           <img src="[##cms.cms.cdn##]/images/logo-taarefe.png" alt="logo" title="logo">
                     </div>
                     <div class="Bottom">
                         <div class="text textHover">
@@ -62,7 +66,7 @@
                                    
                                     
                                  
-                                    <a href="tel:@Answer" >
+                                    <a href="tel:@Answer"  aria-label="phone" rel="noopener" title="phone">
                                         @Answer
                                     </a>
                               
@@ -80,7 +84,7 @@
                 <basis core="print" datamembername="db.image-banner">
                   <face filter="ord=1002">
                     <div class="ad">
-                        <a href="#">
+                        <a href="@description">
                           <img src="@largeIMG" alt="@name" title="@name" ></a>
                   </div>
                   </face>

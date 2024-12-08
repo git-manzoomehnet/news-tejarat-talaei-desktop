@@ -1,54 +1,154 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-    version="XHTML+RDFa 1.0"
-    xmlns:og="http://ogp.me/ns#"
-    xml:lang="en">
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208632">
+    <member name="list"  size="264x288" type="list" propertyid="7244,7248" />
+</basis>
+<basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355039">
+    <member name="image-banner" type="list" format="4"  postsql="select * from [db.image-banner] where ord=1001"/>
+</basis>
+<!doctype html>
+<html lang="fa">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="monitor-signature" content="monitor:player:html5" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
- 
-<meta name="Keywords" content="" />
-<meta name="Description" content="PDF Compressor" />
-<meta name="Generator" content="Flip PDF Professional 2.4.9.43 at http://www.flipbuilder.com" />
-<link rel="image_src" href="shot.png" />
- <link rel="apple-touch-icon" href="../files/thumb/1.jpg" />
+    <meta charset="UTF-8">
+   <title>ماهنامه</title>
+    <meta name="description" content="ماهنامه"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">
+</head>
+<body class="font-['IRANSans'] font-normal bg-black Jornallist ">
+    <basis core="call" file="header-black.inc" />
+    <div class="journalistss grid gap-[160px] w-second my-0 mx-auto grid-cols-3 justify-items-center " >
+        <basis core="print" datamembername="db.list">
+            <face >
+                <div class="rounded-[20px] relative  journal">
+                    <a href="@link" alt="@name" title="@name" aria-label="@name " rel="noopener" >
+                        <img src="[##cms.cms.cdn##]/@00264X00288prp"  loading="lazy"
+                        width="260" class="rounded-[20px]" alt="@title" title="@title" />
+                    </a>
+                
+                    <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
+                       
+                        <a href="@link" alt="@name" title="@name" aria-label="@name " rel="noopener"
+                        class="titlee text-white text-sm relative z-50 w-full  text-center ">
+                           @title
+                        </a>
+                        <span class="sign w-[73px] h-[79px]  absolute top-[-40px] right-2 flex justify-center items-start pt-2 bg-center text-white journal_title_badge">
+                           @prp_7248
+                        </span>
+                    </div>
+                  </div>
+            </face>
+        </basis>
+       
 
-<meta property="og:image" content="shot.png" />
-<meta property="og:title" content="PDF Compressor"/> 
-<meta property="og:description" content="PDF Compressor" />
-<title>PDF Compressor</title>
+  <div class="clr"></div>
+  </div>
+  <div class="textHover seeMore w-[152px] h-[46px] mt-[30px] rounded-[20px] border-[1px] border-lightorange text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto">
+    مشاهده بیشتر 
+</div>
+<div id="form" class="w-main my-0 mx-auto">
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-<link rel="stylesheet" type="text/css" href="test/style.css" />
-<link rel="stylesheet" type="text/css" href="test/player.css" />
-<link rel="stylesheet" type="text/css" href="test/tepl.css" />
-<link rel="stylesheet" type="text/css" href="test/temp.css" />
-<script type="text/javascript" src="test/jquery.js"></script>
+    <p class="textHover text-orange text-lg font-bold">
 
-<script type="text/javascript" src="test/config.js"></script>
+فرم ثبت نام دریافت ماهنامه
 
+    </p>
+    <p class="textHover text-white">
+        جهت دریافت ماهنامه‌ی تجارت طلایی، لطفا فرم زیر را تکمیل و ارسال بفرمایید.
+    </p>
+    <div id="journal_form" class="journal_form mt-[30px]">
+        <basis core='callback' run='AtClient' method='onSource' triggers='form.result'></basis>
+        <basis core='api' if='{##edit.object|(false)##}' run='AtClient'
+        url='/schema/F2DE5289-6DB0-4E7A-AC90-7536EDB1D3B9/fa/editobject' 
+        method='post' 
+        body='object_edit={##edit.object.value##}&captcha={##edit.object.captcha##}&captchaid={##edit.object.captchaid##}' 
+        content-type='application/x-www-form-urlencoded' triggers='edit.object' 
+        onprocessed='OnProcessedEditObject'  onprocessing='OnProcessingEditObject'></basis>
+        <basis core='dbsource' name='captcha' run='AtClient' source='trust_login' 
+        triggers='captcha.refresh'><member name='code' type='scalar' request='captcha'></member></basis>
+        <basis core='schema' run='AtClient'  OnRendering="formRendering"
+        schemaurl='/schema/domainform/F2DE5289-6DB0-4E7A-AC90-7536EDB1D3B9/8F5F38DD-FE4F-4CC0-A4AD-D3084D38246F/fa/magazine'
+         displaymode='new' button="[data-btn-add]" resultsourceid='form.result' 
+         onrendered='schemareview' triggers='db.renews'></basis>
+    </div>
+    <basis core="dbsource" source="trust_login" run="atclient" name="captcha" triggers="refresh.captcha">
+        <member type="scalar" request="captcha" name="code" />
+        </basis>
+    <div id="captcha_wrapper" class=" flex   mt-[30px] justify-start items-center">
+        <div class="flex  justify-end items-center  bg-black  p-[4px] ">
+            <basis core="print" datamembername="captcha.code" run="atclient">
+                <layout>
+                    <script type="text/template">
+                    @child
+                    </script>
+                </layout>
+                <face>
+              
+                    <script type="text/template">
+                       <div class="captchaBox">
+                           <input  aria-label="captchaid" type="hidden" name="captchaid" value="@captcha@" />
+                             <!-- <input type="hidden" name="captcha" value="@captcha@" /> -->
+                          <input aria-label="text"  type="text" class=" noborder w-[460px] h-[32px] ml-[15px] text-xs bg-black placeholder-gray-500 border-b-[1px] border-solid border-gray text-gray codeinputm" name="captcha"
+                          placeholder="کد امنیتی را وارد نمایید."  /> 
+            
+            
+                           <img src="[##cms.cms.cdn##]/@captcha@" alt="captcha"  title="captcha" class="capcha"/>
+                          <!-- <img src="https://www.freeform.ir/assets/images/sync.png" class="refresh" alt="" bc-triggers="click" 
+                          name="refresh.captcha" bc-value="true"/> -->
+                          <svg  class="refresh" alt="" bc-triggers="click" 
+                          name="refresh.captcha" bc-value="true" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_38_2742" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="38" height="38">
+                            <rect width="38" height="38" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_38_2742)">
+                            <path d="M19.0837 31.6673C15.5476 31.6673 12.5393 30.4402 10.0587 27.9861C7.57817 25.5319 6.33789 22.5368 6.33789 19.0006V18.7236L3.80456 21.2569L1.58789 19.0402L7.92122 12.7069L14.2546 19.0402L12.0379 21.2569L9.50456 18.7236V19.0006C9.50456 21.6395 10.4348 23.8826 12.2952 25.7298C14.1556 27.577 16.4184 28.5006 19.0837 28.5006C19.7698 28.5006 20.4428 28.4215 21.1025 28.2631C21.7622 28.1048 22.4087 27.8673 23.0421 27.5506L25.4171 29.9256C24.4143 30.5062 23.3851 30.9416 22.3296 31.2319C21.274 31.5222 20.1921 31.6673 19.0837 31.6673ZM30.0879 25.2944L23.7546 18.9611L25.9712 16.7444L28.5046 19.2777V19.0006C28.5046 16.3618 27.5743 14.1187 25.7139 12.2715C23.8535 10.4243 21.5907 9.50065 18.9254 9.50065C18.2393 9.50065 17.5664 9.57982 16.9066 9.73815C16.2469 9.89648 15.6004 10.134 14.9671 10.4506L12.5921 8.07565C13.5948 7.4951 14.624 7.05968 15.6796 6.7694C16.7351 6.47912 17.8171 6.33398 18.9254 6.33398C22.4615 6.33398 25.4698 7.56107 27.9504 10.0152C30.4309 12.4694 31.6712 15.4645 31.6712 19.0006V19.2777L34.2046 16.7444L36.4212 18.9611L30.0879 25.2944Z" fill="#838383"/>
+                            </g>
+                            </svg>
+                     </div>
+                    </script>
+                </face>
+            </basis>
+        
+        </div>
+        <button type="submit"  data-btn-add data-btn-submit="" 
+        class="textHover schemaBtn w-[300px] h-[40px] border-gray text-xs rounded-l-[50px] border-[1px] mr-2 text-gray">ثبت نظر</button>
+    </div>
+</div>
+<div class="clr"></div>
+<div class="lds-roller2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-<script type="text/javascript">
+<div  class="w-main my-0 mx-auto flex flex-col justify-center items-center pt-[80px]">
+    <basis core="print" datamembername="db.image-banner">
+        <face filter="rownumber=1">
+            <p class=" add mb-3 float-left">
+                <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                <img src="[##cms.cms.cdn##]/@largeIMG" class="mb-[15px]"  alt="@name" title="@name"></a>
+            </p>
+        </face>
+    </basis>
+    <basis core="print" datamembername="db.image-banner">
+        <face filter="rownumber=2">
+            <p class=" add mb-3 float-left">
+                <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+                <img src="[##cms.cms.cdn##]/@largeIMG" class="mb-[15px]"  alt="@name" title="@name"></a>
+            </p>
+        </face>
+    </basis>
+</div>
+  <div class="clr"></div>
+  <div class="main-container">
+    <span></span>
+</div>
+  <basis core="call" file="footer-black.inc" />
+  <basis core="call" file="scripts.inc" />
+  <script src="[##cms.cms.cdn##]/js/journalList.js"></script>
+<script>
+    function formRendering(){
+        console.log('form rendering...');
+        
+    }
 
-		
-	var sendvisitinfo = function(type,page){};
-	
 </script>
-</head>	
-<body>
-	<script type="text/javascript" src="javascript/search_config.js"></script>
-    <script type="text/javascript" src="test/bookmark_config.js"></script>
-<script type="text/javascript" src="test/loading.js"></script>
-
-<script type="text/javascript" src="test/main.js"></script>
-
-
-<script type="text/javascript"></script>
-<!-- <noscript><div><hr/><ul><li><a href="files/basic-html/index.html">Pages</a></li></ul>
-    <hr style="width:80%"/></div></noscript> -->
 </body>
+
 </html>

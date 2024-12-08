@@ -1689,3 +1689,96 @@ gap: 1em;
     height: 100%;
   object-fit: cover;
 }
+.newslistp .lds-roller{
+    opacity: 0;
+    display: none ;
+}
+.lds-roller {
+    width: 80px;
+    height: 80px;
+    margin: 5em auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    display: flex
+;
+}
+.lds-roller, .lds-roller div, .lds-roller div:after, .lds-roller2, .lds-roller2 div, .lds-roller2 div:after {
+    box-sizing: border-box;
+}
+.lds-roller div:nth-child(1), .lds-roller2 div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.lds-roller div, .lds-roller2 div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+.lds-roller div:nth-child(2), .lds-roller2 div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.lds-roller div, .lds-roller2 div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: -40px 40px;
+
+}
+.lds-roller div:nth-child(3), .lds-roller2 div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(4), .lds-roller2 div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(5), .lds-roller2 div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(6), .lds-roller2 div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(7), .lds-roller2 div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(8), .lds-roller2 div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+@keyframes lds-roller
+ {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+ body.Jornallist #journal_form,body.Jornallist #form > p,
+ body.Jornallist #captcha_wrapper{
+    opacity: 0;
+   transition: all .5s ease;
+ }
+.lds-roller div:after, .lds-roller2 div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7.2px;
+    height: 7.2px;
+    border-radius: 50%;
+    background: #febe1b;
+    margin: -3.6px 0 0 -3.6px;
+}
+body.Jornallist #form {
+    position: relative;
+}
+.lds-roller2 {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}

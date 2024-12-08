@@ -1,21 +1,49 @@
 
 
 let mahnames = document.querySelectorAll('.journal')
-let colurs = ['#194A96','#FEBE1B','#ED2289','#FFFFFF']
+let colurs = ['#B2D9EA','#FFFFD1',' #F0C5D5','#FFFFFF']
 let i = 0
 mahnames.forEach(element => {
-   console.log(element);
-   element.querySelector('.color').style.backgroundColor=colurs[i]
-   element.querySelector('.color').setAttribute('data-color',colurs[i])
-   element.querySelector('.color').classList.add(`data-${i}`)
+console.log(element);
+element.querySelector('.color').style.backgroundColor=colurs[i]
+element.querySelector('.color').setAttribute('data-color',colurs[i])
+element.querySelector('.color').classList.add(`data-${i}`)
 
-   i++
-   if(i>colurs.length){
-       i=0
-   }
-  
+i++
+if(i>=colurs.length){
+i=0
+}
+
 });
-
+setTimeout(()=>{
+   $(".journal:hidden").slice(0,8).slideDown();
+   console.log($(".journal:hidden"),'hidden item');
+   if ($(".journal:hidden").length ==0) {
+     $(".seeMore").css('visibility', 'hidden');
+   }
+ 
+  else if ($(".journal:hidden").length - 8 > 0) {
+     console.log('newItem ');
+     
+ $(".seeMore").css('visibility', 'visible');
+ 
+ }
+ else{
+ $(".seeMore").css('visibility', 'hidden');
+ 
+ }
+ 
+ },1000)
+ $('.seeMore').on('click', function (e) {
+   e.preventDefault();
+   $(".journal:hidden").slice(0,8).slideDown();
+   if ($(".journal:hidden").length == 0) {
+     $(".seeMore").css('visibility', 'hidden');
+     $(".seeMore").css('visibility', 'hidden');
+   
+   }
+   
+   });
 function onSource(args) { 
 const captcha = document.querySelector("input[name='captcha']").value; 
 const captchaid = document.querySelector("input[name='captchaid']").value; 
@@ -35,13 +63,25 @@ var response = args.response;
 var json = await response.json();
 
 if( json.errorid == 6){
-console.log('با موفقیت ثبت شذ');
+   gsap.to('.lds-roller2',{
+      opacity:1,
+   })
+   setTimeout(() => {
+      gsap.to('.lds-roller2',{
+         opacity:0,
+      })
+   }, 200);
+
+   setTimeout(() => {
+      console.log('با موفقیت ثبت شذ');
          document.querySelector('.main-container').querySelector('span').innerHTML='پیام شما با موفقیت ثبت شد'
          document.querySelector('.main-container').classList.add('SEND')
 setTimeout(()=>{
  document.querySelector('.main-container').classList.remove('SEND')
 },2000)
 $bc.setSource("db.renews", true)
+   }, 300);
+
 }
 else{
 console.log(json);
@@ -62,6 +102,22 @@ let title = e.querySelector("[data-bc-title-container]")
 title.style.display = "none"
 })
 console.log('rendered');
+gsap.to('.lds-roller',{
+   opacity:0,
+   display:'none'
+})
+setTimeout(() => {
+   gsap.to('body.Jornallist #journal_form',{
+      opacity:1
+   })
+   gsap.to('body.Jornallist #form > p',{
+      opacity:1
+   }) 
+   gsap.to(' body.Jornallist #captcha_wrapper',{
+      opacity:1
+   }) 
+}, 300);
+
 setTimeout(()=>{
 let a =document.querySelectorAll('[data-bc-schema-column] [data-bc-question]')  
 let parent = document.querySelector('[data-bc-schema-column]')
@@ -108,4 +164,8 @@ document.querySelector('.main-container').classList.remove('SEND')
 })
 
 
+}
+function OnProcessingEditObject(){
+   console.log('OnProcessingEditObject');
+   
 }

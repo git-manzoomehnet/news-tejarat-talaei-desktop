@@ -150,30 +150,23 @@ gallerys.forEach(g=>{
       }
 
    // zoom
+   // zoom
+   zoomMax =1.7;
+   currZoom = 1;
+   zoomMin =0.5;
    function zoom(){
-    console.log('zoomin',);
-      let currWidth = document.querySelector('img.Main').clientWidth;
-      let currHeight =document.querySelector('img.Main').clientHeight;
-      document.querySelector('img.Main').style.width = (currWidth + 100) + "px";
-      document.querySelector('img.Main').style.height = (currHeight + 100) + "px";
-      console.log(document.querySelector('img.Main').naturalWidth);
-      
+    console.log('zoomin');
+    if (currZoom<zoomMax) {
+      currZoom+=0.1
+      document.querySelector('img.Main').style.scale = currZoom
+  }
     }
     function zoomout(){
     console.log('zoomout');
-      let currWidth =document.querySelector('img.Main').clientWidth;
-      let currHeight =document.querySelector('img.Main').clientHeight; 
-      document.querySelector('img.Main').style.width = (currWidth - 100) + "px";
-      document.querySelector('img.Main').style.height = (currHeight -100) + "px";
-      console.log('naturalwidth',document.querySelector('img.Main').naturalWidth);
-      console.log('width',document.querySelector('img.Main').style.width);
-
-      if(document.querySelector('img.Main').style.width < document.querySelector('img.Main').naturalWidth+'px'){
-        document.querySelector('img.Main').style.width = document.querySelector('img.Main').naturalWidth+'px' 
-        document.querySelector('img.Main').style.height = document.querySelector('img.Main').naturalHeight+'px' 
-      }
-    }
- 
+    if (currZoom>zoomMin) {
+      currZoom-=0.1;
+      document.querySelector('img.Main').style.scale  = currZoom
+  }}
     function downloadIMG(){
     let fullIMG = document.querySelector('img.Main')
     let imgSRC = fullIMG.getAttribute('src')
@@ -299,10 +292,10 @@ gallerys.forEach(g=>{
       document.querySelector('img.Main').style.scale  = currZoom
   }
 
-      if(document.querySelector('img.Main').style.width < document.querySelector('img.Main').naturalWidth+'px'){
-        document.querySelector('img.Main').style.width = document.querySelector('img.Main').naturalWidth+'px' 
-        document.querySelector('img.Main').style.height = document.querySelector('img.Main').naturalHeight+'px' 
-      }
+      // if(document.querySelector('img.Main').style.width < document.querySelector('img.Main').naturalWidth+'px'){
+      //   document.querySelector('img.Main').style.width = document.querySelector('img.Main').naturalWidth+'px' 
+      //   document.querySelector('img.Main').style.height = document.querySelector('img.Main').naturalHeight+'px' 
+      // }
     }
  
     function downloadIMG(){

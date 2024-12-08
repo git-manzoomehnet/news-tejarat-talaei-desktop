@@ -70,7 +70,8 @@
                         @child
                     </layout>
                     <face>
-                        <img src="@type_159" alt=" [##db.title.title##]" width="140" height="140"
+                        <img src="[##cms.cms.cdn##]/@type_159" alt=" [##db.title.title##]"  title="[##db.title.title##]"
+                        width="140" height="140"
                         class="rounded-full rounded50 " />
                     </face>
                     <else-layout>
@@ -123,7 +124,7 @@
                         </div>
                     </layout>
                        <face filter="ord=1">
-                           <img src="@largeIMG" alt="[##db.title.title##]" title="[##db.title.title##]">
+                           <img src="[##cms.cms.cdn##]/@largeIMG" alt="[##db.title.title##]" title="[##db.title.title##]">
                        </face>
                    </basis>
                
@@ -169,7 +170,7 @@
             <div class="Right">
                  
               
-                        <img src="@largeIMG" alt="[##db.title.title##]" title="[##db.title.title##]">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="[##db.title.title##]" title="[##db.title.title##]">
                  
            
             </div>   </face>
@@ -198,7 +199,7 @@
                         <div class="img">
                            
                      
-                                   <img src="@largeIMG" alt="[##db.title.title##]" title="[##db.title.title##]">
+                                   <img src="[##cms.cms.cdn##]/@largeIMG" alt="[##db.title.title##]" title="[##db.title.title##]">
                            
                         </div> 
                        </face>
@@ -280,7 +281,8 @@
                 <basis core='print' run='AtClient' datamembername='captcha.code'><face >
                     <script type="text/template">
                     
-                    <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                    <img class="mx-2" src="[##cms.cms.cdn##]/@captcha@" width="128" height="44"
+                     alt=" فرم ار تباط با ما" title=" فرم ار تباط با ما" />
                     <input type="hidden" name="captchaid" value="@captcha@" />
                     </script>
                     </face>
@@ -311,7 +313,7 @@
       <face filter="ord=1002">
         <div class="ad">
             <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
-              <img src="@largeIMG" alt="@name" title="@name" ></a>
+              <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name" ></a>
       </div>
       </face>
   </basis>
@@ -373,7 +375,7 @@
                     <div class="bor11   h-[60px] w-full bg-orange absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
                     pr-[150px]
                     ">
-                    <img src="@type_159" alt="@title" width="110" height="110" class="  rounded50  absolute right-[15px] rounded-full bottom-2 " />
+                    <img src="[##cms.cms.cdn##]/@type_159" alt="@title" width="110" height="110" class="  rounded50  absolute right-[15px] rounded-full bottom-2 " />
                     <p>@prp_7248
 </p>
                     </div>

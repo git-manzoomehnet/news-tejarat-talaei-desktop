@@ -12,6 +12,7 @@
     <title>اخبار</title>
     <meta name="description" content="اخبار">
     <basis core="call" file="styles.inc" />
+   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">
    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/newsList.css">
 </head>
 
@@ -19,7 +20,9 @@
     <basis core="call" file="header-white.inc" />
     <div class="w-main filterr border-y-2 border-orange border-solid my-[50px] textHover
      py-2 mx-auto h-[40px] flex items-center mt-20 mb-[40px]">
+<h1>
         فیلتر
+</h1>
     </div>
     <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" >
         <member request="cat" type="tree" name="cat" parentid="208681" preview="" />
@@ -59,7 +62,8 @@
                     <div data-default-news="" class="w-[249.50px] newitem flex-col justify-center items-start gap-[5px]
                      inline-flex border-b-[1px] border-solid border-orange pb-2">
                         <a href="/@link"  aria-label="@title" rel="noopener" alt="@title" title='@title' > 
-                              <img class="w-[249px] h-[249px]" src="[##cms.cms.cdn##]/@00249X00249prp" alt="@title" title='@title' /></a>
+                              <img class="w-[249px] h-[249px]" loading="lazy"
+                              src="[##cms.cms.cdn##]/@00249X00249prp" alt="@title" title='@title' /></a>
                         <div
                             class="pr-1.5 pt-[5.46px] pb-[5.08px]  justify-start items-center inline-flex">
                             <div class="self-stretch flex-col justify-start items-end gap-2.5 inline-flex">
@@ -92,7 +96,7 @@
                     <face filter="ord=1002">
                         <div class="add w-full h-[90px] flex items-center justify-center mb-[30px]">
                             <a href="@description" aria-label="@name" rel="noopener" alt="@name" title='@name'>
-                            <img src="@largeIMG"  alt="@name" title="@name"></a>
+                            <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
                         </div>
                     </face>
                 </basis>
@@ -102,6 +106,8 @@
         </div>
        
     </div>
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
     <div   class="seeMore textHover w-[152px] h-[46px] mt-[30px] transition rounded-[20px] mb-10 my-0 mx-auto border-[1px] border-lightorange text-sm border-solid text-gray flex items-center justify-center my-0 mx-auto hover:bg-orange hover:text-black">
         <p>مشاهده بیشتر </p>
     </div>

@@ -126,7 +126,19 @@ $(".seeMore").css('visibility', 'hidden');
 }
 
   },1000)
-    $("#default_news").load(url);
+    $("#default_news").load(url,function(responseTxt, statusTxt, xhr){
+      gsap.to('.lds-roller',{
+        opacity:1,
+        display:'flex'
+     })
+      if(statusTxt == "success")
+        gsap.to('.lds-roller',{
+          opacity:0,
+          display:'none'
+       })
+      if(statusTxt == "error")
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+    });
     btns.forEach(b=>{
       b.classList.remove('activee')
     })

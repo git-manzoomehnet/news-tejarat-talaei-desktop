@@ -153,7 +153,8 @@
         </div>
         <basis core="print" datamembername="db.gallery">
             <face filter="rownumber = 1">
-                <img class="rightIMG w-[391px] h-[391px] mr-8 " id="gallery_big_image" alt="@name" src="[##cms.cms.cdn##]/@largeIMG" />
+                <img class="rightIMG w-[391px] h-[391px] mr-8 " id="gallery_big_image" alt="@name"
+                 src="[##cms.cms.cdn##]/@largeIMG" title="@name" />
             </face>
             </basis>
        
@@ -213,7 +214,7 @@
                     <basis core='print' run='AtClient' datamembername='captcha.code'><face >
                         <script type="text/template">
                         
-                        <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                        <img class="mx-2" src="[##cms.cms.cdn##]/@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
                         <input type="hidden" name="captchaid" value="@captcha@" />
                         </script>
                         </face>

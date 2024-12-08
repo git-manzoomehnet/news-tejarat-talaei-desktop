@@ -1,0 +1,384 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2355270">
+    <member name="landing" type="view"/>
+  </basis>
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2355270">
+    <member name="banner" type="view" postsql="select * from [db.banner] where ord=1001"/>
+  </basis>
+  <basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355270">
+    <member name="image-landing" type="list" format="4"/>
+  </basis>
+  
+  <basis core="dbsource"  name="db" source="basiscore" lid="1" mid="1" usedforid="2355270">
+    <member name="tesct"type="view" postsql="select * from [db.tesct] where TypeID=129"/>
+  </basis>
+  <basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="2355270">
+    <member name="video-landing" type="list" format="3"/>
+  </basis>
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+    <member name="contactus" type="view"/>
+  </basis>
+  <!doctype html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title> لندینگ</title>
+    <meta name="description" content="لندینگ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/simplebar.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">   
+  </head>
+  <body class="font-['IRANSans'] font-normal landingShow">
+    <basis core="call" file="header-white.inc" />
+    <section class="section-1">
+        <div class="banner">
+            <basis core="print" datamembername="db.image-landing">
+                <layout>
+                    @child
+                </layout>
+                <face filter="ord=1001">
+                   <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name" >
+                </face>
+            </basis>
+        </div>
+        <div class="Overlay">
+            <div class="Text">
+               <p>[##db.tesct.Answer##]</p>    
+            </div> 
+        </div>
+      </section>
+  <div class="Gallery-Wrapper">
+    <div class="swiper-gallery">
+  <div class="rightH">
+    <div class="number">
+        <span class="num">1</span>
+        <span class="line"></span>
+    </div>
+  </div>
+  
+        <div class="swiper-wrapper">
+            <basis core="print" datamembername="db.image-landing">
+                <layout>
+                    @child
+                </layout>
+           
+                <face filter="ord in (1001,1002,1003,1004)">
+                    <div class="swiper-slide">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name">
+                        <div class="Btn-Gallery">
+                            <button class="bt">
+                                <span>
+                                    مشاهده گالری عکس
+                                </span>
+                                <span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_75_4173)">
+                                        <path d="M8.72812 6.54375H15.2719V0H8.72812V6.54375ZM17.4562 0V6.54375H24V0H17.4562ZM0 6.54375H6.54375V0H0V6.54375ZM8.72812 15.2719H15.2719V8.72812H8.72812V15.2719ZM17.4562 15.2719H24V8.72812H17.4562V15.2719ZM0 15.2719H6.54375V8.72812H0V15.2719ZM8.72812 24H15.2719V17.4562H8.72812V24ZM17.4562 24H24V17.4562H17.4562V24ZM0 24H6.54375V17.4562H0V24Z" fill="black"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_75_4173">
+                                        <rect width="24" height="24" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                        </svg>
+                                        
+                                </span>
+                            </button>
+                           <span class="btn2">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 18.3337H16.5M11 3.66699V14.667M11 14.667L14.2083 11.4587M11 14.667L7.79167 11.4587" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                           </span>
+                        </div>
+                        <div class="ov"></div>
+                    </div> 
+                </face>
+            </basis>
+          
+         
+        </div>
+        <div class="swiper-pagination"></div>
+  <div class="leftH">
+    <div class="number">
+        <span class="num">1</span>
+        <span class="line"></span>
+  
+    </div>
+  </div>
+  
+    </div>
+  </div>
+  
+  <div class="Events-Container">
+    <div class="Col">
+        <div class="SchemaBox">
+            <div class="Schema">
+               
+                <basis core="print" datamembername="db.landing">
+                    <layout>
+                        @child
+                    </layout>
+                 
+                    <face filter="TypeID=150">
+                        <span class="answer ">
+                            @Answer
+                         </span>
+                    </face>
+                </basis>
+                <span class="name">
+                    نام رویداد 
+                </span>
+              
+            </div>
+         
+        </div>
+    </div>
+    <div class="EventsDetail">
+        <div class="Text">
+            <basis core="print" datamembername="db.landing">
+                <layout>
+                    @child
+                </layout>
+             
+                <face filter="TypeID=250">
+                   <p>
+                    @Answer
+                   </p>
+                 
+                </face>
+            </basis>
+                 </div>
+        <div class="VideoContainer">
+            <basis core="print" datamembername="db.video-landing">
+                <layout>
+                    @child
+                </layout>
+  
+                <face>
+                    <div class="Video">
+                        <video src="@largeIMG" poster=""></video>
+                        <div class="ov">
+                            <div class="play">
+                                <svg width="38" height="45" viewBox="0 0 38 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 45L37.5 22.5L0 0V45Z" fill="white"/>
+                                    </svg>
+                                    
+                            </div>
+                        </div>
+                        <p>
+                            <span>
+                                <a href="@largeIMG" download="">
+                                    دانلود
+                                </a>
+                            </span>
+                            <span>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 18.3337H16.5M11 3.66699V14.667M11 14.667L14.2083 11.4587M11 14.667L7.79167 11.4587" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    
+                            </span>
+        
+                        </p>
+                    </div>
+                </face>
+            </basis>
+          
+         
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="PopUPF-container">
+    <div class="Top">
+        <div class="close">
+            <div class="box">
+            <svg width="40" height="40" viewbox="0 0 40 40"><path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="white" stroke-width="4" /></svg>
+            </div></div>
+    </div>
+    <div class="Bottom">
+        <div class="Galerrys">
+            <basis core="print" datamembername="db.image-landing">
+                <layout>
+                    @child
+                </layout>
+           
+                <face filter="ord in (1001,1002,1003,1004)">
+                    <div class="swiper-slide">
+                        <div class="sl">
+                            <div class="IMG">
+                                <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name">
+                            </div>
+                       <span>01</span>    
+                        </div>
+                    </div> 
+                </face>
+            </basis>
+          
+         
+      
+        </div>
+    </div>
+  </div>
+  <div class="Gallerypopup">
+  
+  
+    <div class="menu">
+      
+        <div class="tools">
+            <div class="Lightbox-btn">
+                <span class="btn fullscreen ">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_68_3187)">
+                        <path d="M8.72812 7.04375H15.2719V0.5H8.72812V7.04375ZM17.4562 0.5V7.04375H24V0.5H17.4562ZM0 7.04375H6.54375V0.5H0V7.04375ZM8.72812 15.7719H15.2719V9.22812H8.72812V15.7719ZM17.4562 15.7719H24V9.22812H17.4562V15.7719ZM0 15.7719H6.54375V9.22812H0V15.7719ZM8.72812 24.5H15.2719V17.9562H8.72812V24.5ZM17.4562 24.5H24V17.9562H17.4562V24.5ZM0 24.5H6.54375V17.9562H0V24.5Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_68_3187">
+                        <rect width="24" height="24" fill="white" transform="translate(0 0.5)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        
+                        
+                </span>
+                <span class="btn zoomIn">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_68_3148)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.04456e-08 11.3064C0.000186954 9.58024 0.413895 7.87919 1.20649 6.3457C1.99909 4.81221 3.14751 3.4909 4.55562 2.49239C5.96373 1.49388 7.59056 0.847213 9.2999 0.606534C11.0093 0.365854 12.7514 0.538161 14.3805 1.10903C16.0096 1.6799 17.4782 2.63272 18.6634 3.88773C19.8486 5.14274 20.716 6.66341 21.1928 8.32246C21.6696 9.9815 21.7421 11.7306 21.4041 13.4234C21.0662 15.1162 20.3276 16.7034 19.2502 18.0522L23.6629 22.4649C23.8817 22.6914 24.0027 22.9947 24 23.3095C23.9972 23.6243 23.8709 23.9255 23.6483 24.1481C23.4257 24.3707 23.1245 24.497 22.8097 24.4998C22.4949 24.5025 22.1916 24.3815 21.9651 24.1627L17.5524 19.75C15.9624 21.0204 14.0461 21.816 12.0239 22.0452C10.0017 22.2745 7.95592 21.9281 6.12196 21.0458C4.28799 20.1636 2.74042 18.7814 1.65737 17.0584C0.574323 15.3354 -0.000176001 13.3416 4.04456e-08 11.3064ZM10.8066 6.5035C11.1251 6.5035 11.4305 6.63 11.6557 6.85518C11.8809 7.08037 12.0074 7.38578 12.0074 7.70423V10.1057H14.4089C14.7273 10.1057 15.0327 10.2322 15.2579 10.4574C15.4831 10.6826 15.6096 10.988 15.6096 11.3064C15.6096 11.6249 15.4831 11.9303 15.2579 12.1555C15.0327 12.3807 14.7273 12.5072 14.4089 12.5072H12.0074V14.9087C12.0074 15.2271 11.8809 15.5325 11.6557 15.7577C11.4305 15.9829 11.1251 16.1094 10.8066 16.1094C10.4882 16.1094 10.1828 15.9829 9.95759 15.7577C9.73241 15.5325 9.6059 15.2271 9.6059 14.9087V12.5072H7.20443C6.88597 12.5072 6.58056 12.3807 6.35538 12.1555C6.13019 11.9303 6.00369 11.6249 6.00369 11.3064C6.00369 10.988 6.13019 10.6826 6.35538 10.4574C6.58056 10.2322 6.88597 10.1057 7.20443 10.1057H9.6059V7.70423C9.6059 7.38578 9.73241 7.08037 9.95759 6.85518C10.1828 6.63 10.4882 6.5035 10.8066 6.5035Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_68_3148">
+                        <rect width="24" height="24" fill="white" transform="translate(0 0.5)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        
+                </span>
+                 </span>
+  
+                 <span class="btn zoomout">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_68_3146)">
+                        <path d="M18.9398 17.7693L24 22.8282L22.3282 24.5L17.2693 19.4398C15.3869 20.9488 13.0456 21.7696 10.6331 21.7661C4.76361 21.7661 0 17.0025 0 11.1331C0 5.26361 4.76361 0.5 10.6331 0.5C16.5025 0.5 21.2661 5.26361 21.2661 11.1331C21.2696 13.5456 20.4488 15.8869 18.9398 17.7693ZM5.90726 9.95161V12.3145H15.3589V9.95161H5.90726Z" fill="white" fill-opacity="0.8"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_68_3146">
+                        <rect width="24" height="25" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        
+                 </span>
+             
+                 <span class="btn download">
+                    <a href="#" download  alt="landing" title="landing" aria-label="landing" rel="noopener">
+                        <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_75_4177)">
+                            <path d="M1 24H19M10 1V18.25M10 18.25L15.25 13.2188M10 18.25L4.75 13.2188" stroke="white" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_75_4177">
+                            <rect width="20" height="25" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+                    </a>
+                </span>
+              
+                <span class="btn share">
+                    <span>
+                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.6667 16C11.0185 16 10.4676 15.7667 10.0139 15.3C9.56019 14.8333 9.33333 14.2667 9.33333 13.6C9.33333 13.5067 9.33982 13.4099 9.35278 13.3096C9.36574 13.2093 9.38519 13.1195 9.41111 13.04L3.92778 9.76C3.70741 9.96 3.46111 10.1168 3.18889 10.2304C2.91667 10.344 2.63148 10.4005 2.33333 10.4C1.68519 10.4 1.13426 10.1667 0.680556 9.7C0.226852 9.23333 0 8.66667 0 8C0 7.33333 0.226852 6.76667 0.680556 6.3C1.13426 5.83333 1.68519 5.6 2.33333 5.6C2.63148 5.6 2.91667 5.6568 3.18889 5.7704C3.46111 5.884 3.70741 6.04053 3.92778 6.24L9.41111 2.96C9.38519 2.88 9.36574 2.79013 9.35278 2.6904C9.33982 2.59067 9.33333 2.49387 9.33333 2.4C9.33333 1.73333 9.56019 1.16667 10.0139 0.7C10.4676 0.233333 11.0185 0 11.6667 0C12.3148 0 12.8657 0.233333 13.3194 0.7C13.7731 1.16667 14 1.73333 14 2.4C14 3.06667 13.7731 3.63333 13.3194 4.1C12.8657 4.56667 12.3148 4.8 11.6667 4.8C11.3685 4.8 11.0833 4.74347 10.8111 4.6304C10.5389 4.51733 10.2926 4.36053 10.0722 4.16L4.58889 7.44C4.61481 7.52 4.63426 7.61013 4.64722 7.7104C4.66019 7.81067 4.66667 7.9072 4.66667 8C4.66667 8.09333 4.66019 8.19013 4.64722 8.2904C4.63426 8.39067 4.61481 8.48053 4.58889 8.56L10.0722 11.84C10.2926 11.64 10.5389 11.4835 10.8111 11.3704C11.0833 11.2573 11.3685 11.2005 11.6667 11.2C12.3148 11.2 12.8657 11.4333 13.3194 11.9C13.7731 12.3667 14 12.9333 14 13.6C14 14.2667 13.7731 14.8333 13.3194 15.3C12.8657 15.7667 12.3148 16 11.6667 16Z" fill="#131312"/>
+                        </svg>
+                     </span>
+                     <div class="shareBox1">
+                        <a href="" class="tele" alt="landing" title="landing" aria-label="landing" rel="noopener">
+                          <span class="share">
+                          
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.66667 0C2.98667 0 0 2.98667 0 6.66667C0 10.3467 2.98667 13.3333 6.66667 13.3333C10.3467 13.3333 13.3333 10.3467 13.3333 6.66667C13.3333 2.98667 10.3467 0 6.66667 0ZM9.76 4.53333C9.66 5.58667 9.22667 8.14667 9.00667 9.32667C8.91333 9.82667 8.72667 9.99333 8.55333 10.0133C8.16667 10.0467 7.87333 9.76 7.5 9.51333C6.91333 9.12667 6.58 8.88667 6.01333 8.51333C5.35333 8.08 5.78 7.84 6.16 7.45333C6.26 7.35333 7.96667 5.8 8 5.66C8.00463 5.63879 8.00401 5.61678 7.9982 5.59587C7.9924 5.57496 7.98157 5.55578 7.96667 5.54C7.92667 5.50667 7.87333 5.52 7.82667 5.52667C7.76667 5.54 6.83333 6.16 5.01333 7.38667C4.74667 7.56667 4.50667 7.66 4.29333 7.65333C4.05333 7.64667 3.6 7.52 3.26 7.40667C2.84 7.27333 2.51333 7.2 2.54 6.96667C2.55333 6.84667 2.72 6.72667 3.03333 6.6C4.98 5.75333 6.27333 5.19333 6.92 4.92667C8.77333 4.15333 9.15333 4.02 9.40667 4.02C9.46 4.02 9.58667 4.03333 9.66667 4.1C9.73333 4.15333 9.75333 4.22667 9.76 4.28C9.75333 4.32 9.76667 4.44 9.76 4.53333Z" fill="black"/>
+                                    </svg>
+                                    
+                          </span>
+                        </a>
+                        <a href="" class="whatsapp" alt="landing" title="landing" aria-label="landing" rel="noopener">
+                          <span class="share">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.00001 0C10.8661 0 14 3.1339 14 7C14 10.8661 10.8661 14 7.00001 14C5.76295 14.002 4.54767 13.6746 3.47901 13.0515L0.00280985 14L0.949209 10.5224C0.325575 9.45341 -0.00205686 8.23759 9.71617e-06 7C9.71617e-06 3.1339 3.13391 0 7.00001 0ZM4.61441 3.71L4.47441 3.7156C4.38377 3.72112 4.29519 3.74493 4.21401 3.7856C4.13807 3.8286 4.06875 3.88235 4.00821 3.9452C3.92421 4.0243 3.87661 4.0929 3.82551 4.1594C3.56659 4.49603 3.42719 4.90932 3.42931 5.334C3.43071 5.677 3.52031 6.0109 3.66031 6.3231C3.94661 6.9545 4.41771 7.62299 5.03931 8.24249C5.18911 8.39159 5.33611 8.5414 5.49431 8.68069C6.26668 9.36072 7.18708 9.85112 8.1823 10.1129L8.5799 10.1738C8.7094 10.1808 8.8389 10.171 8.9691 10.1647C9.17297 10.1542 9.37203 10.099 9.5522 10.003C9.64387 9.95578 9.73333 9.90439 9.8203 9.84899C9.8203 9.84899 9.8504 9.82939 9.9078 9.78599C10.0023 9.71599 10.0604 9.6663 10.1388 9.58439C10.1969 9.52419 10.2473 9.45349 10.2858 9.37299C10.3404 9.25889 10.395 9.04119 10.4174 8.85989C10.4342 8.7213 10.4293 8.64569 10.4272 8.59879C10.4244 8.5239 10.3621 8.44619 10.2942 8.41329L9.8868 8.2306C9.8868 8.2306 9.2778 7.9653 8.9054 7.7959C8.86644 7.77888 8.82468 7.76915 8.7822 7.7672C8.73431 7.76228 8.68592 7.76767 8.64028 7.783C8.59464 7.79833 8.55281 7.82326 8.5176 7.8561C8.5141 7.8547 8.4672 7.8946 7.9611 8.5078C7.93206 8.54683 7.89204 8.57633 7.84617 8.59253C7.80029 8.60874 7.75062 8.61092 7.7035 8.59879C7.6579 8.58657 7.61323 8.57113 7.5698 8.5526C7.483 8.5162 7.4529 8.50219 7.3934 8.47699C6.99165 8.30168 6.61969 8.0648 6.29091 7.7749C6.20271 7.6979 6.12081 7.6139 6.03681 7.5327C5.76142 7.26896 5.52141 6.9706 5.32281 6.6451L5.28151 6.5786C5.25184 6.53391 5.22786 6.48571 5.21011 6.4351C5.18351 6.3322 5.25281 6.2496 5.25281 6.2496C5.25281 6.2496 5.42291 6.0634 5.50201 5.9626C5.57901 5.8646 5.64411 5.7694 5.68611 5.7015C5.76871 5.5685 5.79461 5.432 5.75121 5.3263C5.55521 4.8475 5.35221 4.3708 5.14361 3.8976C5.10231 3.8038 4.97981 3.7366 4.86851 3.7233C4.83071 3.7191 4.79291 3.7149 4.75511 3.7121C4.6611 3.70743 4.5669 3.70836 4.47301 3.7149L4.61441 3.71Z" fill="black"/>
+                                </svg>
+                                
+                          </span>
+                        </a>
+                        <a href="" class="insta" alt="landing" title="landing" aria-label="landing" rel="noopener">
+                          <span class="share">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.00001 0C10.8661 0 14 3.1339 14 7C14 10.8661 10.8661 14 7.00001 14C5.76295 14.002 4.54767 13.6746 3.47901 13.0515L0.00280985 14L0.949209 10.5224C0.325575 9.45341 -0.00205686 8.23759 9.71617e-06 7C9.71617e-06 3.1339 3.13391 0 7.00001 0ZM4.61441 3.71L4.47441 3.7156C4.38377 3.72112 4.29519 3.74493 4.21401 3.7856C4.13807 3.8286 4.06875 3.88235 4.00821 3.9452C3.92421 4.0243 3.87661 4.0929 3.82551 4.1594C3.56659 4.49603 3.42719 4.90932 3.42931 5.334C3.43071 5.677 3.52031 6.0109 3.66031 6.3231C3.94661 6.9545 4.41771 7.62299 5.03931 8.24249C5.18911 8.39159 5.33611 8.5414 5.49431 8.68069C6.26668 9.36072 7.18708 9.85112 8.1823 10.1129L8.5799 10.1738C8.7094 10.1808 8.8389 10.171 8.9691 10.1647C9.17297 10.1542 9.37203 10.099 9.5522 10.003C9.64387 9.95578 9.73333 9.90439 9.8203 9.84899C9.8203 9.84899 9.8504 9.82939 9.9078 9.78599C10.0023 9.71599 10.0604 9.6663 10.1388 9.58439C10.1969 9.52419 10.2473 9.45349 10.2858 9.37299C10.3404 9.25889 10.395 9.04119 10.4174 8.85989C10.4342 8.7213 10.4293 8.64569 10.4272 8.59879C10.4244 8.5239 10.3621 8.44619 10.2942 8.41329L9.8868 8.2306C9.8868 8.2306 9.2778 7.9653 8.9054 7.7959C8.86644 7.77888 8.82468 7.76915 8.7822 7.7672C8.73431 7.76228 8.68592 7.76767 8.64028 7.783C8.59464 7.79833 8.55281 7.82326 8.5176 7.8561C8.5141 7.8547 8.4672 7.8946 7.9611 8.5078C7.93206 8.54683 7.89204 8.57633 7.84617 8.59253C7.80029 8.60874 7.75062 8.61092 7.7035 8.59879C7.6579 8.58657 7.61323 8.57113 7.5698 8.5526C7.483 8.5162 7.4529 8.50219 7.3934 8.47699C6.99165 8.30168 6.61969 8.0648 6.29091 7.7749C6.20271 7.6979 6.12081 7.6139 6.03681 7.5327C5.76142 7.26896 5.52141 6.9706 5.32281 6.6451L5.28151 6.5786C5.25184 6.53391 5.22786 6.48571 5.21011 6.4351C5.18351 6.3322 5.25281 6.2496 5.25281 6.2496C5.25281 6.2496 5.42291 6.0634 5.50201 5.9626C5.57901 5.8646 5.64411 5.7694 5.68611 5.7015C5.76871 5.5685 5.79461 5.432 5.75121 5.3263C5.55521 4.8475 5.35221 4.3708 5.14361 3.8976C5.10231 3.8038 4.97981 3.7366 4.86851 3.7233C4.83071 3.7191 4.79291 3.7149 4.75511 3.7121C4.6611 3.70743 4.5669 3.70836 4.47301 3.7149L4.61441 3.71Z" fill="black"/>
+                                </svg>
+                          </span>
+                        </a>
+                       </div>  
+                </span>
+              
+            </div>
+        </div>
+    </div>
+    <div class="popUp">
+  
+        <div class="right">
+           
+            <span class="Gnext">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.00075 5.00016L1.75775 9.24316L0.34375 7.82816L3.17275 5.00016L0.34375 2.17216L1.75775 0.757164L6.00075 5.00016Z" fill="black"/>
+                    </svg>
+                    
+            </span>
+         <img class="Main" src="[##cms.cms.cdn##]/@largeIMG" alt="@title" title="@title"/>
+         <span class="Gprev">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-0.000749773 4.99984L4.24225 0.756836L5.65625 2.17184L2.82725 4.99984L5.65625 7.82784L4.24225 9.24284L-0.000749773 4.99984Z" fill="black"/>
+                </svg>
+                
+        </span>
+            </basis>
+        </div>
+    </div>
+    <div class="Num">
+        <span class="total"></span>
+        <span>/</span>
+        <span class="current"></span>
+    </div>
+  </div>  
+  <div class="cursor">
+    <div class="cursor__circle cursor__circle--big ">
+        <img src="[##cms.cms.cdn##]/images/icons8-left-arrow-24.png" alt="landing" title="landing">
+   
+    </div>
+  
+    <div class="cursor_circle cursor__circle--small">
+      
+    </div>
+  
+    <div class="cursor__plus">
+        <svg
+              class="cursor__plus--area"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              >
+            <g stroke-width="1">
+                <path
+                        d="M12.5,1.87037037 L12.5,11.4993704 L22.5,11.5 L22.5,12.5 L12.5,12.4993704 L12.5,22.1296296 L11.5,22.1296296 L11.5,12.4993704 L1.5,12.5 L1.5,11.5 L11.5,11.4993704 L11.5,1.87037037 L12.5,1.87037037 Z"
+                        ></path>
+            </g>
+        </svg>
+    </div>
+  </div>
+<basis core="call" file="footer-white.inc" />
+ <basis core="call" file="scripts.inc" />
+<script src="[##cms.cms.cdn##]/js/simplebar.min.js"></script>
+<script src="[##cms.cms.cdn##]/js/landingDesc.js"></script> 
+</body>  
+</html>
+  

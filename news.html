@@ -104,7 +104,8 @@
               <div class="relative w-1/2 imgg">
                   <basis core="print" datamembername="db.banner">
                       <face>
-                          <img src="[##cms.cms.cdn##]/@largeIMG" width="700" height="480" class="w-full" alt="@name"  />
+                          <img src="[##cms.cms.cdn##]/@largeIMG" width="700" height="480" class="w-full"
+                           alt="@name" title="@name"  />
                           <div class="w-[49px] h-[113px]  rounded-[36px] bg-white shadow-xl shadow-shadow absolute flex flex-col justify-around right-[10px] bottom-[-50px] items-center bottom-[-10px]">
                               <!-- <div class="w-[80px] h-[80px] bg-social absolute top-[-20px] z-0"></div> -->
                         
@@ -257,7 +258,7 @@
                             <face filter="ord=1002">
                                 <div class=" add w-full h-[90px]  flex items-center justify-center ">
 <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
-                                    <img src="@largeIMG"  alt="@name" title="@name">
+                                    <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name">
 </a>
                                 </div>
                             </face>
@@ -292,7 +293,8 @@
                                         <basis core='print' run='AtClient' datamembername='captcha.code'><face >
                                             <script type="text/template">
                                             
-                                            <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                                            <img class="mx-2" src="[##cms.cms.cdn##]/@captcha@" width="128" title="فرم ار تباط با ما"
+                                             height="44" alt=" فرم ار تباط با ما" />
                                             <input type="hidden" name="captchaid" value="@captcha@" />
                                             </script>
                                             </face>
@@ -315,7 +317,7 @@
                               <div class="comment w-full mt-4 border-[1px] border-solid border-lightblue p-4" >
                                   <div class="flex ">
                                       <div>
-                                          <img src="[##cms.cms.cdn##]/[##cms.cms.cdn##]/images/comment_avatar.png" class="mt-[5px]" />
+                                          <img src="[##cms.cms.cdn##]/images/comment_avatar.png" class="mt-[5px]" alt="comment_avatar" title="comment_avatar" />
                                       </div>
                                       <div class="mr-4">
                                           <div >@username <span class="text-gray text-xs mr-[15px]">@createdate</span></div>
@@ -357,7 +359,9 @@
                               <basis core='print' run='AtClient' datamembername='captcha.code'><face >
                                   <script type="text/template">
                                   
-                                  <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                                  <img class="mx-2" src="[##cms.cms.cdn##]/@captcha@" 
+                                  alt="captcha" title="captcha"
+                                  width="128" height="44" alt=" فرم ار تباط با ما" />
                                   <input type="hidden" name="captchaid" value="@captcha@" />
                                   </script>
                                   </face>
@@ -403,7 +407,7 @@
                                             <div class="swiper-slide newitem">
                                             <div data-default-news="" class="w-[249.50px] newItem flex-col justify-center items-start gap-[5px] inline-flex border-b-[1px] border-solid border-orange pb-2">
                                                 <a href="/@link"  alt="@title" title="@title" aria-label="@title " rel="noopener">  
-                                                     <img class="w-[249px] h-[249px]" src="/@00249X00249prp" alt="@title" /></a>
+                                                     <img class="w-[249px] h-[249px]" src="[##cms.cms.cdn##]/@00249X00249prp" alt="@title" /></a>
                                                 <div
                                                     class="pr-1.5 pt-[5.46px] pb-[5.08px]  justify-start items-center inline-flex">
                                                     <div class="boxnews  self-stretch flex-col justify-start items-end gap-2.5 inline-flex">
@@ -439,7 +443,7 @@
                                             <face filter="ord=1003">
                                                 <div class="w-2/6 flex items-center justify-center mb-[30px] ads">
                                                  <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
-                                                    <img src="@largeIMG"  alt="@name" title="@name"></a>
+                                                    <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
                                                 </div>
                                             </face>
                                         </basis>
@@ -477,7 +481,8 @@
                                               <div class="text-right text-[#ABABAB] text-sm font-normal ">@cdate</div>
                                               </div>
                                               <div class="w-full h-0 overflow-hidden  rtl  justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
-                                                  <a href="@link"><img class="w-[187px] h-[187px]" alt="@title" src="/@00187x00187prp " width="180" height="180" /></a>
+                                                  <a href="@link"><img class="w-[187px] h-[187px]" title="@title"
+                                                     alt="@title" src="[##cms.cms.cdn##]/@00187x00187prp " width="180" height="180" /></a>
                                                   <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
                                                   <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">@cdate</div>
                                                   <a href="/@link" class=" text-right text-black text-sm font-normal mb-2">@title</a>
@@ -509,7 +514,7 @@
                                               <div class="w-full h-0 overflow-hidden  rtl  justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
                                                   <a href="@link" alt="@title" title="@title" aria-label="@title " rel="noopener">
                                                     <img class="w-[187px] h-[187px]"
-                                                     alt="@title" src="/@00187x00187prp" width="180" height="180" /></a>
+                                                     alt="@title" title="@title" src="[##cms.cms.cdn##]/@00187x00187prp" width="180" height="180" /></a>
                                                   <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
                                                   <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">@cdate</div>
                                                   <a href="/@link" alt="@title" title="@title" aria-label="@title " rel="noopener" class=" text-right text-black 
@@ -535,8 +540,8 @@
                     <basis core="print" datamembername="db.image-banner">
                         <face filter="ord=1005">
                             <p class="fill add mb-3 float-left">
-                                <a href="@description" aria-label="@name " rel="noopener" title="@name ">
-                                <img src="@largeIMG"  alt="@name" title="@name"></a>
+                                <a href="[##cms.cms.cdn##]/@description" aria-label="@name " rel="noopener" title="@name ">
+                                <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
                             </p>
                         </face>
                     </basis>

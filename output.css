@@ -4419,6 +4419,7 @@ opacity: 1 !important;
     justify-content: flex-end;
     align-items: flex-end;
     transform: translateY(-5px);
+    gap: 1em;
 
 }
 .home .swiper-slide{
@@ -4519,6 +4520,7 @@ width: 500px !important;
 }
 .home .mahname .splide__arrows--rtl .splide__arrow--next{
  left: -4em;
+ position: absolute;
 }
 .home .mahname .splide__arrows--rtl .splide__arrow--prev{
   right: -4em;
@@ -4845,6 +4847,7 @@ gap: 2em
 .home .gallery .topG .splide__arrows {
   width: 75px;
   display: flex;
+  gap: 1em;
 }
 .home .gallery .topG .h-16 .justify-end{
   position: relative;
@@ -5454,7 +5457,7 @@ header{
 .header2 .inner{
   width: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   align-items: center;
 }
 header .bordertop{

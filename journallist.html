@@ -5,12 +5,13 @@
     <member name="image-banner" type="list" format="4"  postsql="select * from [db.image-banner] where ord=1001"/>
 </basis>
 <!doctype html>
-<html>
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
    <title>ماهنامه</title>
     <meta name="description" content="ماهنامه"> 
     <basis core="call" file="styles.inc" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/styleNew.css">
 </head>
 <body class="font-['IRANSans'] font-normal bg-black Jornallist ">
     <basis core="call" file="header-black.inc" />
@@ -19,7 +20,8 @@
             <face >
                 <div class="rounded-[20px] relative  journal">
                     <a href="@link" alt="@name" title="@name" aria-label="@name " rel="noopener" >
-                        <img src="[##cms.cms.cdn##]/@00264X00288prp" width="260" class="rounded-[20px]" alt="@title" />
+                        <img src="[##cms.cms.cdn##]/@00264X00288prp" 
+                        width="260" class="rounded-[20px]" alt="@title" title="@title" />
                     </a>
                 
                     <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
@@ -43,7 +45,11 @@
     مشاهده بیشتر 
 </div>
 <div id="form" class="w-main my-0 mx-auto">
-    <p class="textHover text-orange text-lg font-bold">فرم ثبت نام دریافت ماهنامه
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+    <p class="textHover text-orange text-lg font-bold">
+
+فرم ثبت نام دریافت ماهنامه
 
     </p>
     <p class="textHover text-white">
@@ -52,14 +58,14 @@
     <div id="journal_form" class="journal_form mt-[30px]">
         <basis core='callback' run='AtClient' method='onSource' triggers='form.result'></basis>
         <basis core='api' if='{##edit.object|(false)##}' run='AtClient'
-        url='/schema/9BEB7BBE-A7C0-44D5-93AA-8CBA286F16FA/fa/editobject' 
+        url='/schema/F2DE5289-6DB0-4E7A-AC90-7536EDB1D3B9/fa/editobject' 
         method='post' 
         body='object_edit={##edit.object.value##}&captcha={##edit.object.captcha##}&captchaid={##edit.object.captchaid##}' 
         content-type='application/x-www-form-urlencoded' triggers='edit.object' 
-        onprocessed='OnProcessedEditObject'></basis>
+        onprocessed='OnProcessedEditObject'  onprocessing='OnProcessingEditObject'></basis>
         <basis core='dbsource' name='captcha' run='AtClient' source='trust_login' 
         triggers='captcha.refresh'><member name='code' type='scalar' request='captcha'></member></basis>
-        <basis core='schema' run='AtClient'
+        <basis core='schema' run='AtClient'  OnRendering="formRendering"
         schemaurl='/schema/domainform/F2DE5289-6DB0-4E7A-AC90-7536EDB1D3B9/8F5F38DD-FE4F-4CC0-A4AD-D3084D38246F/fa/magazine'
          displaymode='new' button="[data-btn-add]" resultsourceid='form.result' 
          onrendered='schemareview' triggers='db.renews'></basis>
@@ -108,6 +114,7 @@
     </div>
 </div>
 <div class="clr"></div>
+<div class="lds-roller2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
 <div  class="w-main my-0 mx-auto flex flex-col justify-center items-center pt-[80px]">
     <basis core="print" datamembername="db.image-banner">
@@ -134,7 +141,13 @@
   <basis core="call" file="footer-black.inc" />
   <basis core="call" file="scripts.inc" />
   <script src="[##cms.cms.cdn##]/js/journalList.js"></script>
+<script>
+    function formRendering(){
+        console.log('form rendering...');
+        
+    }
 
+</script>
 </body>
 
 </html>

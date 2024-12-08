@@ -78,8 +78,8 @@
     <basis core="call" file="styles.inc" />
     <link rel="stylesheet" href="[##cms.cms.cdn3##]/css/paranoma.css">
     <link rel="stylesheet" href="[##cms.cms.cdn3##]/css/home.css">
-    <link rel="modulepreload" href="/js/vendor.dba6b2d2.js">
-    <link rel='stylesheet' id='malgre-core-style-css' href='css/malgre-core.min.css?ver=6.3.4' type='text/css' media='all' />
+    <link rel="modulepreload" href="[##cms.cms.cdn3##]/js/vendor.dba6b2d2.js">
+    <link rel='stylesheet' id='malgre-core-style-css' href='[##cms.cms.cdn3##]/css/malgre-core.min.css?ver=6.3.4' type='text/css' media='all' />
   </head>
   <body class="font-['IRANSans'] font-normal home ">
    <basis core="call" file="header-white.inc" />
@@ -102,7 +102,7 @@
                 <div class="swiper-slide relative">
                         <a aria-label="@title" rel="noopener" href="@link" class="slide" alt="@title" title='@title'> 
                             <img alt="@title" title="@title"
-                             class="absolute top-0 left-0" src="@00473x00473prp"  />
+                             class="absolute top-0 left-0" src="[##cms.cms.cdn##]/@00473x00473prp"  />
                         </a>
                      <div class=" innerr flex-col justify-center items-end gap-1.5 inline-flex absolute top-[90%] right-3">
                          <div class=" text-right text-white text-sm font-normal ">@cdate</div>
@@ -132,7 +132,7 @@
             <face filter="ord=1001">
                 <div class="w-2/6 h-[90px] flex items-center justify-center mb-[30px] ads">
                     <a href="@description" aria-label="@name" rel="noopener" alt="@name" title="@name">
-                    <img src="@largeIMG" alt="@name" title="@name"></a>
+                    <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name"></a>
                 </div>
             </face>
         </basis>
@@ -143,7 +143,7 @@
                 <face filter="ord in (1004,1005)">
                     <p class="mb-3">
                         <a href="@description" aria-label="@name" rel="noopener" alt="@name" title="@name">
-                        <img src="@largeIMG" alt="@name" title="@name">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name">
                         </a>
                     </p>
                 </face>
@@ -177,7 +177,8 @@
                                     </div>
                                     <div class="w-full h-0 overflow-hidden  rtl  justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
                                         <a href="@link" alt="@title" title="@title" aria-label="@title" rel="noopener" >
-                                             <img class="w-[187px] h-[187px]" alt="@title" title="@title" src="@00187X00187prp" />
+                                             <img class="w-[187px] h-[187px]" alt="@title" title="@title"
+                                              src="[##cms.cms.cdn##]/@00187X00187prp" />
                                         </a>
                                         <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
                                         <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">
@@ -217,7 +218,7 @@
                                      justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
                                         <a href="@link" aria-label="@title" rel="noopener"  alt="@title" title="@title">
                                             <img alt="@title" title="@title" class="w-[187px] h-[187px]"
-                                             src="/@00187x00187prp" />
+                                             src="[##cms.cms.cdn##]/@00187x00187prp" />
                                         </a>
                                         <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
                                         <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">
@@ -275,7 +276,7 @@
             <basis core="print" datamembername="db.list-blog22">
                 <face filter="ord=1">
                     <a href="/@link" aria-label="@title" rel="noopener" alt="@title" title="@title" >
-                        <img src="@00752x00752prp" alt="@title" class="w-full" />
+                        <img src="[##cms.cms.cdn##]/@00752x00752prp" alt="@title" class="w-full" />
                     </a>
                     <div class="absolute bottom-5  left-5 right-5 mr-5 z-50 rtl boxes textHover">
                         <div class="bdat centerr text-white text-sm pb-2">تاریخ انتشار: @cdate</div>
@@ -305,7 +306,7 @@
                     <face filter="rownumber <> 0">
                         <li class="flex items-end textHover">
                             <a class="rightside" href="/@link"  aria-label="@title" rel="noopener"  alt="@title" title="@title">
-                                  <img src="/@00249X00249prp" alt="@title" title="@title" />
+                                  <img src="[##cms.cms.cdn##]/@00249X00249prp" alt="@title" title="@title" />
                                 </a>
                             <div class="leftside mr-5 z-50 rtl">
                                 <div class="text-orange text-sm pb-2">تاریخ انتشار: @cdate</div>
@@ -339,7 +340,7 @@
         <face filter="ord=1002">
             <div class="w-2/6 h-[90px]  flex items-center justify-center mb-[30px] ads">
                 <a href="@description" aria-label="@name " rel="noopener">
-                <img src="@largeIMG"  alt="@name" title="@name"></a>
+                <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
             </div>
         </face>
     </basis>
@@ -410,7 +411,7 @@
     <basis core="print" datamembername="db.list-project">
         <face filter="rownumber=1">
             <div class="qodef-fsg-image-holder GridItem" data-bg="/@01600X00739prp" >
-              <img src="/@01600X00739prp"  alt="Tejarat" title="Tejarat" >  
+              <img src="[##cms.cms.cdn##]/@01600X00739prp"  alt="Tejarat" title="Tejarat" >  
                 </div>
         </face>
     </basis>
@@ -418,7 +419,7 @@
     <basis core="print" datamembername="db.list-project">
         <face filter="rownumber<7">
            
-              <img src="/@01600X00739prp"  alt="Tejarat" title="Tejarat"  style="display: none;">  
+              <img src="[##cms.cms.cdn##]/@01600X00739prp"  alt="Tejarat" title="Tejarat"  style="display: none;">  
               
         </face>
     </basis>
@@ -434,7 +435,7 @@
         <face filter="ord=1003">
             <div class="w-2/6 h-[90px]  flex items-center justify-center mb-[30px] ads">
                 <a href="@description" aria-label="@name" rel="noopener" alt="@name" title="@name" >
-                <img src="@largeIMG"  alt="@name" title="@name"></a>
+                <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
             </div>
         </face>
     </basis>
@@ -507,7 +508,7 @@
                     <div class="Left">
                          <div class="IMG">
                             <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener">
-                                <img src="@00600X00647prp"  alt="@title" title="@title" />
+                                <img src="[##cms.cms.cdn##]/@00600X00647prp"  alt="@title" title="@title" />
                             </a>
                          </div>
                     </div>
@@ -527,7 +528,7 @@
                             <div class="Left">
                                 <div class="IMG">
                                     <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener">
-                                        <img src="@00600X00647prp"  alt="@title" title="@title" />
+                                        <img src="[##cms.cms.cdn##]/@00600X00647prp"  alt="@title" title="@title" />
                                     </a>
                                  </div>
                                 </div>             
@@ -606,12 +607,12 @@
             <div class=" relative">
                 <div class="relative">
                     <a href="/@link"  alt="@title" title="@title" aria-label="@title" rel="noopener" > 
-                         <img class="leftimg"  alt="@title" title="@title" width="500" src="/@type_159" />
+                         <img class="leftimg"  alt="@title" title="@title" width="500" src="[##cms.cms.cdn##]/@type_159" />
                         </a>
                 <div class=" bor11 h-[60px] w-full bg-orange 
                 absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
                 pr-[150px]">
-                <img src="/@00500X00260prp" 
+                <img src="[##cms.cms.cdn##]/@00500X00260prp" 
                 alt="@title" title="@title" width="110" height="110" class="absolute right-[15px] rounded50 bottom-2 " />
                <p>
                 @prp_7248
@@ -669,7 +670,7 @@
                         <div class="w-[142px] h-[338px] relative green_book">
                             <div class="w-[142px] h-[338px] left-0 top-0 absolute bg-black/opacity-50"></div>
                             <div class="IMG">                           
-                                <img src="/@00286X00286prp"  alt="@title" title="@title">
+                                <img src="[##cms.cms.cdn##]/@00286X00286prp"  alt="@title" title="@title">
                             </div>
                             <div class="w-[30px] h-[292px] left-[56px] top-[8px] absolute text">
                                   <div class="left-0 top-0 absolute text-center 
@@ -712,7 +713,7 @@
                                     <li class="splide__slide journal_list">
                                         <div class="w-[260px]  rounded-[20px] relative ">
                                             <a href="@link" aria-label="@title" rel="noopener"  alt="@title" title="@title">
-                                            <img src="@00264X00288prp" width="260" 
+                                            <img src="[##cms.cms.cdn##]/@00264X00288prp" width="260" 
                                             class="rounded-[20px]" alt="@title" title="@title" /></a>
                                             <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
                                                 <a href="@link"   alt="@tit" title="@title" aria-label="@title" rel="noopener"

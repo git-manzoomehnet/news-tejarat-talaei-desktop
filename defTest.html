@@ -50,14 +50,12 @@
   <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" > 
     <member request="cat" type="tree" name="titlenews" parentid="208622" size="240x240" />
 </basis>    
-  
   <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" > 
     <member request="cat" type="tree" name="pnews" parentid="208625" size="240x240" />
 </basis>
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" > 
     <member request="cat" type="tree" name="conver" parentid="208528" size="240x240" />
 </basis>
-
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" > 
     <member request="cat" type="tree" name="rnew" parentid="208628" size="240x240" />
 </basis>
@@ -71,90 +69,81 @@
     <member request="cat" type="tree" name="projs" parentid="208629" size="240x240" />
 </basis>
   <!doctype html>
-  <html>
+  <html lang="fa">
   <head>
     <meta charset="UTF-8">
     <title>تجارت طلایی</title>
+    <meta name="description" content="تجارت طلایی">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="[##cms.cms.cdn3##]/css/splide.min.css">
+    <basis core="call" file="styles.inc" />
     <link rel="stylesheet" href="[##cms.cms.cdn3##]/css/paranoma.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn3##]/css/swiper.css">
     <link rel="stylesheet" href="[##cms.cms.cdn3##]/css/home.css">
-    <link rel="modulepreload" href="/js/vendor.dba6b2d2.js">
-  <link rel='stylesheet' id='malgre-core-style-css' href='css/malgre-core.min.css?ver=6.3.4' type='text/css' media='all' />
+    <link rel="modulepreload" href="[##cms.cms.cdn3##]/js/vendor.dba6b2d2.js">
+    <link rel='stylesheet' id='malgre-core-style-css' href='[##cms.cms.cdn3##]/css/malgre-core.min.css?ver=6.3.4' type='text/css' media='all' />
   </head>
-  
   <body class="font-['IRANSans'] font-normal home ">
    <basis core="call" file="header-white.inc" />
     <div class="clr"></div>
-    <div class="sticky-p">
+    <div class="sticky-p topsec">
     <div class="w-full textHover h-[145px] bg-index_bg text-2xl font-bold flex items-center justify-center mt-20 bg-cover">
-      [##db.titlenews.urltitle##]
+  <h1>    [##db.titlenews.urltitle##] </h1>
     </div>
-    <div id="slider">
+    <div id="slider" class="section1">
     
-  <div class="panorama-slider section1" >
+  <div class="panorama-slider " >
     <div class="swiper">
     <div class="swiper-wrapper">
 
         <basis core="print" datamembername="db.list-blog-def">
             <layout>
                 @child
-            </layout>
-        
+            </layout>      
             <face>
                 <div class="swiper-slide relative">
-                    <!-- <div class=" "> -->
-                        <a href="@link" class="slide" alt="@title" title='@title'> 
+                        <a aria-label="@title" rel="noopener" href="@link" class="slide" alt="@title" title='@title'> 
                             <img alt="@title" title="@title"
-                             class="absolute top-0 left-0" src="@00473x00473prp"  /></a>
+                             class="absolute top-0 left-0" src="[##cms.cms.cdn##]/@00473x00473prp"  />
+                        </a>
                      <div class=" innerr flex-col justify-center items-end gap-1.5 inline-flex absolute top-[90%] right-3">
                          <div class=" text-right text-white text-sm font-normal ">@cdate</div>
-                         <a href="@title" alt="@title" title="@title"
-                          class=" text-right text-white text-lg font-medium ">@title</a>
+
+                         <a aria-label="@title" rel="noopener" href="@title" alt="@title" title="@title"
+                          class=" text-right text-white text-lg font-medium ">
+                          @title
+                        </a>
                           <span class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                             <p class=" font-normal text-sm leading-21.91 text-white">مشاهده </p>
-                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                            ">
+                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                             <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                              bg-black absolute top-[70%] translate-x-[-50%]"></div>
                             </div>
-                        </span>
-                     
-                        
+                        </span>                                   
                          </div>
-                    <!-- </div> -->
                      </div>
             </face>
-        </basis>
-      
-
-    
+        </basis> 
     </div>
     <div class="swiper-pagination"></div>
     </div>
     </div> 
     </div>
-    <div class="w-main mx-auto my-0 relative flex mt-[50px] addCont margin">
+    <div class="section2 w-main mx-auto my-0 relative flex mt-[50px] addCont margin">
         <basis core="print" datamembername="db.image-banner">
             <face filter="ord=1001">
                 <div class="w-2/6 h-[90px] flex items-center justify-center mb-[30px] ads">
-                    <a href="@description">
-                    <img src="@largeIMG" alt="@name" title="@name"></a>
+                    <a href="@description" aria-label="@name" rel="noopener" alt="@name" title="@name">
+                    <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name"></a>
                 </div>
             </face>
         </basis>
-  
-  
     </div>
-    <div class="w-main mx-auto my-0 flex justify-between">
+    <div class="section3 w-main mx-auto my-0 flex justify-between">
         <div class="w-[30%] sideM">
             <basis core="print" datamembername="db.image-banner">
                 <face filter="ord in (1004,1005)">
                     <p class="mb-3">
-                        <a href="@description">
-                        <img src="@largeIMG" alt="@name" title="@name">
+                        <a href="@description" aria-label="@name" rel="noopener" alt="@name" title="@name">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name">
                         </a>
                     </p>
                 </face>
@@ -164,11 +153,13 @@
         <div id="tabs" class="w-[70%]">
             <div id="tabs_header" class="flex w-full  rtl tab_heaer">
                 <div class="tab_active text-right text-gray tab_header text-base pb-2 textHover"
-                data-tab-header="1" onclick="changeTab(this,1)">[##db.tab1.urltitle##] </div>
-                <div class=" text-right text-gray  text-base 
-                 tab_header  ml-8  pb-2 z-50 textHover"
-                  onclick="changeTab(this,2)" data-tab-header="2">[##db.tab2.urltitle##]   </div>
-            
+                data-tab-header="1" onclick="changeTab(this,1)">
+                [##db.tab1.urltitle##] 
+            </div>
+            <div class="text-right text-gray text-base tab_header  ml-8  pb-2 z-50 textHover"
+                  onclick="changeTab(this,2)" data-tab-header="2">
+                  [##db.tab2.urltitle##]
+            </div>
             </div>
             <div id="tabs_body">
                 <div class="body_active tab1 " data-tab-body="1">
@@ -177,62 +168,76 @@
                             <div class="w-full tab_body_header textHover">
                                 <div class="w-full htab  px-[15px] py-[19px] border-b border-[#ABABAB] justify-between items-start flex ">
                                     
-                                    <div class="text-right text-black text-sm font-normal ">@title</div>
-                                    <div class="text-right text-[#ABABAB] text-sm font-normal ">@cdate</div>
+                                    <div class="text-right text-black text-sm font-normal">
+                                        @title
+                                    </div>
+                                    <div class="text-right text-[#ABABAB] text-sm font-normal">
+                                        @cdate
+                                    </div>
                                     </div>
                                     <div class="w-full h-0 overflow-hidden  rtl  justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
-                                        <a href="@link" alt="@title" title="@title">
-                                             <img class="w-[187px] h-[187px]" alt="@title" title="@title" src="@00187X00187prp" /></a>
+                                        <a href="@link" alt="@title" title="@title" aria-label="@title" rel="noopener" >
+                                             <img class="w-[187px] h-[187px]" alt="@title" title="@title"
+                                              src="[##cms.cms.cdn##]/@00187X00187prp" />
+                                        </a>
                                         <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
-                                        <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">@cdate</div>
-                                        <a href="/@link" alt="@title" title="@title"
-                                         class=" text-right text-black text-sm font-normal mb-2">@title</a>
-                                         <a href="/@link" alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                        <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">
+                                            @cdate
+                                        </div>
+                                        <a href="/@link" alt="@title" title="@title" aria-label="@title" rel="noopener" 
+                                         class=" text-right text-black text-sm font-normal mb-2">
+                                         @title
+                                        </a>
+                                         <a href="/@link" alt="@title" title="@title" aria-label="@title" rel="noopener"  class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                                             <p class=" font-normal text-sm leading-21.91 text-black">مشاهده </p>
-                                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                                            ">
+                                            <div class="circle w-[20px] h-[20px]
+                                             rounded-full border-[1px] border-black relative ">
                                             <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                                              bg-black absolute top-[70%] translate-x-[-50%]"></div>
                                             </div>
-                                        </a>
-                                  
+                                        </a>                                 
+                                        </div>                                       
                                         </div>
-                                       
-                                        </div>
-                                    </div>
+                                 </div>
                         </face>
-                    </basis>
-                  
+                    </basis>    
                 </div>
                 <div class="tab1 body_inactive" data-tab-body="2">
                     <basis core="print" datamembername="db.retail">
                         <face>
                             <div class="w-full tab_body_header textHover  border-b border-[#ABABAB]">
-                                <div class="w-full htab px-[15px] py-[19px] justify-between items-start flex ">
-                                    
-                                    <div class="text-right text-black text-sm font-normal ">@title</div>
-                                    <div class="text-right text-[#ABABAB] text-sm font-normal ">@cdate</div>
+                                <div class="w-full htab px-[15px] py-[19px] justify-between items-start flex "> 
+                                    <div class="text-right text-black text-sm font-normal ">
+                                        @title
+                                    </div>
+                                    <div class="text-right text-[#ABABAB] text-sm font-normal ">
+                                        @cdate
+                                    </div>
                                     </div>
                                     <div class="w-full h-0 overflow-hidden  rtl 
                                      justify-start mt-2 items-center gap-[18px] inline-flex tab_body_body">
-                                        <a href="@link" alt="@title" title="@title">
+                                        <a href="@link" aria-label="@title" rel="noopener"  alt="@title" title="@title">
                                             <img alt="@title" title="@title" class="w-[187px] h-[187px]"
-                                             src="/@00187x00187prp" /></a>
+                                             src="[##cms.cms.cdn##]/@00187x00187prp" />
+                                        </a>
                                         <div class="self-stretch flex-col justify-center items-start gap-1.5 flex">
-                                        <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">@cdate</div>
-                                        <a href="/@link"  alt="@title" title="@title"
-                                        class=" text-right text-black text-sm font-normal mb-2">@title</a>
-                                        <a href="/@link" alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                        <div class="text-right text-[#ABABAB] text-xs font-normal mb-2 ">
+                                            @cdate
+                                        </div>
+                                        <a href="/@link"  alt="@title" title="@title" aria-label="@title" rel="noopener" 
+                                        class=" text-right text-black text-sm font-normal mb-2">
+                                        @title
+                                    </a>
+                                        <a href="/@link" alt="@title" title="@title" aria-label="@title"
+                                         rel="noopener" class="ShowMore ml-auto w-max 
+                                         flex gap-[10px] overflow-hidden justify-center">
                                             <p class=" font-normal text-sm leading-21.91 text-black">مشاهده </p>
-                                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                                            ">
+                                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                                             <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                                              bg-black absolute top-[70%] translate-x-[-50%]"></div>
                                             </div>
-                                        </a>
-                                  
-                                        </div>
-                                       
+                                        </a>                                
+                                        </div>                                      
                                         </div>
                                     </div>
                         </face>
@@ -248,15 +253,19 @@
   </div>
   
   <div class="sticky-p">
-  <div class="w-main mx-auto my-0 ">
+  <div class="section4 w-main mx-auto my-0 ">
   <div class="w-full border-b border-black justify-end items-start mb-3 pb-3 mt-20 inline-flex">
     <div class="w-[177px] h-16 relative borderr textHover" style="width: max-content; ">
-    <div class=" text-right text-black text-2xl font-medium  ">[##db.pnews.urltitle##]  </div>
+    <div class=" text-right text-black text-2xl font-medium  ">
+  <h2>   
+[##db.pnews.urltitle##]  
+  </h2>   
+</div>
     <div class="flex rtl titleMain" style="gap: .5em;">
-        <a href="اخبار" alt="اخبار" title="اخبار" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+        <a href="اخبار" alt="اخبار" title="اخبار" aria-label="اخبار" rel="noopener"
+         class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
             <p class=" font-normal text-sm leading-21.91 text-black">مشاهده لیست  </p>
-            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-            ">
+            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative">
             <div class="dot w-[5px] h-[5px] translate-y-[-50%]
              bg-black absolute top-[70%] translate-x-[-50%]"></div>
             </div>
@@ -270,20 +279,26 @@
         <div class="relative w-6/12 blogFirst">
             <basis core="print" datamembername="db.list-blog22">
                 <face filter="ord=1">
-                    <a href="/@link"><img src="@00752x00752prp" alt="@title" class="w-full" /></a>
+                    <a href="/@link" aria-label="@title" rel="noopener" alt="@title" title="@title" >
+                        <img src="[##cms.cms.cdn##]/@00752x00752prp" alt="@title" class="w-full" />
+                    </a>
                     <div class="absolute bottom-5  left-5 right-5 mr-5 z-50 rtl boxes textHover">
                         <div class="bdat centerr text-white text-sm pb-2">تاریخ انتشار: @cdate</div>
-                    <a href="/@link" class="bti centerr text-white text-sm font-bold pb-3 ">@title</a>
-                    <div class="bdat centerr text-justify text-white text-sm font-normal pb-3"> @prp_7244</div>
-                    <a href="/@link" alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                    <a href="/@link" class="bti centerr text-white text-sm font-bold pb-3 ">
+                        @title
+                    </a>
+                    <div class="bdat centerr text-justify text-white text-sm font-normal pb-3">
+                         @prp_7244
+                    </div>
+                    <a href="/@link" alt="@title" title="@title" 
+                    aria-label="@title" rel="noopener"  
+                    class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                         <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
-                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                        ">
+                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative">
                         <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                          bg-black absolute top-[70%] translate-x-[-50%]"></div>
                         </div>
-                    </a>
-          
+                    </a>  
                     </div>
                 </face>
             </basis>
@@ -294,75 +309,88 @@
                 <basis core="print" datamembername="db.list-blog11">
                     <face filter="rownumber <> 0">
                         <li class="flex items-end textHover">
-                            <a class="rightside" href="/@link"  alt="@title" title="@title">
-                                  <img src="/@00249X00249prp" alt="@title" title="@title" />
+                            <a class="rightside" href="/@link"  aria-label="@title" rel="noopener"  alt="@title" title="@title">
+                                  <img src="[##cms.cms.cdn##]/@00249X00249prp" alt="@title" title="@title" />
                                 </a>
                             <div class="leftside mr-5 z-50 rtl">
                                 <div class="text-orange text-sm pb-2">تاریخ انتشار: @cdate</div>
-                                <a href="/@link"  alt="@title" title="@title" class=" text-black text-sm font-bold pb-3 ">@title</a>
-                            <div class=" text-justify text-black text-sm font-normal pb-3 h-[40px] mb-[10px] overflow-hidden">@prp_7244</div>
-                            <a href="/@link" alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                <a href="/@link"  alt="@title" title="@title" aria-label="@title" 
+                                rel="noopener"  class=" text-black text-sm font-bold pb-3 ">
+                                @title
+                            </a>
+                            <div class=" text-justify text-black text-sm font-normal pb-3 h-[40px]
+                             mb-[10px] overflow-hidden">
+                             @prp_7244
+                            </div>
+                            <a href="/@link" alt="@title" title="@title" 
+                            aria-label="@title" rel="noopener" 
+                            class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                                 <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
-                                <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                                ">
+                                <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                                 <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                                  bg-black absolute top-[70%] translate-x-[-50%]"></div>
                                 </div>
-                            </a>
-                       
+                            </a>                       
                             </div>  
-                        </li>
-                  
+                        </li>                  
                         </face>
-                        </basis>
-               
+                </basis>           
             </ul>
         </div>
     </div>
   </div>
-  <div class="w-main mx-auto my-0 relative flex mt-[50px] margin addCont bb secAdd" >
+  <div class="section5 w-main mx-auto my-0 relative flex mt-[50px] margin addCont bb secAdd" >
     <basis core="print" datamembername="db.image-banner">
         <face filter="ord=1002">
             <div class="w-2/6 h-[90px]  flex items-center justify-center mb-[30px] ads">
-                <a href="@description">
-                <img src="@largeIMG"  alt="@name" title="@name"></a>
+                <a href="@description" aria-label="@name " rel="noopener">
+                <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
             </div>
         </face>
     </basis>
   </div>
-  <div class="w-main mx-auto my-0 shoppingcenter">
+  <div class="section6 w-main mx-auto my-0 shoppingcenter">
     <div class="w-full border-b border-black justify-end items-start mb-3 pb-3 mt-5 inline-flex">
         <div class=" h-16 relative borderr textHover "style="display: flex;justify-content:flex-end ;align-items: flex-end;
         gap:.5em; flex-direction:column;position: relative;" >
-        <div class=" text-right text-black text-2xl font-medium textHover">[##db.projs.urltitle##]  </div>
+        <div class=" text-right text-black text-2xl font-medium textHover">
+ <h3> 
+[##db.projs.urltitle##] 
+ <h3> 
+ </div>
         <div class="titleMain">
-        <a href="مراکز-خرید"  alt="مراکز خرید" alt="مراکز خرید" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
-           
-            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-            ">
+        <a href="مراکز-خرید"  alt="مراکز خرید" alt="مراکز خرید"
+         aria-label="مراکز خرید" rel="noopener" 
+         class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
             <div class="dot w-[5px] h-[5px] translate-y-[-50%]
              bg-black absolute top-[70%] translate-x-[-50%]"></div>
             </div>
-          
             <p class=" font-normal text-sm leading-21.91 text-black">مشاهده لیست  </p>
         </a>
     </div>
-     
-        </div>
-        
-        </div>
+    </div>
+</div>
   </div>
-  <section class="elementor-section elementor-top-section elementor-element elementor-element-059de65 elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no qodef-angled-shape-top-no qodef-angled-shape-bottom-no" data-id="059de65" data-element_type="section" id="port">
+  <section class="section6 elementor-section elementor-top-section
+   elementor-element elementor-element-059de65 elementor-section-full_width
+    elementor-section-height-default elementor-section-height-default
+     qodef-elementor-content-no qodef-angled-shape-top-no qodef-angled-shape-bottom-no" 
+     data-id="059de65" data-element_type="section" id="port">
     <div class="elementor-container elementor-column-gap-default">
-  <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1838e98" data-id="1838e98" data-element_type="column">
+  <div class="elementor-column elementor-col-100 elementor-top-column 
+  elementor-element elementor-element-1838e98" data-id="1838e98" data-element_type="column">
   <div class="elementor-widget-wrap elementor-element-populated">
-    <div class="elementor-element elementor-element-e89f79e elementor-widget elementor-widget-malgre_core_portfolio_fullscreen_grid" data-id="e89f79e" data-element_type="widget" data-widget_type="malgre_core_portfolio_fullscreen_grid.default">
+    <div class="elementor-element elementor-element-e89f79e 
+    elementor-widget elementor-widget-malgre_core_portfolio_fullscreen_grid"
+     data-id="e89f79e" data-element_type="widget" data-widget_type="malgre_core_portfolio_fullscreen_grid.default">
   <div class="elementor-widget-container shoppingCenter">
-  <div class="qodef-shortcode qodef-m  qodef-portfolio-fullscreen-grid-holder  qodef-grid qodef-layout--columns   qodef-col-num--3  qodef-responsive--predefined" data-col-number="3" data-number-of-posts="6">
+  <div class="qodef-shortcode qodef-m  qodef-portfolio-fullscreen-grid-holder
+    qodef-grid qodef-layout--columns   qodef-col-num--3 
+     qodef-responsive--predefined" data-col-number="3" data-number-of-posts="6">
   <div class="qodef-fsg-holder-inner">
-  
     <basis core="print" datamembername="db.list-project">
-        <face>
+        <face filter="rownumber<7">
             <article class="qodef-fsg-item GridItem" data-bg="/@01600X00739prp">
                 <div class="qodef-fsg-item-inner">
                 <div class="qodef-fsg-item-table">
@@ -373,18 +401,16 @@
                             <!-- <a itemprop="url" class="qodef-e-category"  alt="@title" title="@title" href="@link">بازار بزرگ</a> -->
                 </div>
                 </div>
-                
                 <h4 itemprop="name" class="qodef-sli-title entry-title">
                     @title</h4>			
                 </div>
                 </div>
                 </div>
-                
                 <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link"
-                alt="@title" title="@title" href="@link"></a>
+                alt="@title" title="@title" href="@link" aria-label="@title" rel="noopener">
+            </a>
                 </div>
-                </article>
-                
+                </article> 
         </face>
     </basis>
   
@@ -393,27 +419,31 @@
     <basis core="print" datamembername="db.list-project">
         <face filter="rownumber=1">
             <div class="qodef-fsg-image-holder GridItem" data-bg="/@01600X00739prp" >
-             
-              <img src="/@01600X00739prp"  alt="Tejarat" title="Tejarat" >
-               
+              <img src="[##cms.cms.cdn##]/@01600X00739prp"  alt="Tejarat" title="Tejarat" >  
                 </div>
         </face>
     </basis>
+
+    <basis core="print" datamembername="db.list-project">
+        <face filter="rownumber<7">
+           
+              <img src="[##cms.cms.cdn##]/@01600X00739prp"  alt="Tejarat" title="Tejarat"  style="display: none;">  
+              
+        </face>
+    </basis>
   </div>		
-  
   </div>
   </div>
   </div>
   </div>
   </div>
   </section>
-  <div class="w-main mx-auto my-0 relative flex mt-[50px] margin addCont">
-  
+  <div class="section7 w-main mx-auto my-0 relative flex mt-[50px] margin addCont">
     <basis core="print" datamembername="db.image-banner">
         <face filter="ord=1003">
             <div class="w-2/6 h-[90px]  flex items-center justify-center mb-[30px] ads">
-                <a href="@description">
-                <img src="@largeIMG"  alt="@name" title="@name"></a>
+                <a href="@description" aria-label="@name" rel="noopener" alt="@name" title="@name" >
+                <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
             </div>
         </face>
     </basis>
@@ -421,49 +451,44 @@
   </div>
   
   
-  <div class="Events-Cont">
+  <div class="section8 Events-Cont">
     <div class="gallery"> 
         <div class="w-full topG border-b border-black justify-end items-start mb-3 pb-3 mt-5 inline-flex pt-[70px]">
             <div class=" h-16 relative borderr" style="width: 255px;">
-            <div class=" text-right text-black text-2xl font-medium textHover">[##db.rnew.urltitle##]  </div>
+            <div class=" text-right text-black text-2xl font-medium textHover">
+ <h4> 
+[##db.rnew.urltitle##]
+ <h4> 
+  </div>
+
             <div class="titleMain">
-                <a href="اخبار"  alt="اخبار " alt="اخبار " class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
-                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                    ">
+                <a href="اخبار"  alt="اخبار " alt="اخبار " aria-label="اخبار" rel="noopener" 
+                class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                     <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                      bg-black absolute top-[70%] translate-x-[-50%]"></div>
                     </div>
                     <p class=" font-normal text-sm leading-21.91 text-black">مشاهده لیست  </p>
-              
                 </a>
             </div>
-      
             </div>
             <div class="splide__arrows gal ">
-          
             <div class="swiper-button-next swiper-button-disabled" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-65caf78a10a0249eb" aria-disabled="true">
-            <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative rounded-0">
+            <button  aria-label="next " class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative rounded-0">
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"></path>
             </svg>
-            
             </button> 
             </div>
             <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-65caf78a10a0249eb" aria-disabled="false">
-                <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
+                <button  aria-label="prev" class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"></path>
                 </svg>
-                
                 </button>
                 </div>
             </div>
             </div>     
-  
-  
-            
-  
-  
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
             <div class="swiper-wrapper">
                 <basis core="print" datamembername="db.list-blogg">
@@ -472,69 +497,63 @@
                     <div class="Right">
                         <div class="Texts">
                           <div class="Date">
-                          
                             <span> @prp_7248</span>
                           </div>
                           <div class="Title">
-                            <a   alt="@title" title="@title" href="@link">
-                                <p>@title</p></a>
+                            <a   alt="@title" title="@title" href="@link" aria-label="@title" rel="noopener">
+                                <p>@title</p>
+                            </a>
                           </div>
                           <div class="Text">
                             <p>@prp_7244</p>
                         </div>
                           <div class="w-[177px] flex justify-end float-right">
-                            <a href="@link"  alt="@title" title="@title" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
-                                <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                                ">
+                            <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener" class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                                <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                                 <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                                  bg-black absolute top-[70%] translate-x-[-50%]"></div>
                                 </div>
-                                <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
-                          
-                            </a>
-                        
-                          
+                                <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>                         
+                            </a>                       
                             </div>
                         </div>
-                      </div>
-                    
+                      </div>                  
                     <div class="Left">
                          <div class="IMG">
-                            <a href="@link"  alt="@title" title="@title">
-                                <img src="@00600X00647prp"  alt="@title" title="@title" /></a>
+                            <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener">
+                                <img src="[##cms.cms.cdn##]/@00600X00647prp"  alt="@title" title="@title" />
+                            </a>
                          </div>
                     </div>
                   
                   </div>
                     </face>
-                </basis>
-                 
+                </basis>          
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
           <div thumbsSlider="" class="swiper mySwiper">
-            <div class="swiper-wrapper">
-               
+            <div class="swiper-wrapper">        
                   <basis core="print" datamembername="db.list-blogg">
                     <face>
                         <div class="swiper-slide textHover">
                             <div class="Left">
                                 <div class="IMG">
-                                    <a href="@link"  alt="@title" title="@title">
-                                        <img src="@00600X00647prp"  alt="@title" title="@title" /></a>
+                                    <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener">
+                                        <img src="[##cms.cms.cdn##]/@00600X00647prp"  alt="@title" title="@title" />
+                                    </a>
                                  </div>
-                                </div>
-                        
+                                </div>             
                             <div class="Right">
                               <div class="Texts">
-                                <div class="Date">
-                          
+                                <div class="Date">          
                                     <span> @prp_7248</span>
                                   </div>
                                 <div class="Title">
-                                    <a href="@link"  alt="@title" title="@title">
-                                        <p>@title</p></a>
+                                    <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener">
+                                        <p>@title</p>
+                                    </a>
                                   </div>
                            
                               </div>
@@ -542,70 +561,59 @@
                           
                           </div>
                     </face>
-                  </basis>
-             
+                  </basis>         
             </div>
           </div>
         
     </div>
   </div>
   
-  <div class="w-main mx-auto my-0 relative">
-  
-  
-  
-  </section>
+  <div class="section9 w-main mx-auto my-0 relative">
   <div class="w-main mx-auto my-0 conversations">
     <div class="w-full border-b border-black justify-end items-start mb-3 pb-3 mt-5 inline-flex ">
         <div class=" h-16 relative borderr textHover" >
-        <div class=" text-right text-black text-2xl font-medium textHover">[##db.conver.urltitle##]</div>
+        <div class=" text-right text-black text-2xl font-medium textHover">
+ <h5> 
+            [##db.conver.urltitle##]
+ <h5> 
+        </div>
         <div class="titleMain">
-            <a href="گفتگو"   title="گفتگو" alt="گفتگو " class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+            <a href="گفتگو"  title="گفتگو" alt="گفتگو " aria-label="گفتگو" rel="noopener"
+              class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                 <p class=" font-normal text-sm leading-21.91 text-black">مشاهده لیست  </p>
-                <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                ">
+                <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                 <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                  bg-black absolute top-[70%] translate-x-[-50%]"></div>
                 </div>
-              
-          
             </a>
         </div>
      
         </div>
-        <div class="splide__arrows  newss ">
+        <div class="splide__arrows newss">
        <div class="swiper-button-prev">
-        <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0" 
-            >
+        <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0" >
                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
-                    </svg>
-                    
+                    </svg>  
             </button>
        </div>
        <div class="swiper-button-next">
         <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative  rounded-0">
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
-                </svg>
-                
+              </svg>   
         </button> 
-       </div>
-        
-            </div>
-        </div>
+       </div>    
+         </div>
+    </div>
   </div>
   <basis core="print" datamembername="db.list--blogg">
-   
     <layout>
         <div id="" class="w-main  mx-auto my-0">
-      
             <section class="swiper-news">
-                <div class="swiper-wrapper">
-                
+                <div class="swiper-wrapper"> 
          @child
   </div>
-  
   </section>
   </div>
     </layout>
@@ -613,12 +621,13 @@
         <li class="swiper-slide conver textHover">
             <div class=" relative">
                 <div class="relative">
-                    <a href="/@link"  alt="@title" title="@title"> 
-                         <img class="leftimg"  alt="@title" title="@title" width="500" src="/@type_159" /></a>
-                <div class=" bor11 h-[60px] w-full bg-orange absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
-                pr-[150px]
-                ">
-                <img src="/@00500X00260prp" 
+                    <a href="/@link"  alt="@title" title="@title" aria-label="@title" rel="noopener" > 
+                         <img class="leftimg"  alt="@title" title="@title" width="500" src="[##cms.cms.cdn##]/@type_159" />
+                        </a>
+                <div class=" bor11 h-[60px] w-full bg-orange 
+                absolute text-black rounded-b-lg left-0 bottom-0 flex items-center justify-start 
+                pr-[150px]">
+                <img src="[##cms.cms.cdn##]/@00500X00260prp" 
                 alt="@title" title="@title" width="110" height="110" class="absolute right-[15px] rounded50 bottom-2 " />
                <p>
                 @prp_7248
@@ -627,218 +636,139 @@
             </div>
                 <div class="  mr-5 z-50 marright">
                     <div class="text-gray text-sm pb-2">تاریخ انتشار: @cdate</div>
-    <a href="/@link"  alt="@title" title="@title" class="block text-black text-sm font-bold pb-3 ">@title</a>
-    <div class=" text-justify text-black text-sm font-normal pb-3">
-        @prp_7244
-    </div>
+                    <a href="/@link"  alt="@title" title="@title" aria-label="@title" rel="noopener" 
+                     class="block text-black text-sm font-bold pb-3 ">@title</a>
+                    <div class=" text-justify text-black text-sm font-normal pb-3">
+                        @prp_7244
+                    </div>
                 <div class="flex">
-           
-                        <a href="@link"   title="@title" alt="@title " class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                        <a href="@link"  aria-label="@title" rel="noopener"  title="@title" alt="@title " 
+                        class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                             <p class=" font-normal text-sm leading-21.91 text-black">مشاهده   </p>
-                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
-                            ">
+                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative ">
                             <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                              bg-black absolute top-[70%] translate-x-[-50%]"></div>
-                            </div>
-                          
-                      
-                        </a>
-                 
+                            </div>                                               
+                        </a>                
                 </div>
-                </div>
-               
-               
-                </div>
+                </div>                        
+               </div>
                 </li>
     </face>
-  </basis>
-  
+  </basis> 
   </div>
   </div>
-  
   <div class="w-full  bg-black">
-    <div class="w-main mx-auto my-0 pt-20 pr-10 bookContainer">
-        
-  
+    <div class="section10 w-main mx-auto my-0 pt-20 pr-10 bookContainer">
         <div class="w-main mx-auto my-0">
             <div class="w-full  justify-end items-start mb-3 pb-3 mt-5 inline-flex ">
                 <div class=" h-16 relative borderr textHover" style=" border-color: #fff;">
                 <div class=" text-right text-white text-2xl font-medium textHover"> [##db.bookss.urltitle##]   </div>
                 <div class="titleMain">
-                    <a href="بلاگ"   title="بلاگ" alt="بلاگ " class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                    <a href="بلاگ"   title="بلاگ" alt="بلاگ " aria-label="بلاگ" rel="noopener"  class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                         <p class=" font-normal text-sm leading-21.91 text-white">مشاهده لیست  </p>
-                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white relative 
-                        ">
+                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white relative ">
                         <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                          bg-black absolute top-[70%] translate-x-[-50%]"></div>
-                        </div>
-                      
-                  
+                        </div>          
                     </a>
-                </div>
-             
-                </div>
-                
+                </div>         
+                </div>            
                 </div>
         </div>
-  
             <div id="books" class="w-[1000px] mx-auto my-0 flex justify-between">
-  
                 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="208527">
                     <member name="list--book" size="286x286" type="list" propertyid="7244,7248" link="blog.bc" sort="id desc"/>
-                </basis>
-  
+                </basis>  
                 <basis core="print" datamembername="db.list--book">
                     <face>
-  
                         <div class="w-[142px] h-[338px] relative green_book">
                             <div class="w-[142px] h-[338px] left-0 top-0 absolute bg-black/opacity-50"></div>
-                            <div class="IMG">
-                                
-                                <img src="/@00286X00286prp"  alt="@title" title="@title">
+                            <div class="IMG">                           
+                                <img src="[##cms.cms.cdn##]/@00286X00286prp"  alt="@title" title="@title">
                             </div>
                             <div class="w-[30px] h-[292px] left-[56px] top-[8px] absolute text">
-                             
                                   <div class="left-0 top-0 absolute text-center 
                                   text-white text-[35px] font-normal num">0@RowNumber</div>
-                                  <a href="@link"  alt="@title" title="@title">     <div class="w-[212px] h-[27px] left-[1px] top-[292px]
+                                  <a href="@link"  alt="@title" title="@title" aria-label="@title" rel="noopener" >   
+                                      <div class="w-[212px] h-[27px] left-[1px] top-[292px]
                              absolute origin-top-left -rotate-90 text-right 
                              text-white text-sm font-bold font-['IRANSansWeb(FaNum)']">@title   </div></a>
                             </div>
-                         
                             </div> 
                     </face>
                 </basis>
-  
             </div>
-  
       </div> 
-  
-      <div class="w-main mx-auto my-0 pt-20  mahname">
+      <div class="section11 w-main mx-auto my-0 pt-20  mahname">
         <div class="w-main mx-auto my-0">
             <div class="w-full  justify-end items-start mb-3 pb-3 mt-5 inline-flex ">
                 <div class=" h-16 relative borderr textHover" style=" border-color: #fff;">
                 <div class=" text-right text-white text-2xl font-medium textHover ">[##db.mahnamee.urltitle##]  </div>
                 <div class="titleMain">
-                    <a href="ماهنامه"   title="ماهنامه" alt="ماهنامه " class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                    <a href="ماهنامه"   title="ماهنامه" alt="ماهنامه "
+                     aria-label="ماهنامه" rel="noopener" 
+                     class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
                         <p class=" font-normal text-sm leading-21.91 text-white">مشاهده لیست  </p>
-                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white relative 
-                        ">
+                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white relative ">
                         <div class="dot w-[5px] h-[5px] translate-y-[-50%]
                          bg-black absolute top-[70%] translate-x-[-50%]"></div>
                         </div>
-                      
-                  
                     </a>
                 </div>
-             
-            
                 </div>
-                
                 </div>
         </div>
-  
-  
-     
             <div id="" class="mahcao  mx-auto my-0">
                 <section class="splide mt-[40px]" id="news_slider1">
                     <div class="splide__track">
                           <ul class="splide__list">
-  
-  
                             <basis core="print" datamembername="db.list-mahnamee">
                                 <face>
                                     <li class="splide__slide journal_list">
                                         <div class="w-[260px]  rounded-[20px] relative ">
-                                            <a href="@link"   alt="@tit" title="@title">
-                                            <img src="@00264X00288prp" width="260" 
+                                            <a href="@link" aria-label="@title" rel="noopener"  alt="@title" title="@title">
+                                            <img src="[##cms.cms.cdn##]/@00264X00288prp" width="260" 
                                             class="rounded-[20px]" alt="@title" title="@title" /></a>
                                             <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
-                                               
-                                                <a href="@link"   alt="@tit" title="@title"
+                                                <a href="@link"   alt="@tit" title="@title" aria-label="@title" rel="noopener"
                                                 class="text-white text-sm relative z-50 w-full  text-center ">
                                                   @title
                                                 </a>
-                                                <span class="sign w-[73px] h-[79px]  absolute top-[-40px] right-2 flex justify-center items-start pt-2 bg-center text-white journal_title_badge">
+                                                <span class="sign w-[73px] h-[79px] 
+                                                absolute top-[-40px] right-2 flex justify-center
+                                                 items-start pt-2 bg-center text-white journal_title_badge">
                                                  @prp_7248
                                                 </span>
                                             </div>
                                           </div>
-                                            </li>
-                                         
+                                     </li> 
                                 </face>
-  
                             </basis>
-                          
                           </ul>
                     </div>
-                    <div class="splide__arrows   ">
-                        
-                        <button class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative left-[-60px]  rounded-0" 
-                        >
+                    <div class="splide__arrows">
+                        <button aria-label="next" 
+                        class="splide__arrow splide__arrow--next bg-orange w-6 h-6 relative left-[-60px] rounded-0">
                             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
-                                </svg>
-                                
+                            </svg>
                         </button>
-                        <button class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
+                        <button  aria-label="prev" 
+                        class="splide__arrow splide__arrow--prev bg-orange w-6 h-6 absolute rounded-0 right-0">
                             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.99977 5.00016L1.75677 9.24316L0.342773 7.82816L3.17177 5.00016L0.342773 2.17216L1.75677 0.757164L5.99977 5.00016Z" fill="white"/>
-                                </svg>
-                                
+                            </svg>  
                         </button>
                   </div>
                   </section>
             </div>
         </div>
-  
   <basis core="call" file="footer-black.inc" ></basis>
-  
-  
   </div>
   <basis core="call" file="scripts.inc" ></basis>
-   
   <script src="[##cms.cms.cdn3##]/js/default.js"></script>
   <script type="module" crossorigin>
-    document.addEventListener("DOMContentLoaded", function () {
-    "use strict";
-  
-const tabletDevice = window.matchMedia("(min-width:1200px )");
-const tabletDevice1 = window.matchMedia("(min-width:2000px )");
-
-tabletDevice.addListener(handleDeviceChange);
-tabletDevice1.addListener(handleDeviceChange1);
-let tl
-function handleDeviceChange(e) {
-    if (e.matches){
-         tl =  ScrollTrigger.create({
-  trigger:' .pinscroll',
-  start:'top top',
-  end:'bottom 100%',
-  pin:'.blogFirst',
-  //   animation: animation,
-  scrub: 1,
-  })
-    }
-
-
-}
-
-function handleDeviceChange1(e) {
-    if (e.matches){
-        tl.kill();
-
-    }
-
-
-}
-
-// Run it initially
-handleDeviceChange(tabletDevice);
-handleDeviceChange1(tabletDevice1);
-
-  
-  });
      import { S as E, P as S } from "./js/vendorr.js";
      function b({ swiper: a, extendParams: s, on: o }) {
   s({ panoramaEffect: { depth: 200, rotate: 30 } }),
@@ -899,8 +829,7 @@ handleDeviceChange1(tabletDevice1);
   }
   
   );
-  let header1 = document.querySelector('header .left a:nth-child(1)')
-  header1.classList.add('active')
+
   </script>
   </body>
   

@@ -194,7 +194,7 @@
                   <basis core='print' run='AtClient' datamembername='captcha.code'><face >
                       <script type="text/template">
                       
-                      <img class="mx-2" src="@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
+                      <img class="mx-2" src="[##cms.cms.cdn##]/@captcha@" width="128" height="44" alt=" فرم ار تباط با ما" />
                       <input type="hidden" name="captchaid" value="@captcha@" />
                       </script>
                       </face>
@@ -227,7 +227,8 @@
               <div class="w-[48.67px] h-52 left-[12.04px] top-[50.95px] absolute origin-top-left rotate-[-90.12deg] bg-neutral-50 rounded-tl-[36px] rounded-tr-[36px] shadow"></div>
               <div class="w-[62px] h-[51px] left-0 top-0 absolute justify-center items-center inline-flex">
               <div class="w-[62px] h-[51px] relative">
-              <img class="w-[62px] h-[51px] left-0 top-0 absolute" src="[##cms.cms.cdn##]/images/social_bg.png"   alt="[##db.list-center.title##]" title="[##db.list-center.title##]" />
+              <img class="w-[62px] h-[51px] left-0 top-0 absolute" 
+              src="[##cms.cms.cdn##]/images/social_bg.png"   alt="[##db.list-center.title##]" title="[##db.list-center.title##]" />
              
               </div>
               </div>
@@ -251,13 +252,14 @@
                           <li class="splide__slide">
                               <div class="w-[400px] h-[250px] rounded-[20px] relative shL">
                                   <a href="@link"  alt="@title" title="@title">
-                                      <img src="@00408X00255prp" class="rounded-[20px]" alt="@title" title="@title" />
+                                      <img src="[##cms.cms.cdn##]/@00408X00255prp"
+                                       class="rounded-[20px]" alt="@title" title="@title" />
                               </a>
                                 <a href="@link" alt="@title" title="@title" class="shL logoc absolute top-0 left-0 w-[400px] h-[250px] bg-hover flex justify-center rounded-[20px] items-center transition hover:opacity-0" >
                                   <div class="title">
                                       <p>@title</p>
                                     </div>
-                                  <img src="images/shoping_center_logo.png" />
+                                  <img src="[##cms.cms.cdn##]/images/shoping_center_logo.png" />
                                 </a>
                               </div>
                             </li>
@@ -285,7 +287,7 @@
               <div class="right">
                   <span class="Gprev"></span>
                   <span class="Gnext"></span>
-               <img class="Main" src="@largeIMG" alt="@title" title="@title"/>
+               <img class="Main" src="[##cms.cms.cdn##]/@largeIMG" alt="@title" title="@title"/>
                   </basis>
               </div>
           </div>

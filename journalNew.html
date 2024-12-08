@@ -1,7 +1,6 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member name="title"  type="list"/>
 </basis>
-
 <basis core="dbsource" name="db"  source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
     <member name="image" type="list" format="4"/>
 </basis>
@@ -19,46 +18,18 @@
 </basis>
 <!doctype html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title> [##db.title.title##]</title>
-    <meta name="description" content=" [##db.title.title##]"> 
+    <title> [##cms.seo.title##]</title>
+    <meta name="description" content=" [##cms.seo.description##]"> 
     <basis core="call" file="styles.inc" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/viewer.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/splide.min.css">
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/journal.css">
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/journalShow.css">
-<style>
-    .journal-Flip{
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .journal-Flip iframe{
-        width: 100%;
-        height: 100% !important;
-    }
-    .logo-backs2{
-display: none !important;
-    }
-</style>
 </head>
-
 <body class="font-['IRANSans'] font-normal bg-black journalshow ">
-
     <basis core="call" file="header-black.inc" />
     <div class="w-full journalcont bg-black mt-[150px]">
- 
-   
-    </div>
-<!-- 
-<div class="clr"></div> -->
+</div>
 <div class="shh w-main mx-auto  ">
     <basis core="print" datamembername="db.cataloge">
         <layout>
@@ -87,7 +58,8 @@ display: none !important;
                     </div>
                  
                     </div>
-                    <a href="ماهنامه" class=" text-white  origin-top-left leading-10 titleM1">مشاهده لیست </a>
+                    <a href="ماهنامه"  alt="ماهنامه" title="ماهنامه" aria-label="ماهنامه" rel="noopener"
+                     class=" text-white  origin-top-left leading-10 titleM1">مشاهده لیست </a>
                 </div>
                     </div> 
               <div class="result">
@@ -128,12 +100,11 @@ display: none !important;
               <face>
                   <li class="splide__slide journal_list">
                       <div class="w-[260px]  rounded-[20px] relative ">
-                          <a href="@link"   alt="@tit" title="@title">
-                          <img src="@00264X00288prp" width="260" 
+                          <a href="@link" alt="@tit" title="@title" aria-label="@title" rel="noopener">
+                          <img src="[##cms.cms.cdn##]/@00264X00288prp" width="260" 
                           class="rounded-[20px]" alt="@title" title="@title" /></a>
                           <div class="w-full journal_body h-[72px] absolute bottom-0 rounded-b-[20px] p-2 color ">
-                             
-                              <a href="@link"   alt="@tit" title="@title"
+                              <a href="@link"   alt="@title" title="@title"  aria-label="@title" rel="noopener"
                               class="text-white text-sm relative z-50 w-full  text-center ">
                                 @title
                               </a>
@@ -142,95 +113,21 @@ display: none !important;
                               </span>
                           </div>
                         </div>
-                          </li>
-                       
-              </face>
-          
-          </basis>
-
-                   
-  
+                    </li>                      
+              </face>         
+          </basis>       
 <div  class=" jornalshow-adaa w-main my-0 mx-auto flex flex-col justify-center items-center pt-[80px] pb-[80px]">
     <basis core="print" datamembername="db.image-banner">
         <face filter="ord=1005">
- 
-                <a href="@description">
-                <img src="@largeIMG"  alt="@name" title="@name"></a>
-    
+            <a href="@description" alt="@name" title="@name" aria-label="@name " rel="noopener">
+             <img src="[##cms.cms.cdn##]/@largeIMG"  alt="@name" title="@name"></a>
         </face>
-    </basis>
-   
+    </basis> 
 </div>
 </div>
   <div class="clr"></div>
   <basis core="call" file="footer-black.inc" />
   <basis core="call" file="scripts.inc" />
-    <script src="[##cms.cms.cdn##]/js/swiper-bundle.min.js"></script>
-    <script src="[##cms.cms.cdn##]/js/jquery.slim.min.js" crossorigin="anonymous"></script>
-    <script src="[##cms.cms.cdn##]/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="[##cms.cms.cdn##]/js/splide.min.js"></script>
-<script>
-var iframe = document.getElementById( 'myiFrame' );
-	var content = document.getElementById("myiFrame").innerHTML;
-	var frameDoc = iframe.document;
-    console.log(frameDoc);
-    
-	// if (iframe.contentWindow)
-	// 	frameDoc = iframe.contentWindow.document;
-
-	// frameDoc.open();
-	// frameDoc.writeln(content);
-	// frameDoc.close();
-
-    // $(".fp-iframe").contents().find(".logo-backs2").attr("style","display:none;")
-    let mahnames = document.querySelectorAll('#news_slider1 .splide__slide')
- let colurs = ['#B2D9EA','#FFFFD1',' #F0C5D5','#FFFFFF']
- let i = 0
- mahnames.forEach(element => {
-    console.log(element);
-    element.querySelector('.color').style.backgroundColor=colurs[i]
-    element.querySelector('.color').setAttribute('data-color',colurs[i])
-    element.querySelector('.color').classList.add(`data-${i}`)
-
-    i++
-    if(i>=colurs.length){
-        i=0
-    }
-   
- });
- var news_slider1 = new Splide( '#news_slider1', {
-  // type   : 'loop',
-  perPage: 4,
-  perMove: 1,
-  autoWidth: true,
-  arrows : true,
-  pagination : false,
-  gap: '28px',
-  direction: 'rtl', 
-  classes: {
-      arrows: 'splide__arrows your-class-arrows',
-             arrow : 'splide__arrow your-class-arrow',
-          prev  : 'splide__arrow--prev',
-          next  : 'splide__arrow--next',
-  },
-  breakpoints: {
-    1024: {
-      perPage: 3,
-     
-    },
-    767: {
-      perPage: 2,
-  
-    },
-    640: {
-      perPage: 1,
-
-    },
-  },
-  } );
-
-  news_slider1.mount();
-</script>
 <script  type="application/ld+json" >
     [##db.json.Column1##]
      </script>
